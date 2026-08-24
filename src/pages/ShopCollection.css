@@ -1,0 +1,274 @@
+/* ============ Shop Collection Page ============ */
+
+/* ---- Filter & Sort Toolbar ---- */
+.shopcol-toolbar {
+  background: var(--cream);
+  border-bottom: 1px solid var(--slate-light);
+  position: sticky;
+  top: 66px;
+  z-index: 40;
+  padding: 20px var(--section-x);
+}
+
+.shopcol-toolbar__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.shopcol-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.shopcol-filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--slate-border);
+  border-radius: 20px;
+  padding: 9px 18px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate-text);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.shopcol-filter-pill:hover {
+  border-color: var(--terracotta);
+  color: var(--terracotta);
+}
+
+.shopcol-sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.shopcol-sort__label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate-text);
+}
+
+.shopcol-sort__select {
+  border: 1px solid var(--slate-border);
+  border-radius: 8px;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--cream);
+  cursor: pointer;
+}
+
+/* ---- Product Grid ---- */
+.shopcol-grid-section {
+  background: var(--cream);
+  padding: 70px var(--section-x) 100px;
+}
+
+.shopcol-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* ---- Product Card ---- */
+.shopcol-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.shopcol-card-img {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  height: 360px;
+}
+
+.shopcol-img-base {
+  transition: opacity 0.35s ease;
+}
+
+.shopcol-img-hover {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.shopcol-card-img:hover .shopcol-img-hover {
+  opacity: 1;
+}
+
+.shopcol-card-img:hover .shopcol-img-base {
+  opacity: 0;
+}
+
+.shopcol-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  background: var(--emerald);
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.shopcol-card-name {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--emerald);
+  margin: 16px 0 4px;
+}
+
+.shopcol-card-detail {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--slate-muted);
+  margin: 0 0 8px;
+}
+
+.shopcol-card-price {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--terracotta);
+  margin: 0;
+}
+
+.shopcol-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.shopcol-card-actions > * {
+  flex: 1;
+}
+
+.shopcol-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 0;
+  font-size: 12.5px;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.shopcol-btn-outline-emerald {
+  background: transparent;
+  color: var(--emerald);
+  border: 1.5px solid var(--emerald);
+}
+.shopcol-btn-outline-emerald:hover {
+  background: var(--emerald);
+  color: var(--cream);
+}
+
+.shopcol-btn-whatsapp {
+  background: var(--emerald);
+  color: var(--cream);
+  border: none;
+  text-decoration: none;
+}
+.shopcol-btn-whatsapp:hover {
+  background: var(--terracotta);
+  color: var(--cream);
+}
+
+/* ---- Inline Trust Banner ---- */
+.shopcol-trust-banner {
+  background: var(--emerald);
+  border-radius: 16px;
+  padding: clamp(36px, 5vw, 56px);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.shopcol-trust-banner__title {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 600;
+  color: var(--cream);
+  margin: 0 0 14px;
+}
+
+.shopcol-trust-banner__body {
+  font-size: 15px;
+  color: var(--sage-text);
+  max-width: 520px;
+  margin: 0 auto 26px;
+  line-height: 1.7;
+}
+
+/* ---- Bottom Assurance Row ---- */
+.shopcol-assurance {
+  background: var(--cream-warm);
+  padding: 70px var(--section-x);
+}
+
+.shopcol-assurance__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 36px;
+}
+
+.shopcol-assurance__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.shopcol-assurance__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1.5px solid var(--terracotta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.shopcol-assurance__icon i {
+  font-size: 20px;
+  color: var(--emerald);
+}
+
+.shopcol-assurance__title {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.shopcol-assurance__desc {
+  font-size: 13.5px;
+  color: var(--slate-text);
+  max-width: 280px;
+  margin: 0;
+  line-height: 1.6;
+}

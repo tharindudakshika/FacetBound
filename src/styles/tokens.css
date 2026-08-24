@@ -1,0 +1,34 @@
+:root {
+  /* Colors */
+  --emerald: #0f2e23;
+  --emerald-deep: #081f19;
+  --emerald-darkest: #051a14;
+  --emerald-mid: #152f26;
+  --emerald-light: #1a4a3a;
+  --terracotta: #c88a75;
+  --terracotta-hover: #a66b57;
+  --cream: #fdfbf7;
+  --cream-warm: #f3f1eb;
+  --cream-border: #edeae2;
+  --ink: #142720;
+  --ink-soft: #22342c;
+  --slate-text: #3a4a44;
+  --slate-muted: #7a8b84;
+  --slate-border: #a9b4c2;
+  --slate-light: #e7eaee;
+  --sterling: #e2e8f0;
+  --sage-text: #c9d3d0;
+  --placeholder-warm-a: #d9c9bc;
+  --placeholder-warm-b: #efe6dc;
+  --placeholder-warm-caption: #8a7a6c;
+
+  /* Type */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Montserrat', sans-serif;
+  --font-body: 'Lato', sans-serif;
+  --font-mono: 'Courier New', monospace;
+
+  /* Spacing */
+  --section-x: clamp(20px, 4vw, 48px);
+  --content-max: 1280px;
+}

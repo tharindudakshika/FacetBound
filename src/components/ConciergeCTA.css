@@ -1,0 +1,39 @@
+.concierge {
+  background: var(--cream-warm);
+  padding: 80px var(--section-x);
+}
+
+.concierge__inner {
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.concierge__inner h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3vw, 32px);
+  color: var(--emerald);
+  margin: 0 0 28px 0;
+  font-weight: 600;
+}
+
+.concierge__buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.concierge__buttons .btn {
+  padding: 15px 30px;
+  font-size: 13.5px;
+  border-radius: 10px;
+}
+
+.concierge__link {
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
