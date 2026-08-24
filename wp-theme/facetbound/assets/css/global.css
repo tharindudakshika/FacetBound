@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--terracotta);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--terracotta-hover);
+}
+
+button {
+  font-family: inherit;
+}
+
+input,
+select,
+textarea {
+  font-family: var(--font-body);
+}
+
+::placeholder {
+  color: var(--slate-border);
+}
+
+.container {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding-left: var(--section-x);
+  padding-right: var(--section-x);
+}
+
+.kicker {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 12px;
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.section-head h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.5vw, 42px);
+  color: var(--emerald);
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 10px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  border: none;
+  padding: 16px 34px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-terracotta {
+  background: var(--terracotta);
+  color: var(--cream);
+}
+.btn-terracotta:hover {
+  background: var(--terracotta-hover);
+}
+
+.btn-emerald {
+  background: var(--emerald);
+  color: var(--cream);
+  border: 1.5px solid var(--emerald);
+}
+.btn-emerald:hover {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+}
+
+.btn-outline-emerald {
+  background: transparent;
+  color: var(--emerald);
+  border: 1.5px solid var(--emerald);
+}
+.btn-outline-emerald:hover {
+  background: var(--emerald);
+  color: var(--cream);
+}
+
+.btn-outline-terracotta {
+  background: transparent;
+  color: var(--terracotta);
+  border: 1.5px solid var(--terracotta);
+}
+.btn-outline-terracotta:hover {
+  background: var(--terracotta);
+  color: var(--cream);
+}
+
+/* Placeholder image blocks */
+.ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.ph-caption {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 0 16px;
+}
+
+.ph-light {
+  background: repeating-linear-gradient(135deg, var(--slate-light), var(--slate-light) 12px, var(--cream) 12px, var(--cream) 24px);
+}
+.ph-light .ph-caption {
+  color: var(--slate-border);
+}
+.ph-light.ph-boxed .ph-caption {
+  border: 1px solid var(--slate-border);
+  padding: 8px 14px;
+  background: var(--cream);
+}
+
+.ph-dark {
+  background: repeating-linear-gradient(135deg, var(--emerald-light), var(--emerald-light) 14px, var(--emerald) 14px, var(--emerald) 28px);
+}
+.ph-dark .ph-caption {
+  color: var(--sterling);
+}
+.ph-dark.ph-boxed .ph-caption {
+  border: 1px solid rgba(226, 232, 240, 0.4);
+  padding: 10px 18px;
+  background: rgba(5, 26, 20, 0.55);
+}
+
+.ph-darker {
+  background: repeating-linear-gradient(135deg, var(--emerald), var(--emerald) 14px, var(--emerald-darkest) 14px, var(--emerald-darkest) 28px);
+}
+.ph-darker .ph-caption {
+  color: var(--sterling);
+  border: 1px solid rgba(226, 232, 240, 0.4);
+  padding: 10px 18px;
+}
+
+.ph-terra-dark {
+  background: repeating-linear-gradient(135deg, var(--emerald-light), var(--emerald-light) 14px, var(--emerald) 14px, var(--emerald) 28px);
+  border: 1px solid rgba(200, 138, 117, 0.35);
+}
+.ph-terra-dark .ph-caption {
+  color: #d9b6a8;
+  border: 1px solid rgba(200, 138, 117, 0.5);
+  padding: 10px 18px;
+}
+
+.ph-warm {
+  background: repeating-linear-gradient(135deg, var(--placeholder-warm-a), var(--placeholder-warm-a) 12px, var(--placeholder-warm-b) 12px, var(--placeholder-warm-b) 24px);
+}
+.ph-warm .ph-caption {
+  color: var(--placeholder-warm-caption);
+}
+
+/* Star rating */
+.stars {
+  display: flex;
+  gap: 2px;
+  color: var(--terracotta);
+}
+
+/* Utility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
