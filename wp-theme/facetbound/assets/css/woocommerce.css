@@ -1,0 +1,496 @@
+/* ============================================================
+   WooCommerce native markup skinning — Cart, Checkout, My Account
+   Targets WooCommerce's OWN generated class names (not the theme's
+   checkout-/account- classes, which only exist on custom hook markup).
+   Uses design tokens from tokens.css throughout.
+   ============================================================ */
+
+/* ---- Notices ---- */
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+  border-radius: 8px;
+  border-left: 3px solid var(--terracotta);
+  background: var(--cream-warm);
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--ink);
+  list-style: none;
+  margin: 0 0 24px;
+}
+
+.woocommerce-error .button,
+.woocommerce-info .button,
+.woocommerce-message .button {
+  background: var(--terracotta);
+  color: var(--cream);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.woocommerce-error .button:hover,
+.woocommerce-info .button:hover,
+.woocommerce-message .button:hover {
+  background: var(--terracotta-hover);
+}
+
+/* ---- Buttons ---- */
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit {
+  background: var(--terracotta);
+  color: var(--cream);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.woocommerce #respond input#submit:hover {
+  background: var(--terracotta-hover);
+}
+
+.woocommerce a.button.alt,
+.woocommerce #respond input#submit.alt {
+  background: var(--terracotta);
+  color: var(--cream);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.woocommerce a.button.alt:hover,
+.woocommerce #respond input#submit.alt:hover {
+  background: var(--terracotta-hover);
+}
+
+/* ---- Form inputs ---- */
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea,
+.woocommerce form .form-row select {
+  border: 1px solid var(--slate-border);
+  border-radius: 8px;
+  padding: 13px 16px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  color: var(--ink);
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--cream);
+}
+
+.woocommerce form .form-row label {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--slate-text);
+}
+
+/* ============================================================
+   Cart page
+   ============================================================ */
+.woocommerce-cart-form table.shop_table,
+table.shop_table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table.shop_table th,
+table.shop_table td {
+  border-bottom: 1px solid var(--slate-light);
+  padding: 16px 12px;
+  font-size: 14px;
+  color: var(--slate-text);
+}
+
+table.shop_table th {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--emerald);
+  text-align: left;
+}
+
+table.shop_table td.product-thumbnail img {
+  border-radius: 10px;
+  width: 72px;
+  height: auto;
+}
+
+table.shop_table td.product-name a {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--emerald);
+}
+
+table.shop_table td.product-remove a.remove {
+  color: var(--terracotta);
+  background: transparent;
+  border-radius: 50%;
+}
+
+table.shop_table .quantity .qty {
+  border: 1px solid var(--slate-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--ink);
+  width: 64px;
+}
+
+.cart_totals {
+  background: var(--cream-warm);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.cart_totals h2 {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--emerald);
+  margin: 0 0 20px;
+}
+
+.cart_totals table.shop_table th,
+.cart_totals table.shop_table td {
+  border-bottom: 1px solid #ddd6c8;
+}
+
+.cart_totals .order-total .amount {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--emerald);
+}
+
+.wc-proceed-to-checkout a.checkout-button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 17px 0;
+  font-size: 14.5px;
+  font-weight: 700;
+  border-radius: 10px;
+  background: var(--terracotta);
+  color: var(--cream);
+}
+
+.wc-proceed-to-checkout a.checkout-button:hover {
+  background: var(--terracotta-hover);
+}
+
+/* Cross-sells */
+.cart-collaterals .cross-sells h2 {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--emerald);
+}
+
+/* ---- Express checkout row + divider (custom markup added via the
+   woocommerce_before_checkout_form hook in inc/woocommerce-support.php —
+   these are not native WooCommerce class names) ---- */
+.checkout-express {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.checkout-express__paypal {
+  background: #ffc439;
+  color: #142720;
+  border: none;
+  width: 100%;
+  padding: 16px 0;
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.checkout-express__paypal:hover {
+  background: #e6b033;
+}
+
+.checkout-express__wallet {
+  background: var(--emerald);
+  color: var(--cream);
+  border: none;
+  width: 100%;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.checkout-express__wallet:hover {
+  background: var(--emerald-mid);
+}
+
+.checkout-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.checkout-divider span {
+  flex: 1;
+  height: 1px;
+  background: var(--slate-light);
+}
+
+.checkout-divider p {
+  white-space: nowrap;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--slate-muted);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ============================================================
+   Checkout page
+   ============================================================ */
+.woocommerce-checkout #customer_details h3,
+.woocommerce-checkout #order_review_heading {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--emerald);
+  font-weight: 600;
+  margin: 0 0 18px;
+}
+
+.woocommerce-checkout .woocommerce-billing-fields > h3,
+.woocommerce-checkout .woocommerce-shipping-fields > h3,
+.woocommerce-checkout .woocommerce-additional-fields > h3 {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--emerald);
+  font-weight: 600;
+  margin: 0 0 18px;
+}
+
+#order_review {
+  background: var(--cream-warm);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+@media (min-width: 900px) {
+  #order_review {
+    position: sticky;
+    top: 32px;
+  }
+}
+
+#order_review table.shop_table th,
+#order_review table.shop_table td {
+  border-bottom: 1px solid #ddd6c8;
+}
+
+#order_review .order-total .amount {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--emerald);
+}
+
+/* Payment method list — single bordered group */
+ul.wc_payment_methods {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+ul.wc_payment_methods li.wc_payment_method {
+  border: 1px solid var(--slate-light);
+  border-top: none;
+  border-radius: 0;
+  padding: 16px 20px;
+  margin-bottom: 0;
+  background: var(--cream);
+}
+
+ul.wc_payment_methods li.wc_payment_method:first-child {
+  border-top: 1px solid var(--slate-light);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+ul.wc_payment_methods li.wc_payment_method:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+ul.wc_payment_methods li.wc_payment_method label {
+  font-weight: 700;
+  color: var(--emerald);
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+}
+
+ul.wc_payment_methods li.wc_payment_method input[type='radio'] {
+  accent-color: var(--terracotta);
+}
+
+ul.wc_payment_methods .payment_box {
+  background: transparent;
+  padding: 14px 0 0;
+  font-size: 13.5px;
+  color: var(--slate-text);
+}
+
+ul.wc_payment_methods .payment_box::before {
+  display: none;
+}
+
+#place_order {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 17px 0;
+  font-size: 14.5px;
+  font-weight: 700;
+  border-radius: 10px;
+  background: var(--terracotta);
+  color: var(--cream);
+  border: none;
+}
+
+#place_order:hover {
+  background: var(--terracotta-hover);
+}
+
+/* ============================================================
+   My Account
+   ============================================================ */
+.woocommerce-MyAccount-navigation {
+  background: var(--cream-warm);
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.woocommerce-MyAccount-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.woocommerce-MyAccount-navigation ul li {
+  margin: 0;
+}
+
+.woocommerce-MyAccount-navigation ul li a {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--slate-text);
+  margin-bottom: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.woocommerce-MyAccount-navigation ul li a:hover {
+  color: var(--emerald);
+}
+
+.woocommerce-MyAccount-navigation ul li.is-active a {
+  background: var(--emerald);
+  color: var(--cream);
+}
+
+.woocommerce-MyAccount-content {
+  background: transparent;
+}
+
+.woocommerce-MyAccount-content table.woocommerce-orders-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.woocommerce-MyAccount-content table.woocommerce-orders-table th,
+.woocommerce-MyAccount-content table.woocommerce-orders-table td {
+  border-bottom: 1px solid var(--slate-light);
+  padding: 16px 12px;
+  font-size: 14px;
+  color: var(--slate-text);
+}
+
+.woocommerce-MyAccount-content table.woocommerce-orders-table th {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--emerald);
+  text-align: left;
+}
+
+mark.order-status {
+  border-radius: 16px;
+  padding: 5px 12px;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  background: transparent;
+  border: 1px solid currentColor;
+}
+
+.woocommerce-Address {
+  border: 1px solid var(--slate-light);
+  border-radius: 14px;
+  padding: 26px;
+  background: #fff;
+}
+
+.woocommerce-Address-title h3 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--emerald);
+}
+
+.woocommerce-Address-title .edit {
+  color: var(--terracotta);
+}
+
+.woocommerce-account .addresses .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

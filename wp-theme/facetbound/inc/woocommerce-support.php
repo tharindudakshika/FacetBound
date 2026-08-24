@@ -122,7 +122,8 @@ add_action('woocommerce_before_checkout_form', function () {
     <div class="checkout-express">
         <button type="button" class="checkout-express__paypal" disabled>Express Checkout with PayPal</button>
         <button type="button" class="checkout-express__wallet" disabled>
-            <i class="fa-brands fa-apple"></i> / <i class="fa-brands fa-google"></i> Express Checkout with Apple Pay / Google Pay
+            <i class="fa-brands fa-apple"></i> <span> / </span> <i class="fa-brands fa-google"></i>
+            <span>Express Checkout with Apple Pay / Google Pay</span>
         </button>
     </div>
     <div class="checkout-divider">
