@@ -1,0 +1,286 @@
+/*
+ * Skins WooCommerce's own auto-generated block templates (Shop/Product
+ * Collection, Single Product, Cart, Checkout, Mini-Cart) to the
+ * Facetbound palette/type scale — this theme has no override template
+ * files for those flows (see readme.md), so styling is the only lever
+ * here. Targets WooCommerce Blocks' documented, stable CSS classes.
+ * Visually verify against a real WooCommerce install/theme.json colors
+ * after import, since block markup can't be rendered in this sandbox.
+ */
+
+/* ---------- Shared: any WooCommerce Blocks button ---------- */
+.wp-block-woocommerce-product-collection .wp-element-button,
+.wc-block-add-to-cart-form .wp-element-button,
+.wc-block-cart .wp-element-button,
+.wc-block-checkout .wp-element-button,
+.wc-block-mini-cart__footer .wp-element-button,
+.wc-block-components-product-button .wp-element-button {
+  background: var(--terracotta);
+  color: var(--cream);
+  border-radius: 10px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 14px 28px;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+.wp-block-woocommerce-product-collection .wp-element-button:hover,
+.wc-block-add-to-cart-form .wp-element-button:hover,
+.wc-block-cart .wp-element-button:hover,
+.wc-block-checkout .wp-element-button:hover,
+.wc-block-mini-cart__footer .wp-element-button:hover,
+.wc-block-components-product-button .wp-element-button:hover {
+  background: var(--terracotta-hover);
+}
+
+/* ---------- Shop: Product Collection grid ---------- */
+.wp-block-woocommerce-product-collection,
+.wp-block-woocommerce-product-template {
+  --wc-product-grid-gap: 32px;
+}
+.wc-block-product-template li,
+ul.products li.product {
+  background: var(--cream);
+  border-radius: 12px;
+}
+.wc-block-components-product-image img,
+.wc-block-product-template img {
+  border-radius: 10px;
+  object-fit: cover;
+}
+.wc-block-components-product-title,
+.wc-block-components-product-name {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 15px;
+}
+.wc-block-components-product-price,
+.wc-block-grid__product-price {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--emerald);
+}
+.wc-block-components-product-price del {
+  color: var(--slate-muted);
+  opacity: 0.7;
+}
+.wc-block-components-product-price ins {
+  color: var(--terracotta);
+  text-decoration: none;
+}
+.wc-block-components-product-rating .star-rating,
+.wc-block-grid__product-rating .star-rating {
+  color: var(--terracotta);
+}
+
+/* ---------- Filters/sorting toolbar ---------- */
+.wc-block-sort-select__select,
+.wc-block-components-filter-submit-button {
+  font-family: var(--font-body);
+  border-color: var(--slate-border);
+  border-radius: 8px;
+}
+
+/* ---------- Single Product ---------- */
+.wp-block-woocommerce-product-image-gallery,
+.wc-block-components-product-image-gallery {
+  border-radius: 16px;
+  overflow: hidden;
+}
+.woocommerce div.product .wp-block-post-title,
+.wp-block-post-title {
+  font-family: var(--font-serif);
+  color: var(--emerald);
+}
+.wc-block-components-product-price.product-page,
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+  font-family: var(--font-sans);
+  font-size: 22px;
+  color: var(--emerald);
+  font-weight: 600;
+}
+.wc-block-add-to-cart-form .quantity input.qty {
+  border: 1.5px solid var(--slate-border);
+  border-radius: 8px;
+  font-family: var(--font-body);
+}
+.wc-block-components-product-rating__stars {
+  color: var(--terracotta);
+}
+
+/* Free inside-band engraving field (still rendered via the classic
+   woocommerce_before_add_to_cart_button hook inside the Add to Cart +
+   Options block — see inc/woocommerce-support.php). */
+.pdp-engraving {
+  margin: 16px 0;
+}
+.pdp-engraving__label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.pdp-engraving__input {
+  width: 100%;
+  border: 1.5px solid var(--slate-border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: var(--font-body);
+}
+.pdp-breadcrumb {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--slate-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 24px;
+}
+
+/* Product details (description/reviews) tabs/accordion */
+.wc-block-product-details,
+.wc-tabs-wrapper,
+.woocommerce-tabs {
+  border-top: 1px solid var(--cream-border);
+  margin-top: 40px;
+  padding-top: 24px;
+}
+.wc-block-product-details__header,
+.wc-tabs li a {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--emerald);
+}
+
+/* Related products */
+.wc-block-related-products,
+.related.products {
+  border-top: 1px solid var(--cream-border);
+  padding-top: 40px;
+  margin-top: 48px;
+}
+.wc-block-related-products h2,
+.related.products > h2 {
+  font-family: var(--font-serif);
+  color: var(--emerald);
+}
+
+/* ---------- Cart & Checkout ---------- */
+.wc-block-cart,
+.wc-block-checkout {
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+.wc-block-cart-item,
+.wc-block-components-order-summary-item {
+  border-color: var(--cream-border);
+}
+.wc-block-cart-item__image img,
+.wc-block-components-product-image img {
+  border-radius: 8px;
+}
+.wc-block-cart__totals-title,
+.wc-block-components-totals-item__label,
+.wc-block-checkout__title {
+  font-family: var(--font-serif);
+  color: var(--emerald);
+}
+.wc-block-components-totals-item__value,
+.wc-block-components-totals-footer-item .wc-block-components-totals-item__value {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--emerald);
+}
+.wc-block-components-text-input input,
+.wc-block-components-textarea textarea,
+.wc-block-components-radio-control__input,
+.wc-block-checkout__form input[type="text"],
+.wc-block-checkout__form input[type="email"],
+.wc-block-checkout__form input[type="tel"] {
+  border: 1.5px solid var(--slate-border);
+  border-radius: 8px;
+  font-family: var(--font-body);
+}
+.wc-block-components-text-input input:focus,
+.wc-block-checkout__form input:focus {
+  border-color: var(--terracotta);
+  outline: none;
+}
+.wc-block-components-panel,
+.wc-block-components-order-summary,
+.wc-block-checkout__sidebar {
+  border-radius: 12px;
+  background: var(--cream-warm);
+}
+.wc-block-components-radio-control__option-checked,
+.wc-block-components-payment-method-label {
+  font-family: var(--font-sans);
+}
+.wc-block-components-notice-banner {
+  border-radius: 8px;
+  font-family: var(--font-body);
+}
+.wc-block-components-notice-banner.is-info {
+  border-left-color: var(--terracotta);
+}
+
+/* Express-payment banner pattern (patterns/checkout-express-banner.php) */
+.checkout-express {
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.checkout-express__paypal,
+.checkout-express__wallet {
+  flex: 1;
+  min-width: 220px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  border: 1.5px solid var(--slate-border);
+  background: var(--cream);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--ink);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.checkout-divider {
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.checkout-divider span {
+  flex: 1;
+  height: 1px;
+  background: var(--cream-border);
+}
+.checkout-divider p {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--slate-muted);
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* ---------- Mini-Cart ---------- */
+.wc-block-mini-cart__button {
+  color: var(--ink);
+}
+.wc-block-mini-cart__badge,
+.wc-block-mini-cart__quantity-badge {
+  background: var(--terracotta);
+  color: var(--cream);
+}
+.wc-block-mini-cart__title,
+.wc-block-mini-cart-items__product-name {
+  font-family: var(--font-sans);
+  color: var(--emerald);
+}
+
+/* ---------- My Account (still classic-shortcode-rendered) ---------- */
+/* See assets/css/woocommerce.css for full My Account skinning; unchanged. */

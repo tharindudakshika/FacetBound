@@ -13,6 +13,7 @@ define('FACETBOUND_URI', get_template_directory_uri());
 
 require_once FACETBOUND_DIR . '/inc/theme-setup.php';
 require_once FACETBOUND_DIR . '/inc/enqueue.php';
+require_once FACETBOUND_DIR . '/inc/blocks.php';
 require_once FACETBOUND_DIR . '/inc/woocommerce-support.php';
 require_once FACETBOUND_DIR . '/inc/content-seed.php';
 require_once FACETBOUND_DIR . '/inc/template-tags.php';

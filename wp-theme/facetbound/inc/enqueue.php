@@ -34,6 +34,7 @@ function facetbound_assets() {
 
     if (function_exists('is_woocommerce') && (is_woocommerce() || is_cart() || is_checkout() || is_account_page())) {
         wp_enqueue_style('facetbound-woocommerce', FACETBOUND_URI . '/assets/css/woocommerce.css', ['facetbound-pages'], FACETBOUND_VERSION);
+        wp_enqueue_style('facetbound-woocommerce-blocks', FACETBOUND_URI . '/assets/css/woocommerce-blocks.css', ['facetbound-woocommerce'], FACETBOUND_VERSION);
     }
 
     wp_enqueue_script('facetbound-main', FACETBOUND_URI . '/assets/js/main.js', [], FACETBOUND_VERSION, true);

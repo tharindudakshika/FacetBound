@@ -2,20 +2,25 @@
 Theme Name: Facetbound
 Theme URI: https://facetbound.com
 Author: Facetbound
-Description: Custom WooCommerce theme for Facetbound — organic luxury, hand-shaped 925 sterling silver rings with ethically sourced Sri Lankan gemstones. Recreates the Facetbound hi-fidelity design spec pixel-for-pixel.
-Version: 1.0.0
-Requires at least: 6.0
+Description: Full site editing (block) theme for Facetbound — organic luxury, hand-shaped 925 sterling silver rings with ethically sourced Sri Lankan gemstones. Every template and template part is editable visually in the WordPress Site Editor, and WooCommerce's native block templates power Shop, Product, Cart and Checkout.
+Version: 2.0.0
+Requires at least: 6.4
 Requires PHP: 7.4
 Tested up to: 6.7
 Text Domain: facetbound
 Requires Plugins: woocommerce
 
-WooCommerce 8.3+ defaults new stores to block-based Cart/Checkout;
-this theme intentionally reverts Checkout/Cart to the classic
-shortcode-based flow (see inc/woocommerce-support.php) so it can
-fully skin the design instead of fighting Cart/Checkout blocks.
+This is a block theme: layout/typography/color come from theme.json,
+templates/*.html and parts/*.html (edit them at Appearance > Editor).
+Shop, Product, Cart, Checkout and My Account are intentionally left
+to WooCommerce's own auto-generated block templates (no override
+files in this theme) so they stay fully visual-editable and always
+compatible with new WooCommerce Blocks releases; this theme skins
+them via assets/css/woocommerce-blocks.css instead of overriding
+their markup. See readme.md for the full explanation.
 */
 
 /* Intentionally empty — all styling lives in assets/css/*.css,
-   enqueued in inc/enqueue.php. WordPress requires this file to
-   exist with the header above for the theme to be recognized. */
+   enqueued in inc/enqueue.php, plus theme.json for editor-native
+   settings. WordPress requires this file to exist with the header
+   above for the theme to be recognized. */

@@ -21,7 +21,6 @@ add_action('admin_init', 'facetbound_seed_products_when_ready');
 
 function facetbound_seed_all() {
     facetbound_seed_pages();
-    facetbound_seed_menu();
     facetbound_seed_journal();
     facetbound_seed_products_when_ready();
 }
@@ -62,7 +61,6 @@ function facetbound_seed_pages() {
         'post_type' => 'page',
         'post_content' => '',
     ]);
-    update_post_meta($our_story_id, '_wp_page_template', 'page-our-story.php');
 
     $sustainability_id = facetbound_page_exists_by_slug('sustainability') ?: wp_insert_post([
         'post_title' => 'Sustainability',
@@ -71,7 +69,6 @@ function facetbound_seed_pages() {
         'post_type' => 'page',
         'post_content' => '',
     ]);
-    update_post_meta($sustainability_id, '_wp_page_template', 'page-sustainability.php');
 
     update_option('show_on_front', 'page');
     update_option('page_on_front', $home_id);
@@ -82,43 +79,10 @@ function facetbound_seed_pages() {
 }
 
 /* -----------------------------------------------------------------------
- * Primary nav menu
+ * Primary navigation is authored directly as fallback nav-link blocks
+ * inside the block-based Navigation block in parts/header.html — no
+ * classic wp_nav_menu seeding needed for a block theme.
  * --------------------------------------------------------------------- */
-function facetbound_seed_menu() {
-    if (get_option('facetbound_menu_seeded')) {
-        return;
-    }
-
-    $menu_name = 'Primary Navigation';
-    $menu_id = wp_get_nav_menu_object($menu_name);
-    if (!$menu_id) {
-        $menu_id = wp_create_nav_menu($menu_name);
-    } else {
-        $menu_id = $menu_id->term_id;
-    }
-
-    $shop_url = function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/shop/');
-    $items = [
-        ['title' => 'Shop', 'url' => $shop_url],
-        ['title' => 'Our Story', 'url' => home_url('/our-story/')],
-        ['title' => 'Sustainability', 'url' => home_url('/sustainability/')],
-        ['title' => 'Journal', 'url' => home_url('/journal/')],
-        ['title' => 'Contact Us', 'url' => home_url('/contact/')],
-    ];
-    foreach ($items as $item) {
-        wp_update_nav_menu_item($menu_id, 0, [
-            'menu-item-title' => $item['title'],
-            'menu-item-url' => $item['url'],
-            'menu-item-status' => 'publish',
-        ]);
-    }
-
-    $locations = get_theme_mod('nav_menu_locations');
-    $locations['primary'] = $menu_id;
-    set_theme_mod('nav_menu_locations', $locations);
-
-    update_option('facetbound_menu_seeded', 1);
-}
 
 /* -----------------------------------------------------------------------
  * Journal: categories + the 6 posts (data mirrors src/data/journal.js)
