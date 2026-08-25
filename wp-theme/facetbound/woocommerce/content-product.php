@@ -33,14 +33,27 @@ $layer_style = 'position:absolute;inset:0;';
 <div class="shopcol-card">
     <a href="<?php echo esc_url(get_permalink()); ?>" class="shopcol-card-img">
         <?php
-        facetbound_placeholder('light', $name . ', lifestyle shot', [
-            'class' => 'shopcol-img-base',
-            'style' => $layer_style,
-        ]);
-        facetbound_placeholder('warm', $name . ', on-finger close-up', [
-            'class' => 'shopcol-img-hover',
-            'style' => $layer_style,
-        ]);
+        $gallery_ids = $product->get_gallery_image_ids();
+        $base_id = $product->get_image_id();
+        $hover_id = !empty($gallery_ids) ? $gallery_ids[0] : 0;
+
+        if ($base_id) {
+            echo wp_get_attachment_image($base_id, 'large', false, ['class' => 'shopcol-img-base', 'style' => $layer_style . 'width:100%;height:100%;object-fit:cover']);
+        } else {
+            facetbound_placeholder('light', $name . ', lifestyle shot', [
+                'class' => 'shopcol-img-base',
+                'style' => $layer_style,
+            ]);
+        }
+
+        if ($hover_id) {
+            echo wp_get_attachment_image($hover_id, 'large', false, ['class' => 'shopcol-img-hover', 'style' => $layer_style . 'width:100%;height:100%;object-fit:cover']);
+        } else {
+            facetbound_placeholder('warm', $name . ', on-finger close-up', [
+                'class' => 'shopcol-img-hover',
+                'style' => $layer_style,
+            ]);
+        }
         ?>
         <span class="shopcol-badge"><?php echo esc_html($badge); ?></span>
     </a>
