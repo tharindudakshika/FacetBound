@@ -1,0 +1,106 @@
+/**
+ * WordPress core injects its own default Group-block layout classes
+ * (is-layout-flow / is-layout-constrained) with higher specificity /
+ * declaration order than the plain single-class selectors below, which
+ * silently overrides their `display: grid` / `display: flex` with
+ * core's `display: flow-root`, collapsing every two-column/grid section
+ * on Home, Our Story, and Sustainability into a single stacked column.
+ * This file re-asserts this theme's own layout on every section that
+ * is now wrapped in a Group block, loaded after pages.css so it always
+ * wins regardless of core's specificity.
+ */
+
+.home-hero,
+.home-instagram__grid,
+.home-story,
+.home-testimonials__grid,
+.home-trust__grid,
+.home-unboxing__grid,
+.story-artisans,
+.story-genesis-grid,
+.story-packaging-grid,
+.story-philosophy-grid,
+.sustain-artisan__grid,
+.sustain-packaging__grid,
+.sustain-sourcing__grid {
+  display: grid !important;
+}
+
+.home-hero__copy,
+.home-story__copy,
+.story-artisans-copy,
+.story-cta-buttons,
+.story-ethics-points,
+.sustain-artisan__blocks,
+.sustain-artisan__copy {
+  display: flex !important;
+}
+
+/* Core also applies a default child max-width to constrained-layout
+   groups via a CSS custom property; neutralize it everywhere a grid
+   item needs its full track width (the property is unset without a
+   theme.json, so this is a defensive no-op most hosts won't even need,
+   but costs nothing to include). */
+.home-hero > *,
+.home-story > *,
+.story-artisans > *,
+.story-genesis-grid > *,
+.story-packaging-grid > *,
+.story-philosophy-grid > *,
+.sustain-artisan__grid > *,
+.sustain-packaging__grid > *,
+.sustain-sourcing__grid > * {
+  max-width: none !important;
+}
+
+/* Placeholder/real images inside these grid/flex sections need to fill
+   their column rather than render at native pixel size — WordPress's
+   core/image block has no such sizing by default. */
+.home-hero > .wp-block-image,
+.home-story > .wp-block-image,
+.story-genesis-grid > .wp-block-image,
+.story-artisans > .wp-block-image,
+.story-packaging-grid > .wp-block-image,
+.sustain-artisan__grid > .wp-block-image,
+.sustain-sourcing__grid > .wp-block-image,
+.journal-featured > .wp-block-image {
+  height: 100%;
+  margin: 0;
+}
+
+.home-hero > .wp-block-image img,
+.home-story > .wp-block-image img,
+.story-genesis-grid > .wp-block-image img,
+.story-artisans > .wp-block-image img,
+.story-packaging-grid > .wp-block-image img,
+.sustain-artisan__grid > .wp-block-image img,
+.sustain-sourcing__grid > .wp-block-image img,
+.journal-featured > .wp-block-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* home-unboxing__grid's second child (the image) needs the same fill
+   treatment even though the grid itself is a direct child of home-unboxing__grid
+   rather than the section — matches the nesting block-content.php actually uses. */
+.home-unboxing__grid > .wp-block-image {
+  height: 100%;
+  margin: 0;
+}
+.home-unboxing__grid > .wp-block-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* sustain-packaging__grid and story-packaging-grid's full-width banner
+   image should keep a sane max-height rather than stretching to match
+   an unrelated sibling's height. */
+.sustain-packaging__grid > .wp-block-image,
+.sustain-packaging__grid > .wp-block-image img {
+  height: auto;
+  max-height: 500px;
+}
