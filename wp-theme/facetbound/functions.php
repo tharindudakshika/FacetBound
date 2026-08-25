@@ -17,6 +17,3 @@ require_once FACETBOUND_DIR . '/inc/woocommerce-support.php';
 require_once FACETBOUND_DIR . '/inc/content-seed.php';
 require_once FACETBOUND_DIR . '/inc/template-tags.php';
 require_once FACETBOUND_DIR . '/inc/my-account.php';
-require_once FACETBOUND_DIR . '/inc/placeholder-media.php';
-require_once FACETBOUND_DIR . '/inc/shortcodes.php';
-require_once FACETBOUND_DIR . '/inc/block-content.php';

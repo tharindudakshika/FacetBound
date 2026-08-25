@@ -26,12 +26,6 @@ function facetbound_assets() {
     wp_enqueue_style('facetbound-components', FACETBOUND_URI . '/assets/css/components.css', ['facetbound-global'], FACETBOUND_VERSION);
     wp_enqueue_style('facetbound-pages', FACETBOUND_URI . '/assets/css/pages.css', ['facetbound-components'], FACETBOUND_VERSION);
 
-    // Loaded after wp-block-library and pages.css so its !important rules
-    // reliably win over core's default Group-block layout classes, which
-    // otherwise silently collapse the hand-authored grid/flex sections
-    // (Home, Our Story, Sustainability) into a single stacked column.
-    wp_enqueue_style('facetbound-block-overrides', FACETBOUND_URI . '/assets/css/block-overrides.css', ['facetbound-pages', 'wp-block-library'], FACETBOUND_VERSION);
-
     if (function_exists('is_woocommerce') && (is_woocommerce() || is_cart() || is_checkout() || is_account_page())) {
         wp_enqueue_style('facetbound-woocommerce', FACETBOUND_URI . '/assets/css/woocommerce.css', ['facetbound-pages'], FACETBOUND_VERSION);
     }

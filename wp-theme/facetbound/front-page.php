@@ -1,11 +1,8 @@
 <?php
 /**
- * Homepage — WordPress auto-selects this for the site's front page.
- * All content lives in the "Home" page's real block editor content
- * (edit it at wp-admin/post.php?post=<home_id>&action=edit); the
- * Curated Collections / Featured Products sections are embedded as
- * shortcodes so they always reflect live WooCommerce data. This file
- * is intentionally just a thin wrapper — do not add page markup here.
+ * The front page (Homepage). Mirrors src/pages/Home.jsx.
+ * WordPress serves this automatically for the site's front page
+ * (Reading settings are configured in inc/content-seed.php).
  */
 
 if (!defined('ABSPATH')) {
@@ -14,13 +11,250 @@ if (!defined('ABSPATH')) {
 
 get_header();
 
-if (have_posts()) {
-    while (have_posts()) {
-        the_post();
-        the_content();
-    }
-}
+$fb_trust_items = [
+    [
+        'label' => 'Ethically Sourced Gems',
+        'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9s1.3-6.5 3.8-9Z" /></svg>',
+    ],
+    [
+        'label' => '925 Sterling Silver',
+        'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 9l8 12 8-12-8-6Z" /><path d="M4 9h16M8.5 9 12 21l3.5-12" /></svg>',
+    ],
+    [
+        'label' => 'Worldwide Courier Shipping (DHL/FedEx)',
+        'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3 3 10.5l7.2 2.3L12.8 21 21 3Z" /><path d="M10.5 13.2 21 3" /></svg>',
+    ],
+];
 
-facetbound_concierge_cta();
+$fb_collection_captions = [
+    'blue-topaz-collection'   => 'blue topaz ring, studio shot',
+    'artisan-textured-bands'  => 'hammered & tree bark texture band',
+    'minimalist-solitaires'   => 'minimalist solitaire ring',
+];
 
-get_footer();
+$fb_unboxing_features = [
+    'Geometric emerald-green wooden keepsake box',
+    'Mitti attar — the scent of Sri Lankan earth',
+    'Hand-folded terracotta fabric inserts',
+    'Signed authenticity & provenance card',
+];
+
+$fb_testimonials = [
+    [ 'name' => 'Rachel H.', 'location' => 'Austin, TX', 'quote' => "The sizing guide was spot on — first ring I've ordered online that fit perfectly. Unboxing felt like a gift to myself." ],
+    [ 'name' => 'Megan T.', 'location' => 'Portland, OR', 'quote' => 'Genuinely the nicest packaging I\'ve seen from a jewelry brand. The earthy scent when you open the box is unexpected and lovely.' ],
+    [ 'name' => 'Danielle K.', 'location' => 'Charleston, SC', 'quote' => 'I was nervous about ring size but their guide made it easy. The hammered band is even better than the photos.' ],
+];
+
+$fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ) );
+?>
+
+<!-- Hero -->
+<section class="home-hero">
+    <?php
+    facetbound_placeholder(
+        'dark',
+        'hero image: hand modeling gemstone ring, natural light',
+        [
+            'boxed' => true,
+            'style' => 'min-height:420px;display:flex;align-items:center;justify-content:center',
+        ]
+    );
+    ?>
+    <div class="home-hero__copy">
+        <h1 class="home-hero__title">Mind by Nature. Shaped by Hand.</h1>
+        <p class="home-hero__subtitle">Ethically sourced natural Sri Lankan gemstones crafted into 925 sterling silver rings.</p>
+        <a href="<?php echo $fb_shop_url; ?>" class="btn btn-terracotta home-hero__cta">Explore Collections</a>
+    </div>
+</section>
+
+<!-- Trust bar -->
+<section class="home-trust">
+    <div class="container home-trust__grid">
+        <?php foreach ( $fb_trust_items as $item ) : ?>
+            <div class="home-trust__item">
+                <div class="home-trust__icon"><?php echo $item['icon']; ?></div>
+                <div class="home-trust__label"><?php echo esc_html( $item['label'] ); ?></div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</section>
+
+<!-- Curated Collections -->
+<section class="home-collections">
+    <div class="container">
+        <div class="section-head">
+            <div class="kicker" style="text-align:center">Shop</div>
+            <h2>Curated Collections</h2>
+        </div>
+        <div class="home-collections__grid">
+            <?php
+            $fb_collection_terms = get_terms(
+                [
+                    'taxonomy'   => 'product_cat',
+                    'hide_empty' => false,
+                    'slug'       => array_keys( $fb_collection_captions ),
+                ]
+            );
+            if ( ! is_wp_error( $fb_collection_terms ) && ! empty( $fb_collection_terms ) ) {
+                // Preserve the canonical order (Blue Topaz, Artisan Textured Bands, Minimalist Solitaires).
+                $fb_terms_by_slug = [];
+                foreach ( $fb_collection_terms as $fb_term ) {
+                    $fb_terms_by_slug[ $fb_term->slug ] = $fb_term;
+                }
+                foreach ( $fb_collection_captions as $fb_slug => $fb_caption ) {
+                    if ( ! isset( $fb_terms_by_slug[ $fb_slug ] ) ) {
+                        continue;
+                    }
+                    $fb_term = $fb_terms_by_slug[ $fb_slug ];
+                    ?>
+                    <a href="<?php echo esc_url( get_term_link( $fb_term ) ); ?>" class="home-collection-card">
+                        <div class="home-collection-card__img-wrap">
+                            <?php facetbound_placeholder( 'light', $fb_caption ); ?>
+                        </div>
+                        <h3 class="home-collection-card__title"><?php echo esc_html( $fb_term->name ); ?></h3>
+                    </a>
+                    <?php
+                }
+            }
+            ?>
+        </div>
+    </div>
+</section>
+
+<!-- Brand Story -->
+<section class="home-story">
+    <?php
+    facetbound_placeholder(
+        'darker',
+        'artisan hand-carving silver band, Sri Lanka workshop',
+        [
+            'boxed' => true,
+            'style' => 'min-height:460px',
+        ]
+    );
+    ?>
+    <div class="home-story__copy">
+        <div class="kicker">Our Story</div>
+        <h2 class="home-story__heading">The Raw &amp; Refined Journey</h2>
+        <p class="home-story__body">From the depths of Sri Lankan earth to your finger, each stone is hand-selected, cut, and set by artisan hands. What begins as raw, unpolished texture is slowly transformed — faceted, tempered, refined — into a quiet luxury meant to be worn every day.</p>
+        <a href="<?php echo esc_url( home_url( '/our-story/' ) ); ?>" class="home-story__link">Discover Our Roots &rarr;</a>
+    </div>
+</section>
+
+<!-- Featured Products -->
+<section class="home-featured">
+    <div class="container">
+        <div class="section-head">
+            <div class="kicker" style="text-align:center">Bestsellers</div>
+            <h2>Featured Products</h2>
+        </div>
+        <div class="home-featured__grid">
+            <?php
+            if ( function_exists( 'wc_get_products' ) ) {
+                $fb_products = wc_get_products(
+                    [
+                        'limit'   => 8,
+                        'status'  => 'publish',
+                        'orderby' => 'date',
+                        'order'   => 'ASC',
+                    ]
+                );
+                foreach ( $fb_products as $fb_product ) {
+                    $fb_permalink = get_permalink( $fb_product->get_id() );
+                    ?>
+                    <div class="home-product-card">
+                        <a href="<?php echo esc_url( $fb_permalink ); ?>" class="home-product-img-wrap">
+                            <?php facetbound_placeholder( 'light', $fb_product->get_name() . ', product photo', [ 'class' => 'home-product-img' ] ); ?>
+                            <div class="home-product-quickview">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
+                            </div>
+                        </a>
+                        <h3 class="home-product-name"><?php echo esc_html( $fb_product->get_name() ); ?></h3>
+                        <p class="home-product-price"><?php echo $fb_product->get_price_html(); ?></p>
+                        <div class="home-product-actions">
+                            <a href="<?php echo esc_url( $fb_permalink ); ?>" class="home-btn-sm home-btn-outline-emerald">Add to Cart</a>
+                            <a
+                                class="home-btn-sm home-btn-whatsapp"
+                                href="https://wa.me/?text=<?php echo esc_attr( rawurlencode( "Hi! I'm interested in the " . $fb_product->get_name() ) ); ?>"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <i class="fa-brands fa-whatsapp"></i>
+                                WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    <?php
+                }
+            }
+            ?>
+        </div>
+    </div>
+</section>
+
+<!-- Unboxing / Sustainability -->
+<section class="home-unboxing">
+    <div class="container home-unboxing__grid">
+        <div>
+            <div class="kicker">Sustainability</div>
+            <h2 class="home-unboxing__heading">An Unboxing Rooted in Earth.</h2>
+            <p class="home-unboxing__body">100% plastic-free, from box to bubble wrap. Every order arrives in a geometric emerald-green wooden box with a hint of mitti attar — the scent of Sri Lankan earth after rain.</p>
+            <div class="home-unboxing__list">
+                <?php foreach ( $fb_unboxing_features as $fb_feature ) : ?>
+                    <div class="home-unboxing__item">
+                        <span class="home-unboxing__dot"></span>
+                        <span class="home-unboxing__label"><?php echo esc_html( $fb_feature ); ?></span>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <?php
+        facetbound_placeholder(
+            'dark',
+            'opened wooden gift box: terracotta inserts, authenticity card',
+            [
+                'boxed' => true,
+                'style' => 'border:1px solid rgba(200,138,117,0.35);border-radius:16px;min-height:400px',
+            ]
+        );
+        ?>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="home-testimonials">
+    <div class="container">
+        <div class="section-head">
+            <div class="kicker" style="text-align:center">Reviews</div>
+            <h2>Loved, Worldwide</h2>
+        </div>
+        <div class="home-testimonials__grid">
+            <?php foreach ( $fb_testimonials as $fb_t ) : ?>
+                <div class="home-testimonial-card">
+                    <?php facetbound_stars( 5, 15 ); ?>
+                    <p class="home-testimonial-card__quote">&ldquo;<?php echo esc_html( $fb_t['quote'] ); ?>&rdquo;</p>
+                    <p class="home-testimonial-card__meta"><?php echo esc_html( $fb_t['name'] ); ?> — <span><?php echo esc_html( $fb_t['location'] ); ?></span></p>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<!-- Instagram grid -->
+<section class="home-instagram">
+    <div class="container">
+        <div class="home-instagram__head">
+            <h2 class="home-instagram__heading">Join the Community</h2>
+            <a class="home-instagram__handle" href="#">@facetbound.jewelry</a>
+        </div>
+        <div class="home-instagram__grid">
+            <?php for ( $fb_i = 1; $fb_i <= 6; $fb_i++ ) : ?>
+                <?php facetbound_placeholder( 'dark', 'lifestyle shot ' . $fb_i, [ 'class' => 'home-instagram__tile' ] ); ?>
+            <?php endfor; ?>
+        </div>
+    </div>
+</section>
+
+<?php facetbound_concierge_cta(); ?>
+
+<?php get_footer(); ?>
