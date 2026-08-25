@@ -9,7 +9,7 @@
   // Footer / newsletter "Join" and "Subscribe" forms are visual-only until
   // an email service (Mailchimp/Klaviyo/etc.) is connected — give the
   // visitor a lightweight confirmation instead of a real page submit.
-  document.querySelectorAll('.fb-footer__form, .home-newsletter__form, .journal-newsletter__form, .article-newsletter__form').forEach(function (form) {
+  document.querySelectorAll('.fb-footer__form, .home-newsletter__form, .journal-newsletter-form, .article-newsletter-form').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var button = form.querySelector('button[type="submit"], button');
