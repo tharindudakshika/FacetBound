@@ -69,19 +69,8 @@ add_action('woocommerce_account_vault_endpoint', function () {
 });
 
 /**
- * Dashboard welcome flourish: a small "Collector Member" badge + active
- * shipment status line, hooked BEFORE WooCommerce's own "Hello, {name}"
- * dashboard text (which stays intact below it, untouched).
+ * The "Collector Member" badge + active shipment status now render once,
+ * page-wide, in the account-banner hero built in page.php (matches the
+ * design: the banner appears above the Dashboard/Orders/Vault/etc. tabs,
+ * not just inside the Dashboard panel) — no per-tab hook needed here.
  */
-add_action('woocommerce_account_dashboard', function () {
-    ?>
-    <div class="account-banner-badge" style="position: static; margin-bottom: 18px;">
-        <i class="fa-solid fa-gem" style="font-size: 11px;"></i>
-        Facetbound Collector Member
-    </div>
-    <div class="account-banner-status" style="color: var(--slate-text); margin-bottom: 24px;">
-        <i class="fa-solid fa-plane" style="color: var(--terracotta); font-size: 13px;"></i>
-        You have 1 Active Express Shipment in transit.
-    </div>
-    <?php
-}, 5);
