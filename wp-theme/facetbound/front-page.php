@@ -153,7 +153,7 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
             if ( function_exists( 'wc_get_products' ) ) {
                 $fb_products = wc_get_products(
                     [
-                        'limit'   => 8,
+                        'limit'   => 4,
                         'status'  => 'publish',
                         'orderby' => 'date',
                         'order'   => 'ASC',
@@ -188,6 +188,11 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
                 }
             }
             ?>
+        </div>
+        <div class="home-featured__cta">
+            <a href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ) ); ?>" class="btn btn-terracotta">
+                View All Products
+            </a>
         </div>
     </div>
 </section>
