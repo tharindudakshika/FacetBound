@@ -29,4 +29,29 @@
       input.value = '';
     });
   });
+
+  // Header search: click the icon to reveal the Journal search box, click
+  // anywhere outside (or press Escape) to close it again.
+  var searchWrap = document.querySelector('.fb-header__search');
+  if (searchWrap) {
+    var toggle = searchWrap.querySelector('.fb-header__search-toggle');
+    var input = searchWrap.querySelector('.fb-header__search-input');
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      searchWrap.classList.toggle('fb-header__search--open');
+      if (searchWrap.classList.contains('fb-header__search--open')) {
+        input.focus();
+      }
+    });
+    document.addEventListener('click', function (e) {
+      if (!searchWrap.contains(e.target)) {
+        searchWrap.classList.remove('fb-header__search--open');
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        searchWrap.classList.remove('fb-header__search--open');
+      }
+    });
+  }
 })();

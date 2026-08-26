@@ -27,6 +27,17 @@
   display: flex;
   gap: clamp(16px, 3vw, 36px);
   flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* A real "Primary Navigation" menu (Appearance > Menus) renders bare <li>
+   items straight inside .fb-header__nav (no <ul> wrapper) — browsers still
+   draw a list-item marker on a flexed <li> unless list-style is reset here. */
+.fb-header__nav > li {
+  list-style: none;
+  margin: 0;
 }
 
 .fb-header__link {
@@ -54,6 +65,44 @@
 
 .fb-header__icon--active {
   color: var(--terracotta);
+}
+
+.fb-header__search {
+  position: relative;
+}
+
+.fb-header__search-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+}
+
+.fb-header__search-form {
+  display: none;
+  position: absolute;
+  top: calc(100% + 14px);
+  right: -4px;
+  z-index: 10;
+}
+
+.fb-header__search--open .fb-header__search-form {
+  display: block;
+}
+
+.fb-header__search-input {
+  width: 220px;
+  border: 1.5px solid var(--slate-border);
+  border-radius: 8px;
+  padding: 9px 14px;
+  font-size: 13.5px;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--cream);
+}
+.fb-header__search-input:focus {
+  outline: none;
+  border-color: var(--terracotta);
 }
 
 .fb-header__cart {

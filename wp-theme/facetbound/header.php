@@ -33,7 +33,21 @@ $cart_count = (class_exists('WooCommerce') && WC()->cart) ? WC()->cart->get_cart
                     <span>SSL Encrypted</span>
                 </div>
             <?php endif; ?>
-            <i class="fa-solid fa-magnifying-glass fb-header__icon" title="Search"></i>
+            <div class="fb-header__search">
+                <button type="button" class="fb-header__icon fb-header__search-toggle" title="Search the Journal" aria-label="Search the Journal">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <form class="fb-header__search-form" role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
+                    <input type="hidden" name="post_type" value="post">
+                    <input
+                        type="search"
+                        name="s"
+                        class="fb-header__search-input"
+                        placeholder="Search the Journal&hellip;"
+                        value="<?php echo esc_attr(get_search_query()); ?>"
+                    >
+                </form>
+            </div>
             <a href="<?php echo esc_url(class_exists('WooCommerce') ? wc_get_page_permalink('myaccount') : home_url('/my-account/')); ?>" title="Account">
                 <i class="<?php echo $account_active ? 'fa-regular fa-user fb-header__icon fb-header__icon--active' : 'fa-regular fa-user fb-header__icon'; ?>"></i>
             </a>

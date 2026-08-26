@@ -68,3 +68,14 @@ function facetbound_nav_menu() {
         facetbound_nav_fallback();
     }
 }
+
+/**
+ * The header search (magnifying-glass icon) is scoped to Journal posts
+ * only — not products or pages — so restrict the underlying WP search
+ * query to post_type=post regardless of what the search form submits.
+ */
+add_action('pre_get_posts', function ($query) {
+    if (!is_admin() && $query->is_main_query() && $query->is_search()) {
+        $query->set('post_type', 'post');
+    }
+});
