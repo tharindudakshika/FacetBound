@@ -416,6 +416,7 @@ ul.wc_payment_methods .payment_box::before {
 .woocommerce-MyAccount-navigation ul li a {
   display: flex;
   align-items: center;
+  gap: 12px;
   padding: 14px 18px;
   border-radius: 10px;
   font-family: var(--font-sans);
@@ -424,6 +425,12 @@ ul.wc_payment_methods .payment_box::before {
   color: var(--slate-text);
   margin-bottom: 4px;
   transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.woocommerce-MyAccount-navigation ul li a i {
+  width: 16px;
+  font-size: 14px;
+  text-align: center;
 }
 
 .woocommerce-MyAccount-navigation ul li a:hover {
