@@ -63,4 +63,37 @@
       }
     });
   }
+
+  // Mobile nav: hamburger opens a slide-in drawer with the same menu links;
+  // backdrop click, the close button, Escape, or picking a link closes it.
+  var menuToggle = document.querySelector('.fb-header__menu-toggle');
+  var drawer = document.querySelector('.fb-header__drawer');
+  if (menuToggle && drawer) {
+    var drawerClose = drawer.querySelector('.fb-header__drawer-close');
+
+    function openDrawer() {
+      drawer.classList.add('fb-header__drawer--open');
+    }
+    function closeDrawer() {
+      drawer.classList.remove('fb-header__drawer--open');
+    }
+
+    menuToggle.addEventListener('click', openDrawer);
+    if (drawerClose) {
+      drawerClose.addEventListener('click', closeDrawer);
+    }
+    drawer.addEventListener('click', function (e) {
+      if (e.target === drawer) {
+        closeDrawer();
+      }
+    });
+    drawer.querySelectorAll('.fb-header__link').forEach(function (link) {
+      link.addEventListener('click', closeDrawer);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeDrawer();
+      }
+    });
+  }
 })();

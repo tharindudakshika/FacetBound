@@ -24,6 +24,9 @@ $cart_count = (class_exists('WooCommerce') && WC()->cart) ? WC()->cart->get_cart
 
 <header class="fb-header">
     <div class="container fb-header__row">
+        <button type="button" class="fb-header__icon fb-header__menu-toggle" aria-label="Open menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
         <a href="<?php echo esc_url(home_url('/')); ?>" class="fb-header__wordmark">Facetbound</a>
         <?php facetbound_nav_menu(); ?>
         <div class="fb-header__icons">
@@ -63,6 +66,18 @@ $cart_count = (class_exists('WooCommerce') && WC()->cart) ? WC()->cart->get_cart
                     <div class="fb-header__cart-badge"><?php echo (int) $cart_count; ?></div>
                 <?php endif; ?>
             </a>
+        </div>
+    </div>
+
+    <div class="fb-header__drawer">
+        <div class="fb-header__drawer-panel">
+            <div class="fb-header__drawer-head">
+                <span class="fb-header__wordmark">Facetbound</span>
+                <button type="button" class="fb-header__drawer-close" aria-label="Close menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <?php facetbound_nav_menu(); ?>
         </div>
     </div>
 </header>
