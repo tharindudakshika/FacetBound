@@ -401,22 +401,30 @@ ul.wc_payment_methods .payment_box::before {
   background: var(--cream-warm);
   border-radius: 16px;
   padding: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  float: none;
 }
 
 .woocommerce-MyAccount-navigation ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 .woocommerce-MyAccount-navigation ul li {
   margin: 0;
+  width: 100%;
+  float: none;
 }
 
 .woocommerce-MyAccount-navigation ul li a {
   display: flex;
   align-items: center;
   gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
   padding: 14px 18px;
   border-radius: 10px;
   font-family: var(--font-sans);
@@ -424,11 +432,13 @@ ul.wc_payment_methods .payment_box::before {
   font-weight: 600;
   color: var(--slate-text);
   margin-bottom: 4px;
+  white-space: nowrap;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .woocommerce-MyAccount-navigation ul li a i {
   width: 16px;
+  flex: none;
   font-size: 14px;
   text-align: center;
 }
