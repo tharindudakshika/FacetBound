@@ -5,6 +5,14 @@
    Uses design tokens from tokens.css throughout.
    ============================================================ */
 
+/* ---- Cart / Checkout content wrapper (added around the_content() in
+   page.php — WooCommerce's cart/checkout shortcode output has no
+   container of its own, unlike every other page) ---- */
+.wc-content-wrap {
+  background: var(--cream);
+  padding: 56px var(--section-x) 80px;
+}
+
 /* ---- Notices ---- */
 .woocommerce-error,
 .woocommerce-info,

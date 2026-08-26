@@ -18,7 +18,20 @@ if (!defined('ABSPATH')) {
 
 get_header();
 
-if (function_exists('is_checkout') && is_checkout()) {
+$is_cart_page = function_exists('is_cart') && is_cart();
+$is_checkout_page = function_exists('is_checkout') && is_checkout();
+
+if ($is_cart_page) {
+    facetbound_hero([
+        'min_height' => 220,
+        'padding' => '48px',
+        'title' => 'Your Cart',
+        'subtitle' => 'Review your handcrafted pieces before checkout.',
+        'max_width' => 640,
+    ]);
+}
+
+if ($is_checkout_page) {
     facetbound_hero([
         'min_height' => 220,
         'padding' => '48px',
@@ -26,6 +39,14 @@ if (function_exists('is_checkout') && is_checkout()) {
         'subtitle' => "You're one step away from your handcrafted Facetbound ring.",
         'max_width' => 640,
     ]);
+}
+
+// Cart and Checkout are otherwise unwrapped shortcode output (no
+// container like every other page has) — My Account gets its own
+// container via woocommerce/myaccount/my-account.php, so it's excluded
+// here to avoid double-wrapping/double horizontal padding.
+if ($is_cart_page || $is_checkout_page) {
+    echo '<div class="container wc-content-wrap">';
 }
 
 if (function_exists('is_account_page') && is_account_page() && is_user_logged_in()) {
@@ -55,7 +76,11 @@ if (have_posts()) {
     }
 }
 
-if (function_exists('is_checkout') && function_exists('is_account_page') && (is_checkout() || is_account_page())) {
+if ($is_cart_page || $is_checkout_page) {
+    echo '</div>';
+}
+
+if ($is_checkout_page || (function_exists('is_account_page') && is_account_page())) {
     facetbound_concierge_cta();
 }
 
