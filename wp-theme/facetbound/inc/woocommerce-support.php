@@ -20,6 +20,10 @@ remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrap
 // product grid.
 remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 
+// Drop the default "Showing all N results" line above the Shop grid —
+// not part of the design.
+remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+
 // Default WooCommerce shows 3 sale/result-count/ordering rows we style ourselves
 // via woocommerce/archive-product.php's own toolbar; keep result count + ordering,
 // drop the default sale badge markup (we render our own "Ethically Sourced" /
