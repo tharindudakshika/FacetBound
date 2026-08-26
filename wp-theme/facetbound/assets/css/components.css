@@ -246,7 +246,7 @@
 
 .fb-footer {
   background: var(--emerald-deep);
-  padding: 80px var(--section-x) 40px;
+  padding: 80px 0 40px;
 }
 
 .fb-footer__top {

@@ -85,7 +85,7 @@
 /* ---- Curated Collections ---- */
 .home-collections {
   background: var(--cream);
-  padding: 100px var(--section-x);
+  padding: 100px 0;
 }
 
 .home-collections__grid {
@@ -167,7 +167,7 @@
 /* ---- Featured Products ---- */
 .home-featured {
   background: var(--cream);
-  padding: 100px var(--section-x);
+  padding: 100px 0;
 }
 
 .home-featured__grid {
@@ -285,7 +285,7 @@
 /* ---- Unboxing / Sustainability ---- */
 .home-unboxing {
   background: var(--emerald);
-  padding: 100px var(--section-x);
+  padding: 100px 0;
 }
 
 .home-unboxing__grid {
@@ -339,7 +339,7 @@
 /* ---- Testimonials ---- */
 .home-testimonials {
   background: var(--cream);
-  padding: 100px var(--section-x);
+  padding: 100px 0;
 }
 
 .home-testimonials__grid {
@@ -383,7 +383,7 @@
 /* ---- Instagram grid ---- */
 .home-instagram {
   background: var(--cream);
-  padding: 0 var(--section-x) 100px;
+  padding: 0 0 100px;
 }
 
 .home-instagram__head {
@@ -422,7 +422,7 @@
 
 .story-genesis {
   background: var(--cream);
-  padding: 100px var(--section-x);
+  padding: 100px 0;
 }
 
 .story-genesis-grid {
@@ -452,7 +452,7 @@
 /* Philosophy */
 .story-philosophy {
   background: var(--emerald);
-  padding: 100px var(--section-x);
+  padding: 100px 0;
 }
 
 .story-philosophy-head {
@@ -505,7 +505,7 @@
 /* Ethical Sourcing */
 .story-ethics {
   background: var(--cream);
-  padding: 100px var(--section-x);
+  padding: 100px 0;
 }
 
 .story-ethics-box {
@@ -593,7 +593,7 @@
 /* Packaging */
 .story-packaging {
   background: var(--cream);
-  padding: 100px var(--section-x);
+  padding: 100px 0;
 }
 
 .story-packaging-grid {
@@ -646,7 +646,7 @@
 /* ---- Ethical Gem Sourcing ---- */
 .sustain-sourcing {
   background: var(--cream);
-  padding: 100px var(--section-x);
+  padding: 100px 0;
 }
 
 .sustain-sourcing__grid {
@@ -760,7 +760,7 @@
 /* ---- Plastic-Free Packaging ---- */
 .sustain-packaging {
   background: var(--cream);
-  padding: 100px var(--section-x);
+  padding: 100px 0;
 }
 
 .sustain-packaging__head {
@@ -863,7 +863,7 @@
   position: sticky;
   top: 66px;
   z-index: 40;
-  padding: 20px var(--section-x);
+  padding: 20px 0;
 }
 
 .shopcol-toolbar__row {
@@ -928,7 +928,7 @@
 /* ---- Product Grid ---- */
 .shopcol-grid-section {
   background: var(--cream);
-  padding: 70px var(--section-x) 100px;
+  padding: 70px 0 100px;
 }
 
 .shopcol-grid {
@@ -1087,7 +1087,7 @@
 /* ---- Bottom Assurance Row ---- */
 .shopcol-assurance {
   background: var(--cream-warm);
-  padding: 70px var(--section-x);
+  padding: 70px 0;
 }
 
 .shopcol-assurance__grid {
@@ -2725,7 +2725,7 @@
 /* ---- Featured Article ---- */
 .journal-featured-section {
   background: var(--cream);
-  padding: 0 var(--section-x) 72px;
+  padding: 0 0 72px;
 }
 
 .journal-featured {
@@ -2783,7 +2783,7 @@
 /* ---- Category Nav ---- */
 .journal-category-nav-section {
   background: var(--cream);
-  padding: 0 var(--section-x) 48px;
+  padding: 0 0 48px;
 }
 
 .journal-category-nav {
@@ -2815,7 +2815,7 @@
 /* ---- Journal Grid ---- */
 .journal-grid-section {
   background: var(--cream);
-  padding: 0 var(--section-x) 100px;
+  padding: 0 0 100px;
 }
 
 .journal-grid {
@@ -2986,12 +2986,12 @@
 /* ---- Banner ---- */
 .article-banner-section {
   background: var(--cream);
-  padding: 0 var(--section-x) 72px;
+  padding: 0 0 72px;
 }
 
 /* ---- Body + Sidebar Layout ---- */
 .article-body-section {
-  padding: 0 var(--section-x) 88px;
+  padding: 0 0 88px;
 }
 
 .article-body-grid {
@@ -3340,7 +3340,7 @@
 /* ---- Related Articles ---- */
 .article-related-section {
   background: var(--cream-warm);
-  padding: 88px var(--section-x);
+  padding: 88px 0;
 }
 
 .article-related-heading {
