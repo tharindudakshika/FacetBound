@@ -2391,6 +2391,7 @@
 .account-btn-emerald:hover {
   background: var(--terracotta);
   border-color: var(--terracotta);
+  color: var(--cream);
 }
 
 .account-btn-outline-emerald {
@@ -2411,6 +2412,7 @@
 .account-btn-terracotta:hover {
   background: var(--terracotta-hover);
   border-color: var(--terracotta-hover);
+  color: var(--cream);
 }
 
 .account-btn-outline-slate {

@@ -90,6 +90,7 @@ textarea {
 }
 .btn-terracotta:hover {
   background: var(--terracotta-hover);
+  color: var(--cream);
 }
 
 .btn-emerald {
@@ -100,6 +101,7 @@ textarea {
 .btn-emerald:hover {
   background: var(--terracotta);
   border-color: var(--terracotta);
+  color: var(--cream);
 }
 
 .btn-outline-emerald {
