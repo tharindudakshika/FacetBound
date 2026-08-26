@@ -123,33 +123,6 @@ facetbound_hero([
     </div>
 </section>
 
-<!-- Bottom Assurance Row -->
-<section class="shopcol-assurance">
-    <div class="container shopcol-assurance__grid">
-        <div class="shopcol-assurance__item">
-            <div class="shopcol-assurance__icon">
-                <i class="fa-solid fa-box"></i>
-            </div>
-            <h4 class="shopcol-assurance__title">Custom Octagonal Packaging Included</h4>
-            <p class="shopcol-assurance__desc">Every ring comes in our emerald wooden box with Mitti Attar scent.</p>
-        </div>
-        <div class="shopcol-assurance__item">
-            <div class="shopcol-assurance__icon">
-                <i class="fa-solid fa-scroll"></i>
-            </div>
-            <h4 class="shopcol-assurance__title">Authenticity Certificate</h4>
-            <p class="shopcol-assurance__desc">Gemologist-certified natural Sri Lankan stones.</p>
-        </div>
-        <div class="shopcol-assurance__item">
-            <div class="shopcol-assurance__icon">
-                <i class="fa-solid fa-plane"></i>
-            </div>
-            <h4 class="shopcol-assurance__title">Insured Global Courier</h4>
-            <p class="shopcol-assurance__desc">Ships via DHL/FedEx with full tracking.</p>
-        </div>
-    </div>
-</section>
-
 <?php
 facetbound_concierge_cta();
 

@@ -67,6 +67,33 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
     </div>
 </section>
 
+<!-- Assurance Row (same as Shop page) -->
+<section class="shopcol-assurance">
+    <div class="container shopcol-assurance__grid">
+        <div class="shopcol-assurance__item">
+            <div class="shopcol-assurance__icon">
+                <i class="fa-solid fa-box"></i>
+            </div>
+            <h4 class="shopcol-assurance__title">Custom Octagonal Packaging Included</h4>
+            <p class="shopcol-assurance__desc">Every ring comes in our emerald wooden box with Mitti Attar scent.</p>
+        </div>
+        <div class="shopcol-assurance__item">
+            <div class="shopcol-assurance__icon">
+                <i class="fa-solid fa-scroll"></i>
+            </div>
+            <h4 class="shopcol-assurance__title">Authenticity Certificate</h4>
+            <p class="shopcol-assurance__desc">Gemologist-certified natural Sri Lankan stones.</p>
+        </div>
+        <div class="shopcol-assurance__item">
+            <div class="shopcol-assurance__icon">
+                <i class="fa-solid fa-plane"></i>
+            </div>
+            <h4 class="shopcol-assurance__title">Insured Global Courier</h4>
+            <p class="shopcol-assurance__desc">Ships via DHL/FedEx with full tracking.</p>
+        </div>
+    </div>
+</section>
+
 <!-- Trust bar -->
 <section class="home-trust">
     <div class="container home-trust__grid">
