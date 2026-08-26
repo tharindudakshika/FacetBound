@@ -171,9 +171,6 @@ if (have_posts()) :
                 <p class="pdp-buybox__desc"><?php echo wp_kses_post($desc); ?></p>
 
                 <!-- Real WooCommerce add-to-cart (variation select + qty + button).
-                     The "Add Free Inside Band Engraving" field is injected above the
-                     button automatically via woocommerce_before_add_to_cart_button
-                     (see inc/woocommerce-support.php) — not duplicated here.
                      Note: without a variation-swatches plugin, WooCommerce's default
                      template renders the Ring Size attribute as a <select> dropdown
                      rather than the design's pill-swatch UI; wrapped below so it can
