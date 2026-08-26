@@ -21,16 +21,46 @@ add_action('init', function () {
 });
 
 /**
- * Insert "My Vault" into the account nav right after "Orders".
+ * Rebuild the account nav to match the design exactly: icon + label per
+ * row (WooCommerce's default nav is plain text, no icons), "My Vault"
+ * inserted after "Orders" with its full design label, "Downloads" hidden
+ * (not part of the design — WooCommerce only shows it for stores with
+ * downloadable products, but this catalog has none), and "Account
+ * details" recapitalized to match the design's "Account Details".
  */
 add_filter('woocommerce_account_menu_items', function ($items) {
+    $icons = [
+        'dashboard' => 'fa-solid fa-gauge',
+        'orders' => 'fa-solid fa-box',
+        'vault' => 'fa-solid fa-gem',
+        'edit-address' => 'fa-solid fa-location-dot',
+        'edit-account' => 'fa-regular fa-user',
+        'customer-logout' => 'fa-solid fa-arrow-right-from-bracket',
+    ];
+    $labels = [
+        'vault' => 'My Vault / Collections',
+        'edit-account' => 'Account Details',
+    ];
+
+    unset($items['downloads']);
+
     $new = [];
     foreach ($items as $key => $label) {
+        if ($key === 'vault') {
+            continue; // re-inserted below, right after Orders
+        }
         $new[$key] = $label;
         if ($key === 'orders') {
-            $new['vault'] = 'My Vault';
+            $new['vault'] = 'My Vault / Collections';
         }
     }
+
+    foreach ($new as $key => $label) {
+        $text = $labels[$key] ?? $label;
+        $icon = $icons[$key] ?? '';
+        $new[$key] = $icon ? sprintf('<i class="%s"></i> %s', esc_attr($icon), esc_html($text)) : esc_html($text);
+    }
+
     return $new;
 });
 
