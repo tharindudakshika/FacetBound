@@ -1340,22 +1340,20 @@
   margin-bottom: 16px;
 }
 
-/* Real WooCommerce add-to-cart button (woocommerce_template_single_add_to_cart())
-   — styled to match the other full-width buy-box buttons below it (WhatsApp,
-   PayPal/Apple Pay). The extra ".button.alt" classes in the selector are
-   needed to outrank WooCommerce's own plugin CSS (.woocommerce button.button.alt,
-   applied because WooCommerce always adds a "woocommerce" class to <body>),
-   which otherwise repaints this button its default purple (#7f54b3). */
-.pdp-native-addtocart .single_add_to_cart_button.button.alt,
+/* Real WooCommerce add-to-cart button (woocommerce_template_single_add_to_cart()).
+   WooCommerce's own plugin CSS (.woocommerce button.button.alt — it always
+   adds a "woocommerce" class to <body>) repaints this button its default
+   purple (#7f54b3); !important guarantees our theme color wins outright
+   instead of depending on selector-specificity/load-order tie-breaks. */
 .pdp-native-addtocart .single_add_to_cart_button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100% !important;
   height: 44px;
-  background: var(--terracotta);
-  color: var(--cream);
-  border: none;
+  background: var(--terracotta) !important;
+  color: var(--cream) !important;
+  border: none !important;
   border-radius: 8px;
   font-family: var(--font-sans);
   font-size: 14.5px;
@@ -1364,10 +1362,9 @@
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
-.pdp-native-addtocart .single_add_to_cart_button.button.alt:hover,
 .pdp-native-addtocart .single_add_to_cart_button:hover {
-  background: var(--terracotta-hover);
-  color: var(--cream);
+  background: var(--terracotta-hover) !important;
+  color: var(--cream) !important;
 }
 
 .pdp-whatsapp-btn {

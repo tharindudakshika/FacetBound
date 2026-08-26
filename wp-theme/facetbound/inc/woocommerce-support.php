@@ -31,6 +31,12 @@ remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10);
 remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
 
+// Every ring is a one-per-purchase item: this hides WooCommerce's quantity
+// selector everywhere (product page, cart, checkout review) and forces
+// exactly 1 into the cart, same as WooCommerce's per-product "Sold
+// individually" checkbox — just applied to every product at once.
+add_filter('woocommerce_is_sold_individually', '__return_true');
+
 // Breadcrumbs styling hook (used on the Product Detail page).
 add_filter('woocommerce_breadcrumb_defaults', function ($defaults) {
     $defaults['wrap_before'] = '<nav class="pdp-breadcrumb">';
