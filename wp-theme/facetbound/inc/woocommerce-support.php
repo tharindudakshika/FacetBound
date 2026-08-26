@@ -98,6 +98,19 @@ add_filter('woocommerce_product_single_add_to_cart_text', function () {
 });
 
 /**
+ * "Buy Now" is a single-product direct purchase, not a running cart — so
+ * clear out whatever was left in the cart from a previous visit before
+ * WooCommerce processes the new add-to-cart request. Runs at priority 15,
+ * ahead of WC_Form_Handler::add_to_cart() (registered at 20 on the same
+ * hook), so the cart is empty by the time the requested item is added.
+ */
+add_action('wp_loaded', function () {
+    if (isset($_REQUEST['add-to-cart']) && is_numeric($_REQUEST['add-to-cart']) && WC()->cart) {
+        WC()->cart->empty_cart();
+    }
+}, 15);
+
+/**
  * The redirect above lands the shopper on Checkout carrying WooCommerce's
  * default "X has been added to your cart. [Continue shopping]" notice
  * (queued in session at add-to-cart time, meant for the Cart page it used
