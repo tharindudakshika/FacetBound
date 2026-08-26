@@ -11,21 +11,6 @@ if (!defined('ABSPATH')) {
 
 get_header();
 
-$fb_trust_items = [
-    [
-        'label' => 'Ethically Sourced Gems',
-        'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9s1.3-6.5 3.8-9Z" /></svg>',
-    ],
-    [
-        'label' => '925 Sterling Silver',
-        'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 9l8 12 8-12-8-6Z" /><path d="M4 9h16M8.5 9 12 21l3.5-12" /></svg>',
-    ],
-    [
-        'label' => 'Worldwide Courier Shipping (DHL/FedEx)',
-        'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3 3 10.5l7.2 2.3L12.8 21 21 3Z" /><path d="M10.5 13.2 21 3" /></svg>',
-    ],
-];
-
 $fb_collection_captions = [
     'blue-topaz-collection'   => 'blue topaz ring, studio shot',
     'artisan-textured-bands'  => 'hammered & tree bark texture band',
@@ -91,18 +76,6 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
             <h4 class="shopcol-assurance__title">Insured Global Courier</h4>
             <p class="shopcol-assurance__desc">Ships via DHL/FedEx with full tracking.</p>
         </div>
-    </div>
-</section>
-
-<!-- Trust bar -->
-<section class="home-trust">
-    <div class="container home-trust__grid">
-        <?php foreach ( $fb_trust_items as $item ) : ?>
-            <div class="home-trust__item">
-                <div class="home-trust__icon"><?php echo $item['icon']; ?></div>
-                <div class="home-trust__label"><?php echo esc_html( $item['label'] ); ?></div>
-            </div>
-        <?php endforeach; ?>
     </div>
 </section>
 
