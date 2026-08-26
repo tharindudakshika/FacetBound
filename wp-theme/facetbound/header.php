@@ -37,16 +37,22 @@ $cart_count = (class_exists('WooCommerce') && WC()->cart) ? WC()->cart->get_cart
                 <button type="button" class="fb-header__icon fb-header__search-toggle" title="Search the Journal" aria-label="Search the Journal">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
-                <form class="fb-header__search-form" role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
-                    <input type="hidden" name="post_type" value="post">
-                    <input
-                        type="search"
-                        name="s"
-                        class="fb-header__search-input"
-                        placeholder="Search the Journal&hellip;"
-                        value="<?php echo esc_attr(get_search_query()); ?>"
-                    >
-                </form>
+                <div class="fb-header__search-overlay">
+                    <form class="fb-header__search-modal" role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
+                        <i class="fa-solid fa-magnifying-glass fb-header__search-modal-icon"></i>
+                        <input type="hidden" name="post_type" value="post">
+                        <input
+                            type="search"
+                            name="s"
+                            class="fb-header__search-input"
+                            placeholder="Search the Journal&hellip;"
+                            value="<?php echo esc_attr(get_search_query()); ?>"
+                        >
+                        <button type="button" class="fb-header__search-close" aria-label="Close search">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
             <a href="<?php echo esc_url(class_exists('WooCommerce') ? wc_get_page_permalink('myaccount') : home_url('/my-account/')); ?>" title="Account">
                 <i class="<?php echo $account_active ? 'fa-regular fa-user fb-header__icon fb-header__icon--active' : 'fa-regular fa-user fb-header__icon'; ?>"></i>

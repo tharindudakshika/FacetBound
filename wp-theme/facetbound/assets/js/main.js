@@ -30,27 +30,36 @@
     });
   });
 
-  // Header search: click the icon to reveal the Journal search box, click
-  // anywhere outside (or press Escape) to close it again.
+  // Header search: click the icon to open a Journal search popup, click the
+  // backdrop (or the close button, or press Escape) to close it again.
   var searchWrap = document.querySelector('.fb-header__search');
   if (searchWrap) {
     var toggle = searchWrap.querySelector('.fb-header__search-toggle');
+    var overlay = searchWrap.querySelector('.fb-header__search-overlay');
+    var closeBtn = searchWrap.querySelector('.fb-header__search-close');
     var input = searchWrap.querySelector('.fb-header__search-input');
+
+    function openSearch() {
+      searchWrap.classList.add('fb-header__search--open');
+      input.focus();
+    }
+    function closeSearch() {
+      searchWrap.classList.remove('fb-header__search--open');
+    }
+
     toggle.addEventListener('click', function (e) {
       e.stopPropagation();
-      searchWrap.classList.toggle('fb-header__search--open');
-      if (searchWrap.classList.contains('fb-header__search--open')) {
-        input.focus();
-      }
+      openSearch();
     });
-    document.addEventListener('click', function (e) {
-      if (!searchWrap.contains(e.target)) {
-        searchWrap.classList.remove('fb-header__search--open');
+    closeBtn.addEventListener('click', closeSearch);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) {
+        closeSearch();
       }
     });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
-        searchWrap.classList.remove('fb-header__search--open');
+        closeSearch();
       }
     });
   }
