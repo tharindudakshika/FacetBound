@@ -98,6 +98,31 @@ add_filter('woocommerce_product_single_add_to_cart_text', function () {
 });
 
 /**
+ * The redirect above lands the shopper on Checkout carrying WooCommerce's
+ * default "X has been added to your cart. [Continue shopping]" notice
+ * (queued in session at add-to-cart time, meant for the Cart page it used
+ * to redirect to). That "Continue shopping" prompt doesn't belong on a
+ * direct-checkout flow, so drop just that notice before it's printed.
+ */
+add_action('template_redirect', function () {
+    if (!function_exists('is_checkout') || !is_checkout() || !WC()->session) {
+        return;
+    }
+    $notices = WC()->session->get('wc_notices', []);
+    if (empty($notices['success'])) {
+        return;
+    }
+    foreach ($notices['success'] as $key => $notice) {
+        $message = is_array($notice) ? ($notice['notice'] ?? '') : $notice;
+        if (strpos($message, 'Continue shopping') !== false) {
+            unset($notices['success'][$key]);
+        }
+    }
+    $notices['success'] = array_values($notices['success']);
+    WC()->session->set('wc_notices', $notices);
+}, 5);
+
+/**
  * Keep Cart & Checkout on the classic shortcode templates (this theme
  * overrides woocommerce/cart/*.php and woocommerce/checkout/*.php to
  * match the design exactly — Cart/Checkout blocks bypass those files).
