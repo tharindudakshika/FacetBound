@@ -37,7 +37,7 @@ $cart_count = (class_exists('WooCommerce') && WC()->cart) ? WC()->cart->get_cart
             <a href="<?php echo esc_url(class_exists('WooCommerce') ? wc_get_page_permalink('myaccount') : home_url('/my-account/')); ?>" title="Account">
                 <i class="<?php echo $account_active ? 'fa-regular fa-user fb-header__icon fb-header__icon--active' : 'fa-regular fa-user fb-header__icon'; ?>"></i>
             </a>
-            <a href="<?php echo esc_url(class_exists('WooCommerce') ? wc_get_cart_url() : '#'); ?>" class="fb-header__cart" title="Cart">
+            <a href="<?php echo esc_url(class_exists('WooCommerce') ? wc_get_checkout_url() : '#'); ?>" class="fb-header__cart" title="Checkout">
                 <i class="fa-solid fa-bag-shopping fb-header__icon"></i>
                 <?php if ($cart_count > 0) : ?>
                     <div class="fb-header__cart-badge"><?php echo (int) $cart_count; ?></div>

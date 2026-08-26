@@ -81,6 +81,23 @@ add_action('woocommerce_checkout_create_order_line_item', function ($item, $cart
 }, 10, 3);
 
 /**
+ * Direct checkout: skip the Cart page entirely. Adding a product to the
+ * cart sends the shopper straight to Checkout (where the order review
+ * table still lets them adjust quantity/remove the item), and every
+ * "Add to Cart" button/label site-wide reads "Buy Now" instead.
+ */
+add_filter('woocommerce_add_to_cart_redirect', function () {
+    return wc_get_checkout_url();
+});
+
+add_filter('woocommerce_product_add_to_cart_text', function () {
+    return 'Buy Now';
+});
+add_filter('woocommerce_product_single_add_to_cart_text', function () {
+    return 'Buy Now';
+});
+
+/**
  * Keep Cart & Checkout on the classic shortcode templates (this theme
  * overrides woocommerce/cart/*.php and woocommerce/checkout/*.php to
  * match the design exactly — Cart/Checkout blocks bypass those files).

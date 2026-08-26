@@ -172,7 +172,7 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
                         <h3 class="home-product-name"><?php echo esc_html( $fb_product->get_name() ); ?></h3>
                         <p class="home-product-price"><?php echo $fb_product->get_price_html(); ?></p>
                         <div class="home-product-actions">
-                            <a href="<?php echo esc_url( $fb_permalink ); ?>" class="home-btn-sm home-btn-outline-emerald">Add to Cart</a>
+                            <a href="<?php echo esc_url( $fb_permalink ); ?>" class="home-btn-sm home-btn-outline-emerald">Buy Now</a>
                             <a
                                 class="home-btn-sm home-btn-whatsapp"
                                 href="https://wa.me/?text=<?php echo esc_attr( rawurlencode( "Hi! I'm interested in the " . $fb_product->get_name() ) ); ?>"
