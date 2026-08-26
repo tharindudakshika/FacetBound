@@ -14,6 +14,12 @@ if (!defined('ABSPATH')) {
 remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
+// archive-product.php already renders the ordering <select> once, itself,
+// inside the .shopcol-sort toolbar — without this, WooCommerce's own
+// woocommerce_before_shop_loop hook renders a second one right above the
+// product grid.
+remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+
 // Default WooCommerce shows 3 sale/result-count/ordering rows we style ourselves
 // via woocommerce/archive-product.php's own toolbar; keep result count + ordering,
 // drop the default sale badge markup (we render our own "Ethically Sourced" /
