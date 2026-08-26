@@ -4,7 +4,7 @@
 .home-hero {
   background: var(--emerald);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
   min-height: 560px;
 }
 
@@ -47,7 +47,7 @@
 
 .home-trust__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: 28px;
 }
 
@@ -90,7 +90,7 @@
 
 .home-collections__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 28px;
 }
 
@@ -121,7 +121,7 @@
 .home-story {
   background: var(--emerald-deep);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
   align-items: stretch;
 }
 
@@ -290,7 +290,7 @@
 
 .home-unboxing__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
   gap: 56px;
   align-items: center;
 }
@@ -344,7 +344,7 @@
 
 .home-testimonials__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 28px;
 }
 
@@ -407,7 +407,7 @@
 
 .home-instagram__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
   gap: 6px;
 }
 
@@ -427,7 +427,7 @@
 
 .story-genesis-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
   gap: 56px;
   align-items: center;
 }
@@ -475,7 +475,7 @@
 
 .story-philosophy-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
   gap: 28px;
 }
 
@@ -561,7 +561,7 @@
 .story-artisans {
   background: var(--emerald-deep);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
   align-items: stretch;
 }
 
@@ -598,7 +598,7 @@
 
 .story-packaging-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
   gap: 56px;
   align-items: center;
 }
@@ -651,7 +651,7 @@
 
 .sustain-sourcing__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
   gap: 56px;
   align-items: center;
 }
@@ -708,7 +708,7 @@
 
 .sustain-artisan__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
   gap: 0;
   align-items: stretch;
 }
@@ -778,7 +778,7 @@
 
 .sustain-packaging__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 24px;
 }
 
@@ -1092,7 +1092,7 @@
 
 .shopcol-assurance__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 36px;
 }
 
@@ -1155,7 +1155,7 @@
 /* Gallery + Buy Box */
 .pdp-main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
   gap: 56px;
   padding: 32px var(--section-x) 80px;
 }
@@ -1568,7 +1568,7 @@
 
 .pdp-story__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
   gap: 24px;
   margin-bottom: 36px;
 }
@@ -1589,7 +1589,7 @@
 
 .pdp-reviews__summary {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 56px;
   margin-bottom: 56px;
 }
@@ -1685,7 +1685,7 @@
 
 .pdp-reviews__cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 28px;
 }
 
@@ -1747,7 +1747,7 @@
 
 .pdp-crosssell__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 28px;
 }
 
@@ -1808,7 +1808,7 @@
 /* ---- Main two-column layout ---- */
 .checkout-main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
   gap: 64px;
   align-items: start;
   padding: 56px var(--section-x) 100px;
@@ -2562,7 +2562,7 @@
 /* ---- Vault Panel ---- */
 .account-vault-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   gap: 20px;
   margin-bottom: 32px;
 }
@@ -2617,7 +2617,7 @@
 /* ---- Addresses Panel ---- */
 .account-addresses-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 20px;
   margin-bottom: 28px;
 }
@@ -2733,7 +2733,7 @@
   border-radius: 16px;
   overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
   align-items: stretch;
 }
 
@@ -2820,7 +2820,7 @@
 
 .journal-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 36px;
 }
 
@@ -3354,7 +3354,7 @@
 
 .article-related-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 28px;
 }
 
