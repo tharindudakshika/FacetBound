@@ -1167,6 +1167,12 @@
   align-content: start;
 }
 
+@media (max-width: 640px) {
+  .pdp-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
 .pdp-gallery__tile {
   position: relative;
 }
