@@ -134,4 +134,6 @@ $contact_faqs = [
     </div>
 </section>
 
+<?php facetbound_concierge_cta(); ?>
+
 <?php get_footer(); ?>
