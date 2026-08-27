@@ -1,10 +1,13 @@
 <?php
 /**
- * "Gem Certificate (PDF)" field on the Product Data > General tab —
- * lets admins attach a digital certificate of authenticity PDF per
- * product (from the Media Library), stored as post meta so it can be
- * surfaced to customers later (e.g. My Account's "Digital Authenticity
- * Certificates" card).
+ * "Gem Certificate" metabox on the product edit screen — lets admins
+ * attach a digital certificate of authenticity PDF per product (from the
+ * Media Library), stored as post meta so it can be surfaced to customers
+ * later (e.g. My Account's "Digital Authenticity Certificates" card).
+ * Registered as its own postbox (context "normal", priority "default")
+ * rather than a field inside Product Data, so it renders as a separate
+ * box right below it — Product Data itself uses priority "high" in the
+ * same "normal" context.
  */
 
 if (!defined('ABSPATH')) {
@@ -19,14 +22,26 @@ add_action('admin_enqueue_scripts', function ($hook) {
     wp_enqueue_media();
 });
 
-add_action('woocommerce_product_options_general_product_data', function () {
-    global $post;
+add_action('add_meta_boxes', function () {
+    add_meta_box(
+        'facetbound_gem_certificate',
+        'Gem Certificate',
+        'facetbound_render_gem_certificate_metabox',
+        'product',
+        'normal',
+        'default'
+    );
+});
+
+function facetbound_render_gem_certificate_metabox($post) {
     $attachment_id = (int) get_post_meta($post->ID, '_gem_certificate_id', true);
     $filename = $attachment_id ? basename(get_attached_file($attachment_id)) : '';
     $url = $attachment_id ? wp_get_attachment_url($attachment_id) : '';
     ?>
-    <p class="form-field gem_certificate_field">
-        <label for="gem_certificate_upload_btn">Gem Certificate (PDF)</label>
+    <p>
+        <label for="gem_certificate_upload_btn"><strong>Gem Certificate (PDF)</strong></label>
+    </p>
+    <p>
         <input type="hidden" id="gem_certificate_id" name="gem_certificate_id" value="<?php echo esc_attr($attachment_id); ?>" />
         <button type="button" class="button" id="gem_certificate_upload_btn"><?php echo $attachment_id ? 'Replace PDF' : 'Upload PDF'; ?></button>
         <button type="button" class="button" id="gem_certificate_remove_btn" <?php echo $attachment_id ? '' : 'style="display:none;"'; ?>>Remove</button>
@@ -70,7 +85,7 @@ add_action('woocommerce_product_options_general_product_data', function () {
     });
     </script>
     <?php
-});
+}
 
 add_action('woocommerce_process_product_meta', function ($post_id) {
     if (!isset($_POST['gem_certificate_id'])) {
