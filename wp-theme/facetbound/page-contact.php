@@ -18,7 +18,27 @@ facetbound_hero([
 ]);
 
 $contact_status = isset($_GET['contact']) ? sanitize_key(wp_unslash($_GET['contact'])) : '';
-$whatsapp_text = rawurlencode("Hi! I have a question about Facetbound.");
+
+$contact_email_groups = [
+    [
+        'title' => 'General & Customer Support',
+        'email' => 'hello@facetbound.com',
+        'note' => 'Order tracking, ring size inquiries',
+    ],
+    [
+        'title' => 'VIP & Custom Gem Sourcing',
+        'email' => 'concierge@facetbound.com',
+        'note' => 'Custom orders, rare spinel drops',
+    ],
+];
+
+$contact_social_links = [
+    ['icon' => 'fa-instagram', 'label' => '@facetbound.jewelry', 'url' => '#'],
+    ['icon' => 'fa-facebook-f', 'label' => 'Facebook', 'url' => '#'],
+    ['icon' => 'fa-pinterest-p', 'label' => 'Pinterest', 'url' => '#'],
+];
+
+$contact_subjects = ['General Inquiry', 'Order Support', 'VIP & Custom Gem Sourcing', 'Press & Partnerships', 'Other'];
 
 $contact_faqs = [
     [
@@ -38,8 +58,57 @@ $contact_faqs = [
 
 <section class="contact-section">
     <div class="container contact-grid">
-        <div class="contact-form-wrap">
-            <h2 class="contact-heading">Send a Message</h2>
+        <div class="contact-info">
+            <div class="contact-info__group">
+                <div class="contact-info__label">Email Assistance</div>
+                <?php foreach ($contact_email_groups as $group) : ?>
+                    <div class="contact-info__row">
+                        <i class="fa-solid fa-envelope contact-info__icon"></i>
+                        <div>
+                            <div class="contact-info__title"><?php echo esc_html($group['title']); ?></div>
+                            <a class="contact-info__link" href="<?php echo esc_url('mailto:' . $group['email']); ?>"><?php echo esc_html($group['email']); ?></a>
+                            <div class="contact-info__note"><?php echo esc_html($group['note']); ?></div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <div class="contact-info__group">
+                <div class="contact-info__label">Studio &amp; Workshop</div>
+                <div class="contact-info__row">
+                    <i class="fa-solid fa-location-dot contact-info__icon"></i>
+                    <div>
+                        <div class="contact-info__title">Ratnapura / Colombo, Sri Lanka</div>
+                        <div class="contact-info__note">Our gems are selected at the pit and set by Sri Lankan artisans in our own workshop &mdash; not sourced through a warehouse.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-info__group">
+                <div class="contact-info__label">Operating Hours</div>
+                <div class="contact-info__row">
+                    <i class="fa-solid fa-clock contact-info__icon"></i>
+                    <div>
+                        <div class="contact-info__title">Monday &ndash; Saturday &middot; 9:00 AM &ndash; 6:00 PM</div>
+                        <div class="contact-info__note">IST / GMT +5:30</div>
+                        <div class="contact-info__note">We reply to all international inquiries within 12 hours.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-info__group contact-info__group--last">
+                <div class="contact-info__label">Follow the Studio</div>
+                <?php foreach ($contact_social_links as $social) : ?>
+                    <a class="contact-info__social" href="<?php echo esc_url($social['url']); ?>">
+                        <span class="contact-info__social-icon"><i class="fa-brands <?php echo esc_attr($social['icon']); ?>"></i></span>
+                        <?php echo esc_html($social['label']); ?>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <div class="contact-form-card">
+            <h2 class="contact-heading">Send Us a Message</h2>
 
             <?php if ('success' === $contact_status) : ?>
                 <div class="contact-notice contact-notice--success">
@@ -47,7 +116,7 @@ $contact_faqs = [
                 </div>
             <?php elseif ('error' === $contact_status) : ?>
                 <div class="contact-notice contact-notice--error">
-                    Something went wrong sending your message. Please fill in all required fields, or reach us directly on WhatsApp below.
+                    Something went wrong sending your message. Please fill in all required fields.
                 </div>
             <?php endif; ?>
 
@@ -59,54 +128,32 @@ $contact_faqs = [
                     <input type="text" id="facetbound_contact_company" name="facetbound_contact_company" tabindex="-1" autocomplete="off">
                 </div>
 
-                <div class="contact-form__row">
-                    <div class="contact-field">
-                        <label for="contact_name">Name <span class="contact-field__required">*</span></label>
-                        <input type="text" id="contact_name" name="contact_name" required>
-                    </div>
-                    <div class="contact-field">
-                        <label for="contact_email">Email <span class="contact-field__required">*</span></label>
-                        <input type="email" id="contact_email" name="contact_email" required>
-                    </div>
+                <div class="contact-field">
+                    <label for="contact_name">Full Name</label>
+                    <input type="text" id="contact_name" name="contact_name" placeholder="First &amp; Last Name" required>
+                </div>
+
+                <div class="contact-field">
+                    <label for="contact_email">Email Address</label>
+                    <input type="email" id="contact_email" name="contact_email" placeholder="Email address" required>
                 </div>
 
                 <div class="contact-field">
                     <label for="contact_subject">Subject</label>
-                    <input type="text" id="contact_subject" name="contact_subject" placeholder="e.g. Ring size exchange, order #1024">
+                    <select id="contact_subject" name="contact_subject">
+                        <?php foreach ($contact_subjects as $subject) : ?>
+                            <option value="<?php echo esc_attr($subject); ?>"><?php echo esc_html($subject); ?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
 
                 <div class="contact-field">
-                    <label for="contact_message">Message <span class="contact-field__required">*</span></label>
-                    <textarea id="contact_message" name="contact_message" rows="6" required></textarea>
+                    <label for="contact_message">Message</label>
+                    <textarea id="contact_message" name="contact_message" rows="6" placeholder="How can we help you today?" required></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-terracotta contact-form__submit">Send Message</button>
             </form>
-        </div>
-
-        <div class="contact-info">
-            <h2 class="contact-heading">Other Ways to Reach Us</h2>
-            <p class="contact-info__body">
-                For urgent sizing or order questions, WhatsApp is the fastest way to reach our concierge team directly.
-            </p>
-
-            <a
-                class="btn btn-emerald contact-info__whatsapp"
-                href="https://wa.me/?text=<?php echo esc_attr($whatsapp_text); ?>"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
-            </a>
-
-            <a class="contact-info__email" href="<?php echo esc_url('mailto:' . get_option('admin_email')); ?>">
-                <i class="fa-solid fa-envelope"></i> <?php echo esc_html(get_option('admin_email')); ?>
-            </a>
-
-            <div class="contact-info__hours">
-                <div class="contact-info__hours-label">Response Time</div>
-                <p>We typically reply within 24 hours, Monday&ndash;Saturday.</p>
-            </div>
         </div>
     </div>
 </section>
