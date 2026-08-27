@@ -37,6 +37,19 @@ remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_pro
 // individually" checkbox — just applied to every product at once.
 add_filter('woocommerce_is_sold_individually', '__return_true');
 
+// My Account renders the logged-out Login/Register form via WooCommerce's
+// own template (myaccount/form-login.php) directly — it never reaches our
+// woocommerce/myaccount/my-account.php override — so it was spanning the
+// full browser width instead of the site's container. These hooks (fired
+// by that WC template itself) wrap it in the same .container.account-main
+// treatment the logged-in dashboard already uses.
+add_action('woocommerce_before_customer_login_form', function () {
+    echo '<div class="container account-main">';
+});
+add_action('woocommerce_after_customer_login_form', function () {
+    echo '</div>';
+});
+
 // Breadcrumbs styling hook (used on the Product Detail page).
 add_filter('woocommerce_breadcrumb_defaults', function ($defaults) {
     $defaults['wrap_before'] = '<nav class="pdp-breadcrumb">';
