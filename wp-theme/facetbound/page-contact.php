@@ -60,7 +60,7 @@ $contact_faqs = [
     <div class="container contact-grid">
         <div class="contact-info">
             <div class="contact-info__group">
-                <div class="contact-info__label">Email Assistance</div>
+                <div class="kicker">Email Assistance</div>
                 <?php foreach ($contact_email_groups as $group) : ?>
                     <div class="contact-info__row">
                         <i class="fa-solid fa-envelope contact-info__icon"></i>
@@ -74,7 +74,7 @@ $contact_faqs = [
             </div>
 
             <div class="contact-info__group">
-                <div class="contact-info__label">Studio &amp; Workshop</div>
+                <div class="kicker">Studio &amp; Workshop</div>
                 <div class="contact-info__row">
                     <i class="fa-solid fa-location-dot contact-info__icon"></i>
                     <div>
@@ -85,7 +85,7 @@ $contact_faqs = [
             </div>
 
             <div class="contact-info__group">
-                <div class="contact-info__label">Operating Hours</div>
+                <div class="kicker">Operating Hours</div>
                 <div class="contact-info__row">
                     <i class="fa-solid fa-clock contact-info__icon"></i>
                     <div>
@@ -97,7 +97,7 @@ $contact_faqs = [
             </div>
 
             <div class="contact-info__group contact-info__group--last">
-                <div class="contact-info__label">Follow the Studio</div>
+                <div class="kicker">Follow the Studio</div>
                 <?php foreach ($contact_social_links as $social) : ?>
                     <a class="contact-info__social" href="<?php echo esc_url($social['url']); ?>">
                         <span class="contact-info__social-icon"><i class="fa-brands <?php echo esc_attr($social['icon']); ?>"></i></span>
@@ -163,7 +163,7 @@ $contact_faqs = [
     <div class="container">
         <div class="contact-whatsapp__card">
             <div class="contact-whatsapp__text">
-                <div class="contact-whatsapp__kicker">WhatsApp VIP Concierge</div>
+                <div class="kicker">WhatsApp VIP Concierge</div>
                 <h2 class="contact-whatsapp__title">Need quick help with sizing or custom orders?</h2>
                 <p class="contact-whatsapp__body">Message our lead gemologist directly &mdash; typical reply inside studio hours is under an hour.</p>
             </div>

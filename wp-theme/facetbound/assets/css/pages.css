@@ -3611,15 +3611,6 @@
   padding-bottom: 0;
 }
 
-.contact-info__label {
-  font-size: 13px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--terracotta);
-  font-weight: 700;
-  margin-bottom: 18px;
-}
-
 .contact-info__row {
   display: flex;
   gap: 14px;
@@ -3705,15 +3696,6 @@
   justify-content: space-between;
   gap: 32px;
   flex-wrap: wrap;
-}
-
-.contact-whatsapp__kicker {
-  font-size: 13px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--terracotta);
-  font-weight: 700;
-  margin-bottom: 12px;
 }
 
 .contact-whatsapp__title {
