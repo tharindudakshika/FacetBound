@@ -56,13 +56,15 @@ if (function_exists('is_account_page') && is_account_page() && is_user_logged_in
     <section class="account-banner">
         <?php facetbound_placeholder('dark', '', ['style' => 'position:absolute;inset:0']); ?>
         <div class="account-banner-scrim"></div>
-        <div class="container account-banner-content">
-            <div class="account-banner-badge">
-                <i class="fa-solid fa-gem"></i> Facetbound Collector Member
-            </div>
-            <h1 class="account-banner-title">Welcome back, <?php echo esc_html($first_name); ?></h1>
-            <div class="account-banner-status">
-                <i class="fa-solid fa-plane"></i> You have 1 Active Express Shipment in transit.
+        <div class="container">
+            <div class="account-banner-content">
+                <div class="account-banner-badge">
+                    <i class="fa-solid fa-gem"></i> Facetbound Collector Member
+                </div>
+                <h1 class="account-banner-title">Welcome back, <?php echo esc_html($first_name); ?></h1>
+                <div class="account-banner-status">
+                    <i class="fa-solid fa-plane"></i> You have 1 Active Express Shipment in transit.
+                </div>
             </div>
         </div>
     </section>
