@@ -141,28 +141,3 @@ function facetbound_ensure_shortcode_page($page_id, $key, $shortcode) {
     }
     return $page_id;
 }
-
-/**
- * Express-payment row + "OR CONTINUE WITH STANDARD CHECKOUT" divider
- * above the classic checkout form (design spec: Checkout page).
- * The actual PayPal / Apple Pay / Google Pay buttons here render only
- * once the corresponding official gateway plugin is installed and
- * configured with real merchant credentials — until then this shows
- * a disabled preview so the layout is visible immediately.
- */
-add_action('woocommerce_before_checkout_form', function () {
-    ?>
-    <div class="checkout-express">
-        <button type="button" class="checkout-express__paypal" disabled>Express Checkout with PayPal</button>
-        <button type="button" class="checkout-express__wallet" disabled>
-            <i class="fa-brands fa-apple"></i> <span> / </span> <i class="fa-brands fa-google"></i>
-            <span>Express Checkout with Apple Pay / Google Pay</span>
-        </button>
-    </div>
-    <div class="checkout-divider">
-        <span></span>
-        <p>OR CONTINUE WITH STANDARD CHECKOUT</p>
-        <span></span>
-    </div>
-    <?php
-}, 5);
