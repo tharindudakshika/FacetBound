@@ -16,20 +16,24 @@ if (!defined('ABSPATH')) {
 get_header();
 ?>
 
+<?php if (is_search()) : ?>
+    <?php
+    facetbound_hero([
+        'min_height' => 260,
+        'padding' => '56px',
+        'title' => 'Search Results',
+        'subtitle' => sprintf(
+            /* translators: 1: number of results, 2: search query */
+            __('%1$s results found for "%2$s"', 'facetbound'),
+            (int) $wp_query->found_posts,
+            get_search_query()
+        ),
+        'max_width' => 640,
+    ]);
+    ?>
+<?php else : ?>
 <section class="journal-page-header">
-    <?php if (is_search()) : ?>
-        <h1>Search Results</h1>
-        <p>
-            <?php
-            printf(
-                /* translators: %s: search query */
-                esc_html__('%s results found for "%s"', 'facetbound'),
-                (int) $wp_query->found_posts,
-                esc_html(get_search_query())
-            );
-            ?>
-        </p>
-    <?php elseif (is_category() || is_tag() || is_tax()) : ?>
+    <?php if (is_category() || is_tag() || is_tax()) : ?>
         <h1><?php single_term_title(); ?></h1>
         <?php if (term_description()) : ?>
             <p><?php echo wp_kses_post(term_description()); ?></p>
@@ -42,6 +46,7 @@ get_header();
         <h1><?php bloginfo('name'); ?></h1>
     <?php endif; ?>
 </section>
+<?php endif; ?>
 
 <?php if (is_category() || is_tag() || is_tax('category')) : ?>
 <section class="journal-category-nav-section">
