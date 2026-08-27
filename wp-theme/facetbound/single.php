@@ -166,25 +166,7 @@ while (have_posts()) : the_post();
         </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="article-newsletter">
-        <div class="article-newsletter-inner">
-            <h2>
-                Love Gemology &amp; Handcrafted Fine Jewelry? Join the Collector&rsquo;s Circle for Private
-                Gem Drops.
-            </h2>
-            <form class="article-newsletter-form" action="#" method="post">
-                <input
-                    type="email"
-                    name="article_newsletter_email"
-                    placeholder="Your email address"
-                    class="article-newsletter-input"
-                    required
-                >
-                <button type="submit" class="article-newsletter-btn">Subscribe</button>
-            </form>
-        </div>
-    </section>
+    <?php facetbound_concierge_cta(); ?>
 
 <?php
 endwhile;
