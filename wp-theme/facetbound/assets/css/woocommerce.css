@@ -545,6 +545,9 @@ mark.order-status {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   gap: 24px;
 }
 
@@ -552,7 +555,8 @@ mark.order-status {
 .woocommerce-customer-details .col2-set .col-2 {
   float: none;
   width: auto;
-  flex: 1 1 min(320px, 100%);
+  min-width: 260px;
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
 }
