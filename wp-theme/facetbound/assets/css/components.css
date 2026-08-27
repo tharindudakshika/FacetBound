@@ -392,6 +392,31 @@
 .fb-footer__badge i {
   font-size: 16px;
 }
+@media (max-width: 640px) {
+  .fb-footer__brand {
+    align-items: center;
+    text-align: center;
+  }
+
+  .fb-footer__social {
+    justify-content: center;
+  }
+
+  .fb-footer__col {
+    align-items: center;
+    text-align: center;
+  }
+
+  .fb-footer__form {
+    width: 100%;
+  }
+
+  .fb-footer__bottom {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 .fb-footer__badge span {
   font-size: 12px;
   font-weight: 600;
