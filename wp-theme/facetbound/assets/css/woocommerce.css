@@ -13,18 +13,34 @@
   padding: 56px var(--section-x) 80px;
 }
 
-/* ---- Notices ---- */
+/* ---- Notices ----
+   WooCommerce's own CSS puts a coloured (purple/blue/green/red per type)
+   3px border-TOP and an icon absolutely positioned at left:1.5em on
+   these — we only overrode border-left before, so that border-top color
+   was still leaking through, and our tighter padding put the icon right
+   on top of the text instead of beside it. Resetting the border fully and
+   giving the icon its own left-padding + vertical centering fixes both. */
 .woocommerce-error,
 .woocommerce-info,
 .woocommerce-message {
-  border-radius: 8px;
+  border: none;
   border-left: 3px solid var(--terracotta);
+  border-radius: 8px;
   background: var(--cream-warm);
-  padding: 16px 20px;
+  padding: 16px 20px 16px 52px;
   font-size: 14px;
   color: var(--ink);
   list-style: none;
   margin: 0 0 24px;
+}
+
+.woocommerce-error::before,
+.woocommerce-info::before,
+.woocommerce-message::before {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: var(--terracotta);
 }
 
 .woocommerce-error .button,
