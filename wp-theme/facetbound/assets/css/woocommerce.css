@@ -525,11 +525,12 @@ mark.order-status {
   background: #fff;
 }
 
-.woocommerce-Address-title h3 {
+.woocommerce-Address-title h2 {
   font-family: var(--font-serif);
   font-size: 16px;
   font-weight: 600;
   color: var(--emerald);
+  margin-right: 10px;
 }
 
 .woocommerce-Address-title .edit {
