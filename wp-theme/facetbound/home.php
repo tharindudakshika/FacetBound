@@ -20,13 +20,16 @@ $categories = get_categories(['hide_empty' => false]);
 ?>
 
 <!-- Page Header -->
-<section class="journal-page-header">
-    <h1>The Facetbound Journal</h1>
-    <p>
-        Notes on Sri Lankan gemology, artisan silversmithing, and the raw beauty of earth&rsquo;s
-        creations.
-    </p>
-</section>
+<?php
+facetbound_hero([
+    'min_height' => 260,
+    'padding' => '56px',
+    'caption' => 'hero image: artisan workbench, loose gemstones and silversmithing tools',
+    'title' => 'The Facetbound Journal',
+    'subtitle' => "Notes on Sri Lankan gemology, artisan silversmithing, and the raw beauty of earth's creations.",
+    'max_width' => 640,
+]);
+?>
 
 <?php if ($featured_post) : ?>
 <!-- Featured Article -->

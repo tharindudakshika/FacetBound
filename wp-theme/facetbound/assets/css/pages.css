@@ -2728,6 +2728,13 @@
   padding: 0 0 72px;
 }
 
+/* The featured-article card sits directly below the hero banner (no other
+   section in between) — give it the same top space the hero used to get
+   from .journal-page-header's own bottom padding. */
+.fb-hero + .journal-featured-section {
+  padding-top: 72px;
+}
+
 .journal-featured {
   border: 1px solid var(--slate-light);
   border-radius: 16px;
@@ -2784,6 +2791,12 @@
 .journal-category-nav-section {
   background: var(--cream);
   padding: 0 0 48px;
+}
+
+/* Same top-space fix as .journal-featured-section, for when there's no
+   featured post and this nav bar sits directly below the hero instead. */
+.fb-hero + .journal-category-nav-section {
+  padding-top: 48px;
 }
 
 .journal-category-nav {
