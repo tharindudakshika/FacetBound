@@ -1573,7 +1573,7 @@
 }
 
 .pdp-story__inner {
-  max-width: 1100px;
+  max-width: var(--content-max);
   margin: 0 auto;
   text-align: center;
 }
