@@ -519,3 +519,20 @@ mark.order-status {
   align-items: center;
   justify-content: space-between;
 }
+
+/* Order details "Billing address" / "Shipping address" columns: WooCommerce's
+   own CSS zeroes out the gap between them (column__title has margin-top:0,
+   the address box has margin-bottom:0) since on desktop they sit side by
+   side. On mobile they stack into one column with no gap at all, so give
+   the heading an explicit bottom margin and match it above the next column
+   once they're stacked. */
+.woocommerce-customer-details .woocommerce-column__title {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .woocommerce-customer-details .woocommerce-column + .woocommerce-column {
+    margin-top: 16px;
+  }
+}
