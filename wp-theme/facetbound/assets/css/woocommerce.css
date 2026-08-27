@@ -542,19 +542,22 @@ mark.order-status {
    other. Switch to flex with stretch so both columns — and the bordered
    <address> box filling each one — always match the taller one's height. */
 .woocommerce-customer-details .col2-set {
-  display: flex;
+  display: flex !important;
   flex-wrap: wrap;
   align-items: stretch;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
   gap: 24px;
 }
 
 .woocommerce-customer-details .col2-set .col-1,
 .woocommerce-customer-details .col2-set .col-2 {
-  float: none;
-  width: auto;
+  float: none !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
   min-width: 260px;
   flex: 1 1 0;
   display: flex;
