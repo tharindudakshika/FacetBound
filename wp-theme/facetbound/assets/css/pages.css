@@ -2263,6 +2263,15 @@
   overflow: hidden;
 }
 
+/* .container is a flex item here — without an explicit width it shrinks
+   to fit its own content, and its own margin:0 auto then centers that
+   shrunk box in the banner instead of the content hugging the page's
+   usual left edge. Force it to fill the row so centering has nothing
+   left to do. */
+.account-banner > .container {
+  width: 100%;
+}
+
 .account-banner-scrim {
   position: absolute;
   inset: 0;
