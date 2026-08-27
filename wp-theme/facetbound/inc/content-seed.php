@@ -73,6 +73,15 @@ function facetbound_seed_pages() {
     ]);
     update_post_meta($sustainability_id, '_wp_page_template', 'page-sustainability.php');
 
+    $contact_id = facetbound_page_exists_by_slug('contact') ?: wp_insert_post([
+        'post_title' => 'Contact Us',
+        'post_name' => 'contact',
+        'post_status' => 'publish',
+        'post_type' => 'page',
+        'post_content' => '',
+    ]);
+    update_post_meta($contact_id, '_wp_page_template', 'page-contact.php');
+
     update_option('show_on_front', 'page');
     update_option('page_on_front', $home_id);
     update_option('page_for_posts', $journal_id);

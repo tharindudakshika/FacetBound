@@ -3502,3 +3502,141 @@
     position: static;
   }
 }
+
+/* ============ Contact Page ============ */
+.contact-section {
+  background: var(--cream);
+  padding: 90px 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
+  gap: 64px;
+  align-items: start;
+}
+
+.contact-heading {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  color: var(--emerald);
+  font-weight: 600;
+  margin: 0 0 24px;
+}
+
+.contact-notice {
+  border-radius: 8px;
+  border-left: 3px solid var(--terracotta);
+  background: var(--cream-warm);
+  padding: 14px 18px;
+  font-size: 14px;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+
+.contact-notice--error {
+  border-left-color: #cc1818;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: 20px;
+}
+
+.contact-form__honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-field label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--emerald);
+  font-family: var(--font-sans);
+}
+
+.contact-field__required {
+  color: var(--terracotta);
+}
+
+.contact-field input,
+.contact-field textarea {
+  border: 1px solid var(--slate-border);
+  border-radius: 8px;
+  padding: 13px 16px;
+  font-size: 14px;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--cream);
+  resize: vertical;
+}
+.contact-field input:focus,
+.contact-field textarea:focus {
+  outline: none;
+  border-color: var(--terracotta);
+}
+
+.contact-form__submit {
+  align-self: flex-start;
+}
+
+.contact-info__body {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--slate-text);
+  margin: 0 0 24px;
+}
+
+.contact-info__whatsapp {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.contact-info__email {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--emerald) !important;
+  margin-bottom: 32px;
+}
+.contact-info__email:hover {
+  color: var(--terracotta) !important;
+}
+
+.contact-info__hours {
+  border-top: 1px solid var(--slate-light);
+  padding-top: 24px;
+}
+
+.contact-info__hours-label {
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.contact-info__hours p {
+  font-size: 14px;
+  color: var(--slate-text);
+  margin: 0;
+}
