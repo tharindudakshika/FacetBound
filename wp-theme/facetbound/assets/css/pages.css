@@ -1563,18 +1563,16 @@
 /* Visual story banner */
 .pdp-story {
   background: var(--emerald);
-  padding: 90px;
+  padding: 90px 0;
 }
 
 @media (max-width: 640px) {
   .pdp-story {
-    padding: 20px;
+    padding: 20px 0;
   }
 }
 
 .pdp-story__inner {
-  max-width: var(--content-max);
-  margin: 0 auto;
   text-align: center;
 }
 
