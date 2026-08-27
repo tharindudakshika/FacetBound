@@ -158,6 +158,27 @@ $contact_faqs = [
     </div>
 </section>
 
+<!-- WhatsApp VIP Concierge -->
+<section class="contact-whatsapp">
+    <div class="container">
+        <div class="contact-whatsapp__card">
+            <div class="contact-whatsapp__text">
+                <div class="contact-whatsapp__kicker">WhatsApp VIP Concierge</div>
+                <h2 class="contact-whatsapp__title">Need quick help with sizing or custom orders?</h2>
+                <p class="contact-whatsapp__body">Message our lead gemologist directly &mdash; typical reply inside studio hours is under an hour.</p>
+            </div>
+            <a
+                class="btn btn-emerald contact-whatsapp__btn"
+                href="https://wa.me/?text=<?php echo esc_attr(rawurlencode('Hi! I have a sizing or custom order question.')); ?>"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fa-brands fa-whatsapp"></i> Chat with Lead Gemologist
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- FAQ -->
 <section class="contact-faq">
     <div class="container">
