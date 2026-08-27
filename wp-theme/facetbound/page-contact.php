@@ -19,6 +19,21 @@ facetbound_hero([
 
 $contact_status = isset($_GET['contact']) ? sanitize_key(wp_unslash($_GET['contact'])) : '';
 $whatsapp_text = rawurlencode("Hi! I have a question about Facetbound.");
+
+$contact_faqs = [
+    [
+        'question' => 'How long does international delivery take via DHL/FedEx?',
+        'answer' => 'Orders ship free within 5–7 business days via fully insured DHL or FedEx express courier, with a tracking number sent the moment your parcel leaves the studio.',
+    ],
+    [
+        'question' => 'What if I order the wrong ring size?',
+        'answer' => "We offer an easy 30-day size exchange — just reach out via WhatsApp or the form above with your order number, and we'll arrange a free resize or replacement.",
+    ],
+    [
+        'question' => 'Do your gems come with authenticity certificates?',
+        'answer' => "Yes — every piece includes a Gemologist Authenticity Certificate confirming your stone's natural origin, cut, and carat weight.",
+    ],
+];
 ?>
 
 <section class="contact-section">
@@ -92,6 +107,29 @@ $whatsapp_text = rawurlencode("Hi! I have a question about Facetbound.");
                 <div class="contact-info__hours-label">Response Time</div>
                 <p>We typically reply within 24 hours, Monday&ndash;Saturday.</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="contact-faq">
+    <div class="container">
+        <div class="section-head">
+            <div class="kicker" style="text-align:center">Before You Write</div>
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+            <?php foreach ($contact_faqs as $faq_index => $faq) : ?>
+                <div class="faq-item<?php echo 0 === $faq_index ? ' faq-item--open' : ''; ?>">
+                    <button type="button" class="faq-question">
+                        <span><?php echo esc_html($faq['question']); ?></span>
+                        <i class="fa-solid <?php echo 0 === $faq_index ? 'fa-minus' : 'fa-plus'; ?> faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p><?php echo esc_html($faq['answer']); ?></p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>

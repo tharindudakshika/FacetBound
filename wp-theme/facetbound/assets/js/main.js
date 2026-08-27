@@ -96,4 +96,32 @@
       }
     });
   }
+
+  // FAQ accordion: one item open at a time; clicking the open item closes it.
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function (item) {
+    var question = item.querySelector('.faq-question');
+    var icon = item.querySelector('.faq-icon');
+    if (!question) {
+      return;
+    }
+    question.addEventListener('click', function () {
+      var isOpen = item.classList.contains('faq-item--open');
+      faqItems.forEach(function (other) {
+        other.classList.remove('faq-item--open');
+        var otherIcon = other.querySelector('.faq-icon');
+        if (otherIcon) {
+          otherIcon.classList.remove('fa-minus');
+          otherIcon.classList.add('fa-plus');
+        }
+      });
+      if (!isOpen) {
+        item.classList.add('faq-item--open');
+        if (icon) {
+          icon.classList.remove('fa-plus');
+          icon.classList.add('fa-minus');
+        }
+      }
+    });
+  });
 })();
