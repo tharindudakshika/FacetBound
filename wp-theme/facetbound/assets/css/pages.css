@@ -1560,6 +1560,12 @@
   padding: 90px;
 }
 
+@media (max-width: 640px) {
+  .pdp-story {
+    padding: 20px;
+  }
+}
+
 .pdp-story__inner {
   max-width: 1100px;
   margin: 0 auto;
