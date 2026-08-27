@@ -539,7 +539,8 @@ mark.order-status {
 .woocommerce-account .addresses .title {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 10px;
 }
 
 /* Order details "Billing address" / "Shipping address" columns: WooCommerce's
