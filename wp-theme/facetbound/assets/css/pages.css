@@ -2818,6 +2818,15 @@
   padding: 0 0 100px;
 }
 
+/* On Search Results / author / date archives, the grid sits directly below
+   the hero with no category-nav bar in between (unlike category/tag
+   archives), so it needs its own top space to match the bottom padding
+   above — otherwise the cards touch the banner. */
+.fb-hero + .journal-grid-section,
+.journal-page-header + .journal-grid-section {
+  padding-top: 100px;
+}
+
 .journal-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
