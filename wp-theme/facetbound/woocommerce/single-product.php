@@ -298,7 +298,7 @@ if (have_posts()) :
         <!-- Visual Story Banner -->
         <div class="pdp-story">
             <div class="pdp-story__inner">
-                <div class="kicker">Crafted with Intention</div>
+                <h2 class="pdp-story__title">Crafted with Intention</h2>
                 <div class="pdp-story__grid">
                     <?php facetbound_placeholder('dark', 'macro: hammering texture into silver', ['style' => 'border-radius:14px;height:280px']); ?>
                     <?php facetbound_placeholder('dark', 'macro: hammering texture into silver', ['style' => 'border-radius:14px;height:280px']); ?>

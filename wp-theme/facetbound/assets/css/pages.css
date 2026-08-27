@@ -1566,6 +1566,14 @@
   text-align: center;
 }
 
+.pdp-story__title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.5vw, 42px);
+  color: var(--cream);
+  margin: 0 0 32px;
+  font-weight: 600;
+}
+
 .pdp-story__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
