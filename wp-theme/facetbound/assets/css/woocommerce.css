@@ -543,6 +543,15 @@ mark.order-status {
   justify-content: start;
 }
 
+/* My Account > Addresses: WooCommerce stacks the Billing/Shipping boxes
+   into one column on mobile with no gap between them (its float layout
+   only has a horizontal margin for the side-by-side desktop layout). */
+@media (max-width: 768px) {
+  .woocommerce-account .addresses.col2-set .col-2 {
+    margin-top: 24px;
+  }
+}
+
 /* Order details "Billing address" / "Shipping address" columns: WooCommerce's
    own CSS zeroes out the gap between them (column__title has margin-top:0,
    the address box has margin-bottom:0) since on desktop they sit side by
