@@ -536,34 +536,3 @@ mark.order-status {
     margin-top: 16px;
   }
 }
-
-/* WooCommerce lays these two columns out with float (.col-1/.col-2), so
-   their heights never match when one address has more lines than the
-   other. Switch to flex with stretch so both columns — and the bordered
-   <address> box filling each one — always match the taller one's height. */
-.woocommerce-customer-details .col2-set {
-  display: flex !important;
-  flex-wrap: wrap;
-  align-items: stretch;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  gap: 24px;
-}
-
-.woocommerce-customer-details .col2-set .col-1,
-.woocommerce-customer-details .col2-set .col-2 {
-  float: none !important;
-  width: auto !important;
-  max-width: none !important;
-  margin: 0 !important;
-  min-width: 260px;
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.woocommerce-customer-details .col2-set address {
-  flex: 1;
-}
