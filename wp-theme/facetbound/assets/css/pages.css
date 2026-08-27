@@ -1495,6 +1495,13 @@
   border-bottom: 1px solid #ddd6c8;
 }
 
+@media (max-width: 640px) {
+  .pdp-tabs {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 .pdp-tab {
   padding: 14px 22px;
   font-family: var(--font-sans);
