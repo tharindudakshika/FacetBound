@@ -93,7 +93,7 @@ while (have_posts()) : the_post();
                     <div class="article-widget-wordmark">Facetbound</div>
                     <p class="article-widget-blurb">
                         Mined by Nature, Shaped by Hand. Ethically sourced Sri Lankan gemstones set in 925
-                        sterling silver.
+                        sterling silver to celebrate your cherished personal milestones.
                     </p>
                     <a href="<?php echo esc_url(home_url('/our-story/')); ?>" class="article-widget-link">
                         Our Story <i class="fa-solid fa-arrow-right"></i>
