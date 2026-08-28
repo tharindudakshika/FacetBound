@@ -11,17 +11,17 @@ $facetbound_sourcing_rows = [
     [
         'icon' => 'fa-solid fa-hand-holding-heart',
         'title' => 'Direct Mine-to-Hand',
-        'desc' => "Sourcing natural Spinel gemstones directly from Sri Lanka's traditional miners without intermediaries.",
+        'desc' => 'Sourcing natural Sri Lankan gemstones directly from traditional local miners without intermediaries — ensuring complete provenance for your milestone piece.',
     ],
     [
         'icon' => 'fa-solid fa-water',
         'title' => 'No Industrial Mass Mining',
-        'desc' => 'Using strictly traditional, artisanal small-scale mining methods that prevent environmental and river damage.',
+        'desc' => 'Utilizing strictly traditional, artisanal small-scale mining methods that protect surrounding ecosystems and riverbeds.',
     ],
     [
         'icon' => 'fa-solid fa-gem',
         'title' => 'Untreated Natural Spinels',
-        'desc' => 'Utilizing exclusively 100% natural Spinels with zero artificial heat or chemical treatments.',
+        'desc' => 'Utilizing exclusively 100% natural Sri Lankan stones with zero artificial heat or chemical treatments — preserving the raw soul of the earth.',
     ],
 ];
 
