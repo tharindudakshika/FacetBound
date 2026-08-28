@@ -251,7 +251,8 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
     <div class="container">
         <div class="section-head">
             <div class="kicker" style="text-align:center">Reviews</div>
-            <h2>Loved, Worldwide</h2>
+            <h2>Loved Across the Globe</h2>
+            <p class="section-head__body">Real stories from collectors who marked their cherished milestones with a piece of Sri Lankan earth.</p>
         </div>
         <div class="home-testimonials__grid">
             <?php foreach ( $fb_testimonials as $fb_t ) : ?>
@@ -269,8 +270,9 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
 <section class="home-instagram">
     <div class="container">
         <div class="home-instagram__head">
-            <h2 class="home-instagram__heading">Join the Community</h2>
+            <h2 class="home-instagram__heading">Join the Collectors&rsquo; Circle</h2>
             <a class="home-instagram__handle" href="#">@facetbound.jewelry</a>
+            <p class="home-instagram__desc">Share how you style your Sri Lankan earth. Tag us to be featured in our milestone gallery.</p>
         </div>
         <div class="home-instagram__grid">
             <?php for ( $fb_i = 1; $fb_i <= 6; $fb_i++ ) : ?>

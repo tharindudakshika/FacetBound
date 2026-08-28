@@ -423,6 +423,13 @@
   font-size: 14px;
 }
 
+.home-instagram__desc {
+  color: var(--slate-text);
+  font-size: 15px;
+  max-width: 480px;
+  margin: 10px auto 0;
+}
+
 .home-instagram__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
