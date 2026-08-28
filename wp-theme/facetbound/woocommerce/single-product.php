@@ -340,7 +340,11 @@ if (have_posts()) :
         <!-- You May Also Like -->
         <div class="pdp-crosssell">
             <div class="container">
-                <h2 class="pdp-crosssell__title">You May Also Like</h2>
+                <div class="section-head">
+                    <div class="kicker" style="text-align:center">Pair With Your Moment</div>
+                    <h2 class="pdp-crosssell__title">You May Also Cherish</h2>
+                    <p class="section-head__body">Complement your ring or discover another piece of Sri Lankan earth, handcrafted to celebrate life&rsquo;s special milestones.</p>
+                </div>
                 <div class="pdp-crosssell__grid">
                     <?php
                     $related_ids = wc_get_related_products($product->get_id(), 3);
