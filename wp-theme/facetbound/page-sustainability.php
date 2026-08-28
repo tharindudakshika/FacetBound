@@ -60,8 +60,9 @@ facetbound_hero([
     'min_height' => 520,
     'padding' => '110px',
     'caption' => "hero image: Ratnapura mine landscape + raw Spinel crystal macro",
+    'kicker' => "Ethical Commitment",
     'title' => "Ethically Sourced. Earth Consciously Crafted.",
-    'subtitle' => "Our commitment to Sri Lanka's heritage, local artisans, and zero-plastic sustainability.",
+    'subtitle' => "Our commitment to Sri Lanka’s heritage, local artisans, and zero-plastic sustainability — crafting conflict-free keepsakes to celebrate life’s most cherished milestones.",
     'max_width' => 660,
 ]);
 ?>
