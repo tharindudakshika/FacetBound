@@ -26,11 +26,12 @@ facetbound_hero([
         <?php facetbound_placeholder('light', "pit mining scene / gemstone market in Ratnapura", ['boxed' => true, 'style' => 'border-radius:14px;min-height:420px']); ?>
         <div>
             <div class="kicker">The Genesis</div>
-            <h2>Sri Lanka has been the realm of the world&rsquo;s finest gemstones for centuries.</h2>
+            <h2>Sri Lanka Has Been the Realm of the World&rsquo;s Finest Gemstones for Centuries.</h2>
             <p>
-                Facetbound was founded to offer the world hand-crafted rings that preserve the unique character
-                and soul of each natural stone &mdash; standing as an alternative to mass-produced, identical
-                jewelry.
+                Facetbound was founded to offer the world handcrafted 925 sterling silver rings that preserve
+                the unique character, raw beauty, and soul of each natural Sri Lankan crystal. Standing as an
+                authentic alternative to mass-produced, identical jewelry, every piece is shaped to commemorate
+                life&rsquo;s most meaningful personal milestones.
             </p>
         </div>
     </div>
