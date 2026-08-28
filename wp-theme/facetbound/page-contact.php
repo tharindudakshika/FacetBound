@@ -12,8 +12,9 @@ get_header();
 facetbound_hero([
     'min_height' => 260,
     'padding' => '56px',
-    'title' => 'Contact Us',
-    'subtitle' => "Questions about sizing, custom engraving, or an order? We're here to help.",
+    'kicker' => "We're Here to Help",
+    'title' => 'Questions About Sizing, Custom Engraving, or Your Milestone Order?',
+    'subtitle' => 'Whether fine-tuning your fit or crafting a bespoke piece of Sri Lankan earth, our team is here to assist your personal journey.',
     'max_width' => 640,
 ]);
 
