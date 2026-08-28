@@ -20,7 +20,7 @@ $facetbound_sourcing_rows = [
     ],
     [
         'icon' => 'fa-solid fa-gem',
-        'title' => 'Untreated Natural Spinels',
+        'title' => 'Untreated Natural Gemstones',
         'desc' => 'Utilizing exclusively 100% natural Sri Lankan stones with zero artificial heat or chemical treatments — preserving the raw soul of the earth.',
     ],
 ];
