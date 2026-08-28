@@ -25,8 +25,9 @@ facetbound_hero([
     'min_height' => 260,
     'padding' => '56px',
     'caption' => 'hero image: artisan workbench, loose gemstones and silversmithing tools',
-    'title' => 'The Facetbound Journal',
-    'subtitle' => "Notes on Sri Lankan gemology, artisan silversmithing, and the raw beauty of earth's creations.",
+    'kicker' => 'The Facetbound Journal',
+    'title' => 'Notes From the Mine &amp; Studio',
+    'subtitle' => 'Insights on natural Sri Lankan gemology, ethical silversmithing, and how to choose the perfect gemstone ring to commemorate your life’s meaningful milestones.',
     'max_width' => 640,
 ]);
 ?>
