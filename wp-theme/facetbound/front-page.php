@@ -138,9 +138,9 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
     );
     ?>
     <div class="home-story__copy">
-        <div class="kicker">Our Story</div>
-        <h2 class="home-story__heading">The Raw &amp; Refined Journey</h2>
-        <p class="home-story__body">From the depths of Sri Lankan earth to your finger, each stone is hand-selected, cut, and set by artisan hands. What begins as raw, unpolished texture is slowly transformed — faceted, tempered, refined — into a quiet luxury meant to be worn every day.</p>
+        <div class="kicker">Our Story &amp; Heritage</div>
+        <h2 class="home-story__heading">Mined by Nature. Shaped by Hand.</h2>
+        <p class="home-story__body">From the quiet depths of Sri Lankan riverbeds to your hands, every natural Spinel and gemstone is thoughtfully sourced and set by local artisans. What begins as a raw piece of earth is slowly transformed into a refined keepsake &mdash; crafted in solid 925 sterling silver to commemorate life&rsquo;s most meaningful personal milestones.</p>
         <a href="<?php echo esc_url( home_url( '/our-story/' ) ); ?>" class="home-story__link">Discover Our Roots &rarr;</a>
     </div>
 </section>
