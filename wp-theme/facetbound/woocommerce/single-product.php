@@ -42,11 +42,12 @@ if (have_posts()) :
          * Hero
          * ----------------------------------------------------------- */
         facetbound_hero([
-            'min_height' => 320,
-            'padding' => '64px',
-            'caption' => $product->get_name() . ', hand wear',
-            'title' => $product->get_name(),
-            'subtitle' => $product->get_short_description(),
+            'min_height' => 420,
+            'padding' => '80px',
+            'caption' => 'hero image: curated ring collection, studio flat lay',
+            'kicker' => 'The Handcrafted Collection',
+            'title' => 'Mined by Nature. Shaped by Hand.',
+            'subtitle' => 'Explore our collection of natural Sri Lankan gemstones set in solid 925 sterling silver — handcrafted to commemorate life’s most cherished milestones.',
             'max_width' => 640,
         ]);
         ?>
