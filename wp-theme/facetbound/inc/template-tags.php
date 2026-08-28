@@ -68,6 +68,7 @@ function facetbound_hero($args) {
     $min_height = $args['min_height'] ?? 420;
     $padding = $args['padding'] ?? '80px';
     $caption = $args['caption'] ?? '';
+    $kicker = $args['kicker'] ?? '';
     $title = $args['title'] ?? '';
     $subtitle = $args['subtitle'] ?? '';
     $max_width = $args['max_width'] ?? 640;
@@ -82,6 +83,9 @@ function facetbound_hero($args) {
         <?php endif; ?>
         <div class="container fb-hero__content" style="padding:<?php echo esc_attr($padding); ?> var(--section-x)">
             <div style="max-width:<?php echo (int) $max_width; ?>px">
+                <?php if ($kicker) : ?>
+                    <div class="kicker"><?php echo esc_html($kicker); ?></div>
+                <?php endif; ?>
                 <h1 class="fb-hero__title"><?php echo wp_kses_post($title); ?></h1>
                 <?php if ($subtitle) : ?>
                     <p class="fb-hero__subtitle"><?php echo esc_html($subtitle); ?></p>
