@@ -40,17 +40,17 @@ $facetbound_packaging_cards = [
     [
         'icon' => 'fa-solid fa-box',
         'title' => 'Octagonal Teak Wood Box',
-        'desc' => 'Reusable octagonal boxes crafted from local teak wood, replacing plastic boxes.',
+        'desc' => 'Reusable octagonal boxes crafted from local teak wood, replacing traditional plastic boxes to provide a lifetime keepsake for your milestone ring.',
     ],
     [
         'icon' => 'fa-solid fa-droplet',
         'title' => 'Terracotta & Natural Scent',
-        'desc' => 'Natural terracotta board and pure Mitti Attar fragrance, replacing plastic foam inserts.',
+        'desc' => 'Natural terracotta board and pure Mitti Attar fragrance (the scent of rain-soaked earth), replacing plastic foam inserts with authentic Sri Lankan elements.',
     ],
     [
         'icon' => 'fa-solid fa-leaf',
         'title' => 'Honeycomb Kraft Wrap',
-        'desc' => '100% biodegradable hexagonal paper wrap for secure courier shipping instead of plastic bubble wrap.',
+        'desc' => '100% biodegradable hexagonal paper wrap for secure courier shipping, eliminating single-use plastic bubble wrap completely.',
     ],
 ];
 
@@ -115,6 +115,7 @@ facetbound_hero([
         <div class="sustain-packaging__head">
             <div class="kicker">Packaging</div>
             <h2 class="sustain-packaging__title">100% Plastic-Free Packaging</h2>
+            <p class="sustain-packaging__desc">Designed to safely deliver and honor your most cherished milestones, every order is presented in 100% plastic-free, sustainably crafted packaging.</p>
         </div>
         <?php facetbound_placeholder('light', "flat-lay: octagonal wooden box, terracotta board, honeycomb paper wrap", ['boxed' => true, 'style' => 'border-radius:16px;height:380px;margin-bottom:32px']); ?>
         <div class="sustain-packaging__grid">
