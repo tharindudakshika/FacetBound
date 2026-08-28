@@ -17,12 +17,17 @@ get_header();
 ?>
 
 <?php
+$hero_kicker = '';
+
 if (is_search()) {
-    $hero_title = 'Search Results';
+    $hero_kicker = 'Search Results';
+    $hero_title = 'Discover Your Milestone Piece';
+    $found_posts = (int) $wp_query->found_posts;
     $hero_subtitle = sprintf(
-        /* translators: 1: number of results, 2: search query */
-        __('%1$s results found for "%2$s"', 'facetbound'),
-        (int) $wp_query->found_posts,
+        /* translators: 1: number of results, 2: "result" or "results", 3: search query */
+        __('Found %1$s handcrafted %2$s for "%3$s" — Sri Lankan earth set in solid 925 sterling silver to commemorate life\'s cherished moments.', 'facetbound'),
+        $found_posts,
+        _n('result', 'results', $found_posts, 'facetbound'),
         get_search_query()
     );
 } elseif (is_category() || is_tag() || is_tax()) {
@@ -42,6 +47,7 @@ if (is_search()) {
 facetbound_hero([
     'min_height' => 260,
     'padding' => '56px',
+    'kicker' => $hero_kicker,
     'title' => $hero_title,
     'subtitle' => $hero_subtitle,
     'max_width' => 640,
