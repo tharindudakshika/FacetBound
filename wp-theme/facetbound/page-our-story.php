@@ -13,8 +13,9 @@ facetbound_hero([
     'min_height' => 600,
     'padding' => '120px',
     'caption' => "cinematic close-up: raw gemstone from pit + hand-polished silver ring",
+    'kicker' => "Our Heritage &amp; Origins",
     'title' => "Unearthing Sri Lanka&rsquo;s Earth. Shaping Timeless Art.",
-    'subtitle' => "The story of how raw natural crystals from ancient riverbeds are transformed into modern artisanal jewellery.",
+    'subtitle' => "The story of how raw natural crystals from ancient riverbeds are handcrafted into modern 925 sterling silver keepsakes — designed to commemorate life’s most cherished milestones.",
     'max_width' => 660,
 ]);
 ?>
