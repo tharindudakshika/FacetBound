@@ -119,7 +119,8 @@ facetbound_hero([
             <h2>Our packaging is completely plastic-free.</h2>
             <p>
                 The moment you open the box, the scent of rain-soaked earth (Mitti Attar) immerses you in the
-                authentic experience of a Sri Lankan gemstone mine.
+                authentic experience of a Sri Lankan gemstone mine &mdash; presenting a handcrafted 925 sterling
+                silver keepsake built to commemorate life&rsquo;s most cherished milestones.
             </p>
         </div>
         <?php facetbound_placeholder('terra-dark', "octagonal emerald wooden box, terracotta board inserts, mitti attar", ['boxed' => true, 'style' => 'min-height:400px']); ?>
