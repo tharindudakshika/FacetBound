@@ -325,7 +325,7 @@
 
 .home-unboxing__item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
 }
 
@@ -335,11 +335,23 @@
   height: 7px;
   border-radius: 50%;
   background: var(--terracotta);
+  margin-top: 8px;
 }
 
 .home-unboxing__label {
   font-size: 14.5px;
   color: #edeae2;
+  line-height: 1.6;
+}
+
+.home-unboxing__item-title {
+  font-weight: 700;
+  color: #fff;
+}
+
+.home-unboxing__item-desc {
+  display: block;
+  color: #cbd5c9;
 }
 
 /* ---- Testimonials ---- */

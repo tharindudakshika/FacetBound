@@ -18,10 +18,22 @@ $fb_collection_captions = [
 ];
 
 $fb_unboxing_features = [
-    'Geometric emerald-green wooden keepsake box',
-    'Mitti attar — the scent of Sri Lankan earth',
-    'Hand-folded terracotta fabric inserts',
-    'Signed authenticity & provenance card',
+    [
+        'title' => 'Geometric Emerald-Green Wooden Keepsake Box',
+        'desc'  => 'Reusable solid wood housing for a lifetime of protection.',
+    ],
+    [
+        'title' => 'Infused with Mitti Attar',
+        'desc'  => 'Pure essential oil scent capturing the essence of rain-soaked Sri Lankan earth.',
+    ],
+    [
+        'title' => 'Hand-Folded Terracotta Inserts',
+        'desc'  => 'Plastic-free board and natural straw echoing our island’s mining pits.',
+    ],
+    [
+        'title' => 'Signed Authenticity & Provenance Card',
+        'desc'  => 'Certificate confirming 100% natural Sri Lankan gemstones and ethically artisan-crafted 925 silver.',
+    ],
 ];
 
 $fb_testimonials = [
@@ -206,14 +218,17 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
 <section class="home-unboxing">
     <div class="container home-unboxing__grid">
         <div>
-            <div class="kicker">Sustainability</div>
+            <div class="kicker">Sustainability &amp; Packaging</div>
             <h2 class="home-unboxing__heading">An Unboxing Rooted in Earth.</h2>
-            <p class="home-unboxing__body">100% plastic-free, from box to bubble wrap. Every order arrives in a geometric emerald-green wooden box with a hint of mitti attar — the scent of Sri Lankan earth after rain.</p>
+            <p class="home-unboxing__body">Handcrafted 925 sterling silver rings presented in 100% plastic-free packaging &mdash; designed to safely deliver and commemorate life&rsquo;s meaningful moments.</p>
             <div class="home-unboxing__list">
                 <?php foreach ( $fb_unboxing_features as $fb_feature ) : ?>
                     <div class="home-unboxing__item">
                         <span class="home-unboxing__dot"></span>
-                        <span class="home-unboxing__label"><?php echo esc_html( $fb_feature ); ?></span>
+                        <span class="home-unboxing__label">
+                            <span class="home-unboxing__item-title"><?php echo esc_html( $fb_feature['title'] ); ?>:</span>
+                            <span class="home-unboxing__item-desc"><?php echo esc_html( $fb_feature['desc'] ); ?></span>
+                        </span>
                     </div>
                 <?php endforeach; ?>
             </div>
