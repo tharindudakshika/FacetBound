@@ -103,9 +103,10 @@ facetbound_hero([
                     woocommerce_product_loop_end();
                     ?>
                     <div class="shopcol-trust-banner">
-                        <h3 class="shopcol-trust-banner__title">Unsure About Your Ring Size?</h3>
+                        <div class="kicker" style="text-align:center">Perfect Fit Guarantee</div>
+                        <h3 class="shopcol-trust-banner__title">Unsure About Your Milestone Ring Size?</h3>
                         <p class="shopcol-trust-banner__body">
-                            We offer surprise-proof open-gap designs and a comprehensive US Sizing Guide with free exchanges.
+                            We offer surprise-proof open-gap designs and a comprehensive US Sizing Guide with free size exchanges &mdash; ensuring a perfect fit for your special moment.
                         </p>
                         <button type="button" class="btn btn-terracotta">View Sizing Guide</button>
                     </div>
