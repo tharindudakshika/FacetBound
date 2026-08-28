@@ -257,25 +257,25 @@ function facetbound_seed_products_when_ready() {
     facetbound_ensure_attribute('ring-size', 'Ring Size', $size_terms);
 
     $collections = [
-        'blue-topaz-collection' => 'Blue Topaz Collection',
-        'artisan-textured-bands' => 'Artisan Textured Bands',
-        'minimalist-solitaires' => 'Minimalist Solitaires',
+        'birthdays-personal-milestones' => ['name' => 'Birthdays & Personal Milestones', 'description' => 'Celebrating another year of growth.'],
+        'anniversaries-commitments' => ['name' => 'Anniversaries & Commitments', 'description' => 'Hand-hammered rustic silver bands representing enduring journeys.'],
+        'self-reward-achievements' => ['name' => 'Self-Reward & Achievements', 'description' => 'Graduations, promotions, or self-love treats to honor personal progress.'],
     ];
     $cat_ids = [];
-    foreach ($collections as $slug => $name) {
+    foreach ($collections as $slug => $collection) {
         $term = term_exists($slug, 'product_cat');
-        $cat_ids[$slug] = $term ? (int) $term['term_id'] : (int) wp_insert_term($name, 'product_cat', ['slug' => $slug])['term_id'];
+        $cat_ids[$slug] = $term ? (int) $term['term_id'] : (int) wp_insert_term($collection['name'], 'product_cat', ['slug' => $slug, 'description' => $collection['description']])['term_id'];
     }
 
     $products = [
-        ['slug' => 'raw-edge-blue-topaz-solitaire', 'name' => 'The Raw-Edge Blue Topaz Solitaire Ring', 'gem' => 'Natural Blue Topaz', 'low' => 150, 'high' => 175, 'badge' => 'Ethically Sourced', 'cat' => 'blue-topaz-collection', 'featured' => true],
-        ['slug' => 'hammered-spinel-band', 'name' => 'Hammered Spinel Band', 'gem' => 'Natural Spinel', 'low' => 155, 'high' => 170, 'badge' => 'Natural Stone', 'cat' => 'artisan-textured-bands'],
-        ['slug' => 'tree-bark-amethyst-ring', 'name' => 'Tree Bark Amethyst Ring', 'gem' => 'Natural Amethyst', 'low' => 160, 'high' => 175, 'badge' => 'Ethically Sourced', 'cat' => 'artisan-textured-bands'],
-        ['slug' => 'open-gap-moonstone-ring', 'name' => 'Open-Gap Moonstone Ring', 'gem' => 'Natural Moonstone', 'low' => 150, 'high' => 165, 'badge' => 'Natural Stone', 'cat' => 'minimalist-solitaires'],
-        ['slug' => 'high-polish-tourmaline-solitaire', 'name' => 'High-Polish Tourmaline Solitaire', 'gem' => 'Natural Tourmaline', 'low' => 165, 'high' => 175, 'badge' => 'Ethically Sourced', 'cat' => 'minimalist-solitaires'],
-        ['slug' => 'textured-band-blue-topaz-ring', 'name' => 'Textured Band Blue Topaz Ring', 'gem' => 'Natural Blue Topaz', 'low' => 158, 'high' => 172, 'badge' => 'Natural Stone', 'cat' => 'blue-topaz-collection'],
-        ['slug' => 'hammered-amethyst-solitaire', 'name' => 'Hammered Amethyst Solitaire', 'gem' => 'Natural Amethyst', 'low' => 150, 'high' => 168, 'badge' => 'Ethically Sourced', 'cat' => 'artisan-textured-bands'],
-        ['slug' => 'adjustable-spinel-band', 'name' => 'Adjustable Spinel Band', 'gem' => 'Natural Spinel', 'low' => 155, 'high' => 175, 'badge' => 'Natural Stone', 'cat' => 'artisan-textured-bands'],
+        ['slug' => 'raw-edge-blue-topaz-solitaire', 'name' => 'The Raw-Edge Blue Topaz Solitaire Ring', 'gem' => 'Natural Blue Topaz', 'low' => 150, 'high' => 175, 'badge' => 'Ethically Sourced', 'cat' => 'birthdays-personal-milestones', 'featured' => true],
+        ['slug' => 'hammered-spinel-band', 'name' => 'Hammered Spinel Band', 'gem' => 'Natural Spinel', 'low' => 155, 'high' => 170, 'badge' => 'Natural Stone', 'cat' => 'anniversaries-commitments'],
+        ['slug' => 'tree-bark-amethyst-ring', 'name' => 'Tree Bark Amethyst Ring', 'gem' => 'Natural Amethyst', 'low' => 160, 'high' => 175, 'badge' => 'Ethically Sourced', 'cat' => 'anniversaries-commitments'],
+        ['slug' => 'open-gap-moonstone-ring', 'name' => 'Open-Gap Moonstone Ring', 'gem' => 'Natural Moonstone', 'low' => 150, 'high' => 165, 'badge' => 'Natural Stone', 'cat' => 'self-reward-achievements'],
+        ['slug' => 'high-polish-tourmaline-solitaire', 'name' => 'High-Polish Tourmaline Solitaire', 'gem' => 'Natural Tourmaline', 'low' => 165, 'high' => 175, 'badge' => 'Ethically Sourced', 'cat' => 'self-reward-achievements'],
+        ['slug' => 'textured-band-blue-topaz-ring', 'name' => 'Textured Band Blue Topaz Ring', 'gem' => 'Natural Blue Topaz', 'low' => 158, 'high' => 172, 'badge' => 'Natural Stone', 'cat' => 'birthdays-personal-milestones'],
+        ['slug' => 'hammered-amethyst-solitaire', 'name' => 'Hammered Amethyst Solitaire', 'gem' => 'Natural Amethyst', 'low' => 150, 'high' => 168, 'badge' => 'Ethically Sourced', 'cat' => 'anniversaries-commitments'],
+        ['slug' => 'adjustable-spinel-band', 'name' => 'Adjustable Spinel Band', 'gem' => 'Natural Spinel', 'low' => 155, 'high' => 175, 'badge' => 'Natural Stone', 'cat' => 'anniversaries-commitments'],
     ];
 
     foreach ($products as $p) {

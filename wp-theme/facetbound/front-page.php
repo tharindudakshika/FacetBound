@@ -12,17 +12,9 @@ if (!defined('ABSPATH')) {
 get_header();
 
 $fb_collection_captions = [
-    'blue-topaz-collection'   => 'blue topaz ring, studio shot',
-    'artisan-textured-bands'  => 'hammered & tree bark texture band',
-    'minimalist-solitaires'   => 'minimalist solitaire ring',
-];
-
-// Homepage-only display labels — the underlying product category names
-// (used in URLs, breadcrumbs, and the Shop page elsewhere) are unchanged.
-$fb_collection_labels = [
-    'blue-topaz-collection'   => 'Birthdays & Personal Milestones',
-    'artisan-textured-bands'  => 'Anniversaries & Commitments',
-    'minimalist-solitaires'   => 'Self-Reward & Achievements',
+    'birthdays-personal-milestones' => 'blue topaz ring, studio shot',
+    'anniversaries-commitments'     => 'hammered & tree bark texture band',
+    'self-reward-achievements'      => 'minimalist solitaire ring',
 ];
 
 $fb_unboxing_features = [
@@ -105,7 +97,7 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
                 ]
             );
             if ( ! is_wp_error( $fb_collection_terms ) && ! empty( $fb_collection_terms ) ) {
-                // Preserve the canonical order (Blue Topaz, Artisan Textured Bands, Minimalist Solitaires).
+                // Preserve the canonical order (Birthdays, Anniversaries, Self-Reward).
                 $fb_terms_by_slug = [];
                 foreach ( $fb_collection_terms as $fb_term ) {
                     $fb_terms_by_slug[ $fb_term->slug ] = $fb_term;
@@ -120,7 +112,7 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
                         <div class="home-collection-card__img-wrap">
                             <?php facetbound_placeholder( 'light', $fb_caption ); ?>
                         </div>
-                        <h3 class="home-collection-card__title"><?php echo esc_html( $fb_collection_labels[ $fb_slug ] ?? $fb_term->name ); ?></h3>
+                        <h3 class="home-collection-card__title"><?php echo esc_html( $fb_term->name ); ?></h3>
                     </a>
                     <?php
                 }
