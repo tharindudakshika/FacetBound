@@ -2966,8 +2966,8 @@
 
 /* ---- Newsletter ---- */
 .journal-newsletter {
-  background: var(--emerald);
-  padding: 100px;
+  background: var(--cream-warm);
+  padding: 80px var(--section-x);
   text-align: center;
 }
 
@@ -2978,17 +2978,17 @@
 
 .journal-newsletter-inner h2 {
   font-family: var(--font-serif);
-  font-size: clamp(28px, 3.5vw, 40px);
+  font-size: clamp(24px, 3vw, 32px);
   font-weight: 600;
-  color: var(--sterling);
-  margin: 0 0 18px;
+  color: var(--emerald);
+  margin: 0 0 14px;
 }
 
 .journal-newsletter-inner p {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
-  color: var(--sage-text);
-  margin: 0 0 34px;
+  color: var(--slate-text);
+  margin: 0 0 28px;
 }
 
 .journal-newsletter-form {
@@ -3002,16 +3002,16 @@
   flex: 1;
   min-width: 240px;
   max-width: 360px;
-  background: transparent;
-  border: 1px solid var(--sterling);
+  background: #fff;
+  border: 1px solid var(--slate-border);
   border-radius: 10px;
   padding: 15px 18px;
-  color: var(--sterling);
+  color: var(--ink);
   font-size: 14px;
 }
 
 .journal-newsletter-input::placeholder {
-  color: var(--sage-text);
+  color: var(--slate-text);
 }
 
 .journal-newsletter-btn {
@@ -3030,6 +3030,7 @@
 
 .journal-newsletter-btn:hover {
   background: var(--terracotta-hover);
+  color: var(--cream);
 }
 /* ============ Journal Article Page ============ */
 
