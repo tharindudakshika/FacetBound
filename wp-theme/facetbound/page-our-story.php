@@ -73,19 +73,22 @@ facetbound_hero([
         <div class="story-ethics-box">
             <div class="kicker">Sustainability</div>
             <h2>Ethical Sourcing &amp; Fair Trade</h2>
+            <p class="story-ethics-desc">Every piece of Sri Lankan earth is mined and set with absolute respect for nature and human hands &mdash; crafting conflict-free keepsakes to celebrate life&rsquo;s most cherished milestones.</p>
             <div class="story-ethics-points">
                 <div class="story-ethics-point">
                     <h4>No Mass Mining</h4>
                     <p>
-                        Utilizing strictly ethical sourcing methods that protect the environment and ensure fair
-                        wages for local miners.
+                        Utilizing strictly ethical, small-scale sourcing methods that protect riverbed ecosystems
+                        and ensure fair trade wages for local miners. What we collect is naturally formed,
+                        ensuring your milestone ring is as sustainable as it is rare.
                     </p>
                 </div>
                 <div class="story-ethics-point">
                     <h4>Authenticity Guaranteed</h4>
                     <p>
-                        Every ring is delivered with a Gemological Authenticity Certificate and a tag signed by the
-                        artisan.
+                        Every ring is delivered with an official Gemological Authenticity Certificate and a
+                        provenance tag hand-signed by the master silversmith &mdash; certifying 100% natural Sri
+                        Lankan gemstones set in solid 925 sterling silver.
                     </p>
                 </div>
             </div>
