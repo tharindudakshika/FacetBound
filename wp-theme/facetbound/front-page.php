@@ -17,6 +17,14 @@ $fb_collection_captions = [
     'minimalist-solitaires'   => 'minimalist solitaire ring',
 ];
 
+// Homepage-only display labels — the underlying product category names
+// (used in URLs, breadcrumbs, and the Shop page elsewhere) are unchanged.
+$fb_collection_labels = [
+    'blue-topaz-collection'   => 'Birthdays & Personal Milestones',
+    'artisan-textured-bands'  => 'Anniversaries & Commitments',
+    'minimalist-solitaires'   => 'Self-Reward & Achievements',
+];
+
 $fb_unboxing_features = [
     'Geometric emerald-green wooden keepsake box',
     'Mitti attar — the scent of Sri Lankan earth',
@@ -112,7 +120,7 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
                         <div class="home-collection-card__img-wrap">
                             <?php facetbound_placeholder( 'light', $fb_caption ); ?>
                         </div>
-                        <h3 class="home-collection-card__title"><?php echo esc_html( $fb_term->name ); ?></h3>
+                        <h3 class="home-collection-card__title"><?php echo esc_html( $fb_collection_labels[ $fb_slug ] ?? $fb_term->name ); ?></h3>
                     </a>
                     <?php
                 }
