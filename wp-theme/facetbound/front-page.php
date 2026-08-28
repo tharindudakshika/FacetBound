@@ -47,8 +47,8 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
     ?>
     <div class="home-hero__copy">
         <h1 class="home-hero__title">Mind by Nature. Shaped by Hand.</h1>
-        <p class="home-hero__subtitle">Ethically sourced natural Sri Lankan gemstones crafted into 925 sterling silver rings.</p>
-        <a href="<?php echo $fb_shop_url; ?>" class="btn btn-terracotta home-hero__cta">Explore Collections</a>
+        <p class="home-hero__subtitle">Mark your personal milestones with handcrafted Sri Lankan earth set in solid 925 sterling silver.</p>
+        <a href="<?php echo $fb_shop_url; ?>" class="btn btn-terracotta home-hero__cta">Explore Milestone Collections</a>
     </div>
 </section>
 
