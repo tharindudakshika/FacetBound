@@ -300,14 +300,16 @@ if (have_posts()) :
         <div class="pdp-story">
             <div class="container pdp-story__inner">
                 <h2 class="pdp-story__title">Crafted with Intention</h2>
+                <p class="pdp-story__intro">Every ring is individually hand-carved and set to ensure your milestone keepsake carries its own unique identity.</p>
                 <div class="pdp-story__grid">
                     <?php facetbound_placeholder('dark', 'macro: hammering texture into silver', ['style' => 'border-radius:14px;height:280px']); ?>
                     <?php facetbound_placeholder('dark', 'macro: hammering texture into silver', ['style' => 'border-radius:14px;height:280px']); ?>
                     <?php facetbound_placeholder('dark', 'macro: stone-setting process', ['style' => 'border-radius:14px;height:280px']); ?>
                 </div>
                 <p class="pdp-story__copy">
-                    No two rings are 100% identical. The subtle hammer marks on the silver and the unique natural inclusions inside the
-                    crystal ensure your piece is uniquely yours.
+                    No two rings are 100% identical. The subtle hammer marks on the solid 925 sterling silver and the unique natural
+                    inclusions inside each crystal ensure your piece is uniquely yours &mdash; an irreplaceable keepsake to commemorate
+                    life&rsquo;s most cherished milestones.
                 </p>
             </div>
         </div>
