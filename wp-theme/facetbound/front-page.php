@@ -113,6 +113,9 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
                             <?php facetbound_placeholder( 'light', $fb_caption ); ?>
                         </div>
                         <h3 class="home-collection-card__title"><?php echo esc_html( $fb_term->name ); ?></h3>
+                        <?php if ( $fb_term->description ) : ?>
+                            <p class="home-collection-card__desc"><?php echo esc_html( $fb_term->description ); ?></p>
+                        <?php endif; ?>
                     </a>
                     <?php
                 }

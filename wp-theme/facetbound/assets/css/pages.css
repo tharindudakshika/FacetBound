@@ -117,6 +117,12 @@
   margin: 0;
 }
 
+.home-collection-card__desc {
+  font-size: 14px;
+  color: var(--slate-text);
+  margin: 6px 0 0;
+}
+
 /* ---- Brand Story ---- */
 .home-story {
   background: var(--emerald-deep);
