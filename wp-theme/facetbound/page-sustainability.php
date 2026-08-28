@@ -28,11 +28,11 @@ $facetbound_sourcing_rows = [
 $facetbound_artisan_blocks = [
     [
         'title' => 'Fair Wages & Respect',
-        'desc' => 'Providing fair trade wages and proper compensation to local silversmiths and lapidaries.',
+        'desc' => 'Providing fair trade wages, safe workshop environments, and proper compensation to local silversmiths and lapidaries — honoring the human hands that craft your milestone keepsake.',
     ],
     [
         'title' => 'Preserving Heritage',
-        'desc' => 'Showcasing the generational artisanal heritage of Sri Lankan silversmiths to an international audience.',
+        'desc' => 'Showcasing the generational artisanal heritage of Sri Lankan silversmiths to an international audience, turning raw Sri Lankan earth into heirloom-quality 925 sterling silver rings.',
     ],
 ];
 
