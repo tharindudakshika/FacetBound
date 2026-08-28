@@ -165,8 +165,8 @@ $contact_faqs = [
         <div class="contact-whatsapp__card">
             <div class="contact-whatsapp__text">
                 <div class="kicker">WhatsApp VIP Concierge</div>
-                <h2 class="contact-whatsapp__title">Need quick help with sizing or custom orders?</h2>
-                <p class="contact-whatsapp__body">Message our lead gemologist directly &mdash; typical reply inside studio hours is under an hour.</p>
+                <h2 class="contact-whatsapp__title">Need Quick Guidance on Sizing or Custom Milestone Orders?</h2>
+                <p class="contact-whatsapp__body">Connect directly with our lead gemologist to fine-tune your fit or craft a custom piece &mdash; typical response inside studio hours is under an hour.</p>
             </div>
             <a
                 class="btn btn-emerald contact-whatsapp__btn"
