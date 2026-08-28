@@ -149,8 +149,9 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
 <section class="home-featured">
     <div class="container">
         <div class="section-head">
-            <div class="kicker" style="text-align:center">Bestsellers</div>
-            <h2>Featured Products</h2>
+            <div class="kicker" style="text-align:center">Curated for Your Milestones</div>
+            <h2>Featured Keepsakes</h2>
+            <p class="section-head__body">Handcrafted 925 sterling silver rings set with natural Sri Lankan gemstones, designed to celebrate life&rsquo;s most cherished moments.</p>
         </div>
         <div class="home-featured__grid">
             <?php
