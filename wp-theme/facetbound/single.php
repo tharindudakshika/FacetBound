@@ -81,8 +81,9 @@ while (have_posts()) : the_post();
                         <span class="article-author-kicker">Written by</span>
                         <div class="article-author-name">FACETBOUND Gemological Team</div>
                         <p class="article-author-text">
-                            Our in-house gemologists and silversmiths in Sri Lanka, writing on the stones
-                            they select and the bands they raise by hand.
+                            Our gemologists and master silversmiths in Sri Lanka is sharing expert insights
+                            on the untreated gemstones we source and the 925 sterling silver bands we shape
+                            by hand to commemorate life&rsquo;s most cherished milestones.
                         </p>
                     </div>
                 </div>
