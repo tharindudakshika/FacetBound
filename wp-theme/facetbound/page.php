@@ -35,8 +35,9 @@ if ($is_checkout_page) {
     facetbound_hero([
         'min_height' => 220,
         'padding' => '48px',
-        'title' => 'Secure Checkout',
-        'subtitle' => "You're one step away from your handcrafted Facetbound ring.",
+        'kicker' => '256-Bit Encrypted Secure Checkout',
+        'title' => 'Complete Your Milestone Order',
+        'subtitle' => 'You’re one step away from owning an authentic piece of Sri Lankan earth, handcrafted in solid 925 sterling silver to celebrate your special moment.',
         'max_width' => 640,
     ]);
 }
