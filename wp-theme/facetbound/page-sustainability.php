@@ -142,9 +142,11 @@ facetbound_hero([
 
 <!-- Closing CTA -->
 <section class="sustain-cta">
+    <div class="kicker" style="text-align:center">Committed to the Earth</div>
     <h2 class="sustain-cta__title">Wear Jewelry with a Soul</h2>
+    <p class="sustain-cta__desc">Choose 100% ethically sourced Sri Lankan earth set in solid 925 sterling silver &mdash; presented in plastic-free packaging to honor your most cherished milestones.</p>
     <a href="<?php echo esc_url(function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/shop/')); ?>" class="btn btn-terracotta">
-        Explore Ethical Spinel Collections
+        Explore Ethical Gem Collections
     </a>
 </section>
 
