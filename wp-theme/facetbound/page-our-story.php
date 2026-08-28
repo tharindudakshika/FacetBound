@@ -104,7 +104,9 @@ facetbound_hero([
         <h2>A Human Touch, in Every Setting</h2>
         <p>
             Every Facetbound piece carries a human touch. No machines, no factory lines &mdash; just dedicated
-            master craftsmen in Sri Lanka pouring their soul into every texture and setting.
+            master silversmiths in Sri Lanka pouring their soul into every texture and setting. Each hand-hammered
+            mark ensures your piece of Sri Lankan earth is uniquely crafted to mark your most cherished personal
+            milestones.
         </p>
     </div>
 </section>
