@@ -43,7 +43,7 @@ function facetbound_concierge_cta() {
     <section class="concierge">
         <div class="concierge__inner">
             <div class="kicker">Collector Concierge</div>
-            <h2>Need a Size Adjustment, Custom Engraving, or Milestone Query?</h2>
+            <h2>Need a Adjustment, Custom Engraving, or Milestone Query?</h2>
             <p class="concierge__desc">Whether crafting a bespoke piece to commemorate a milestone or fine-tuning your fit, our lead gemologist is here to help.</p>
             <div class="concierge__buttons">
                 <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn btn-terracotta">
