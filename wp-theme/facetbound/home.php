@@ -110,8 +110,8 @@ facetbound_hero([
     <div class="journal-newsletter-inner">
         <h2>Join the Collector&rsquo;s Circle</h2>
         <p>
-            Get early access to our rarest raw gemstone drops and exclusive artisan stories
-            directly to your inbox.
+            Get early access to our rarest raw gemstone drops, exclusive artisan stories, and
+            milestone collection releases directly to your inbox.
         </p>
         <form class="journal-newsletter-form" action="#" method="post">
             <input
