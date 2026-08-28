@@ -421,13 +421,15 @@
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 14px;
+  display: inline-block;
+  margin-top: 14px;
 }
 
 .home-instagram__desc {
   color: var(--slate-text);
   font-size: 15px;
   max-width: 480px;
-  margin: 10px auto 0;
+  margin: 0 auto;
 }
 
 .home-instagram__grid {

@@ -271,8 +271,8 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
     <div class="container">
         <div class="home-instagram__head">
             <h2 class="home-instagram__heading">Join the Collectors&rsquo; Circle</h2>
-            <a class="home-instagram__handle" href="#">@facetbound.jewelry</a>
             <p class="home-instagram__desc">Share how you style your Sri Lankan earth. Tag us to be featured in our milestone gallery.</p>
+            <a class="home-instagram__handle" href="#">@facetbound.jewelry</a>
         </div>
         <div class="home-instagram__grid">
             <?php for ( $fb_i = 1; $fb_i <= 6; $fb_i++ ) : ?>
