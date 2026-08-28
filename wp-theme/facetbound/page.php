@@ -25,8 +25,9 @@ if ($is_cart_page) {
     facetbound_hero([
         'min_height' => 220,
         'padding' => '48px',
-        'title' => 'Your Cart',
-        'subtitle' => 'Review your handcrafted pieces before checkout.',
+        'kicker' => 'Your Selection',
+        'title' => 'Review Your Milestone Keepsakes',
+        'subtitle' => 'Review your handcrafted 925 sterling silver pieces set with natural Sri Lankan gemstones before heading to checkout.',
         'max_width' => 640,
     ]);
 }
