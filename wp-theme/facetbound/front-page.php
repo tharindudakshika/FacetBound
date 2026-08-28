@@ -83,8 +83,9 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
 <section class="home-collections">
     <div class="container">
         <div class="section-head">
-            <div class="kicker" style="text-align:center">Shop</div>
-            <h2>Curated Collections</h2>
+            <div class="kicker" style="text-align:center">Celebrate Your Moment</div>
+            <h2>Curated Milestone Collections</h2>
+            <p class="section-head__body">Mark life&rsquo;s unforgettable chapters with handcrafted Sri Lankan earth set in solid 925 sterling silver.</p>
         </div>
         <div class="home-collections__grid">
             <?php
