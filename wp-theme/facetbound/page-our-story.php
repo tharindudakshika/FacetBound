@@ -129,7 +129,9 @@ facetbound_hero([
 
 <!-- CTA -->
 <section class="story-cta">
-    <h2>Find the Piece That Speaks to You</h2>
+    <div class="kicker" style="text-align:center">Commemorate Your Moment</div>
+    <h2>Find the Piece That Speaks to Your Milestone</h2>
+    <p class="story-cta-desc">Explore our collection of natural Sri Lankan earth, handcrafted in solid 925 sterling silver to honor your personal story.</p>
     <div class="story-cta-buttons">
         <a href="<?php echo esc_url(function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/shop/')); ?>" class="btn btn-terracotta">
             Explore Collections
