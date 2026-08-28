@@ -105,25 +105,6 @@ facetbound_hero([
     </div>
 </section>
 
-<!-- Newsletter -->
-<section class="journal-newsletter">
-    <div class="journal-newsletter-inner">
-        <h2>Join the Collector&rsquo;s Circle</h2>
-        <p>
-            Get early access to our rarest raw gemstone drops, exclusive artisan stories, and
-            milestone collection releases directly to your inbox.
-        </p>
-        <form class="journal-newsletter-form" action="#" method="post">
-            <input
-                type="email"
-                name="journal_newsletter_email"
-                placeholder="Your email address"
-                class="journal-newsletter-input"
-                required
-            >
-            <button type="submit" class="journal-newsletter-btn">Subscribe</button>
-        </form>
-    </div>
-</section>
+<?php facetbound_concierge_cta(); ?>
 
 <?php get_footer(); ?>
