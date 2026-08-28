@@ -50,15 +50,17 @@ facetbound_hero([
                 <h3>Earth&rsquo;s Natural State</h3>
                 <p>
                     A natural gemstone is a creation forged over millions of years under extreme terrestrial
-                    pressure and heat. Because of this, every single stone is 100% unique.
+                    pressure and heat. Because of this, every single stone is 100% unique &mdash; carrying its
+                    own natural character to commemorate your special occasion.
                 </p>
             </div>
             <div class="story-card">
                 <div class="kicker">The Refined</div>
                 <h3>Artisanal Craftsmanship</h3>
                 <p>
-                    Local artisan silversmiths bring each raw stone to life using hammered or tree bark textures,
-                    tailored to fit its natural shape.
+                    Local artisan silversmiths bring each raw stone to life using hand-hammered or tree bark
+                    textures in solid 925 sterling silver, tailored to fit its natural shape &mdash; creating a
+                    timeless keepsake to mark your personal milestone.
                 </p>
             </div>
         </div>
