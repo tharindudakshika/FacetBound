@@ -134,8 +134,9 @@ facetbound_hero([
     <div class="sustain-promise__box">
         <div class="kicker sustain-promise__kicker">Our Sustainability Promise</div>
         <p class="sustain-promise__text">
-            Every FACETBOUND Spinel ring comes with an Authenticity Card certifying that your piece is 100% natural,
-            ethically mined in Sri Lanka, and packaged without a single grain of single-use plastic.
+            Every FACETBOUND ring comes with a Gemological Authenticity Card certifying that your piece is 100%
+            natural, ethically mined in Sri Lanka, and packaged without a single grain of single use plastic
+            &mdash; creating a conflict free keepsake to commemorate life&rsquo;s most cherished milestones.
         </p>
     </div>
 </section>
