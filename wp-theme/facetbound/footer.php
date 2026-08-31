@@ -21,6 +21,7 @@ if (!defined('ABSPATH')) {
             <div class="fb-footer__label">Policies</div>
             <a href="<?php echo esc_url(home_url('/shipping-policy/')); ?>" class="fb-footer__policy-link">Shipping Policy</a>
             <a href="<?php echo esc_url(home_url('/returns-exchanges/')); ?>" class="fb-footer__policy-link">Returns &amp; Exchanges</a>
+            <a href="<?php echo esc_url(home_url('/warranty-policy/')); ?>" class="fb-footer__policy-link">Warranty Policy</a>
             <a href="#" class="fb-footer__policy-link">Ring Size Guide</a>
             <a href="#" class="fb-footer__policy-link">FAQ</a>
         </div>
