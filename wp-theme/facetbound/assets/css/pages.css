@@ -3664,8 +3664,13 @@
 .contact-field input:focus,
 .contact-field textarea:focus,
 .contact-field select:focus {
-  outline: none;
   border-color: var(--terracotta);
+}
+.contact-field input:focus-visible,
+.contact-field textarea:focus-visible,
+.contact-field select:focus-visible {
+  outline: 3px solid var(--terracotta);
+  outline-offset: 2px;
 }
 
 .contact-form__submit {

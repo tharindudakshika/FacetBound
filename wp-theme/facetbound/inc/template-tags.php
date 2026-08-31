@@ -19,17 +19,26 @@ function facetbound_placeholder($variant, $caption = '', $args = []) {
     if (!empty($args['style'])) {
         $style = ' style="' . esc_attr($args['style']) . '"';
     }
-    printf('<div class="%s"%s>', esc_attr($class), $style);
+    // These stand in for real product/hero photography sitewide. With a
+    // caption they carry real meaning, so expose that to screen readers
+    // via role="img"/aria-label instead of the visible "[ bracketed ]"
+    // dev-label text (which stays visible but is hidden from AT, since
+    // it's redundant with the aria-label and reads oddly on its own).
+    // With no caption they're purely decorative and hidden entirely.
+    $a11y = $caption
+        ? ' role="img" aria-label="' . esc_attr($caption) . '"'
+        : ' aria-hidden="true"';
+    printf('<div class="%s"%s%s>', esc_attr($class), $style, $a11y);
     if ($caption) {
-        printf('<div class="ph-caption">[ %s ]</div>', esc_html($caption));
+        printf('<div class="ph-caption" aria-hidden="true">[ %s ]</div>', esc_html($caption));
     }
     echo '</div>';
 }
 
 function facetbound_stars($count = 5, $size = 14) {
-    echo '<div class="stars">';
+    printf('<div class="stars" role="img" aria-label="Rated %1$d out of 5 stars">', (int) $count);
     for ($i = 0; $i < $count; $i++) {
-        printf('<i class="fa-solid fa-star" style="font-size:%dpx"></i>', (int) $size);
+        printf('<i class="fa-solid fa-star" style="font-size:%dpx" aria-hidden="true"></i>', (int) $size);
     }
     echo '</div>';
 }

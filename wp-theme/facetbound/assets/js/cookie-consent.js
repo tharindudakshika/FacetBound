@@ -41,13 +41,53 @@
     return;
   }
 
+  var panelTriggerEl = null;
+
+  function focusableIn(container) {
+    return Array.prototype.slice
+      .call(container.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'))
+      .filter(function (el) {
+        return !el.disabled && el.tabIndex !== -1 && el.offsetParent !== null;
+      });
+  }
+
+  function trapFocus(e) {
+    if (e.key !== 'Tab') {
+      return;
+    }
+    var focusable = focusableIn(panel);
+    if (!focusable.length) {
+      return;
+    }
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+
+  function panelKeydown(e) {
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      hidePanel();
+      return;
+    }
+    trapFocus(e);
+  }
+
   function showBanner() {
     banner.hidden = false;
   }
   function hideBanner() {
     banner.hidden = true;
   }
-  function showPanel() {
+
+  function showPanel(triggerEl) {
+    panelTriggerEl = triggerEl || document.activeElement;
     var current = readConsent() || { essential: true, analytics: false, marketing: false, functional: false };
     CATEGORIES.forEach(function (cat) {
       var input = panel.querySelector('[data-cookie-category="' + cat + '"]');
@@ -56,9 +96,24 @@
       }
     });
     panel.hidden = false;
+    document.addEventListener('keydown', panelKeydown, true);
+    var focusable = focusableIn(panel);
+    if (focusable.length) {
+      focusable[0].focus();
+    }
   }
+
   function hidePanel() {
+    if (panel.hidden) {
+      return;
+    }
     panel.hidden = true;
+    document.removeEventListener('keydown', panelKeydown, true);
+    var returnTo = panelTriggerEl && document.contains(panelTriggerEl) ? panelTriggerEl : null;
+    panelTriggerEl = null;
+    if (returnTo && typeof returnTo.focus === 'function') {
+      returnTo.focus();
+    }
   }
 
   function acceptAll() {
@@ -98,7 +153,7 @@
         break;
       case 'manage':
         hideBanner();
-        showPanel();
+        showPanel(action);
         break;
       case 'save':
         savePreferences();
@@ -111,7 +166,7 @@
         break;
       case 'open-settings':
         e.preventDefault();
-        showPanel();
+        showPanel(action);
         break;
     }
   });

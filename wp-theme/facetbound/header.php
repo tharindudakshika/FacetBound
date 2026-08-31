@@ -22,6 +22,8 @@ $cart_count = (class_exists('WooCommerce') && WC()->cart) ? WC()->cart->get_cart
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
 <header class="fb-header">
     <div class="container fb-header__row">
         <button type="button" class="fb-header__icon fb-header__menu-toggle" aria-label="Open menu">
@@ -57,13 +59,13 @@ $cart_count = (class_exists('WooCommerce') && WC()->cart) ? WC()->cart->get_cart
                     </form>
                 </div>
             </div>
-            <a href="<?php echo esc_url(class_exists('WooCommerce') ? wc_get_page_permalink('myaccount') : home_url('/my-account/')); ?>" title="Account">
+            <a href="<?php echo esc_url(class_exists('WooCommerce') ? wc_get_page_permalink('myaccount') : home_url('/my-account/')); ?>" title="Account" aria-label="My Account">
                 <i class="<?php echo $account_active ? 'fa-regular fa-user fb-header__icon fb-header__icon--active' : 'fa-regular fa-user fb-header__icon'; ?>"></i>
             </a>
-            <a href="<?php echo esc_url(class_exists('WooCommerce') ? wc_get_checkout_url() : '#'); ?>" class="fb-header__cart" title="Checkout">
+            <a href="<?php echo esc_url(class_exists('WooCommerce') ? wc_get_checkout_url() : '#'); ?>" class="fb-header__cart" title="Checkout" aria-label="Checkout<?php echo $cart_count > 0 ? ', ' . (int) $cart_count . ' item' . ($cart_count === 1 ? '' : 's') . ' in cart' : ''; ?>">
                 <i class="fa-solid fa-bag-shopping fb-header__icon"></i>
                 <?php if ($cart_count > 0) : ?>
-                    <div class="fb-header__cart-badge"><?php echo (int) $cart_count; ?></div>
+                    <div class="fb-header__cart-badge" aria-hidden="true"><?php echo (int) $cart_count; ?></div>
                 <?php endif; ?>
             </a>
         </div>
@@ -81,3 +83,5 @@ $cart_count = (class_exists('WooCommerce') && WC()->cart) ? WC()->cart->get_cart
         </div>
     </div>
 </header>
+
+<main id="main-content">

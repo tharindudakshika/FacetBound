@@ -6,6 +6,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 ?>
+</main>
+
 <footer class="fb-footer">
     <div class="container fb-footer__top">
         <div class="fb-footer__brand">

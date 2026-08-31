@@ -190,11 +190,11 @@ $contact_faqs = [
         <div class="faq-list">
             <?php foreach ($contact_faqs as $faq_index => $faq) : ?>
                 <div class="faq-item<?php echo 0 === $faq_index ? ' faq-item--open' : ''; ?>">
-                    <button type="button" class="faq-question">
+                    <button type="button" class="faq-question" aria-expanded="<?php echo 0 === $faq_index ? 'true' : 'false'; ?>" aria-controls="faq-answer-<?php echo (int) $faq_index; ?>">
                         <span><?php echo esc_html($faq['question']); ?></span>
-                        <i class="fa-solid <?php echo 0 === $faq_index ? 'fa-minus' : 'fa-plus'; ?> faq-icon"></i>
+                        <i class="fa-solid <?php echo 0 === $faq_index ? 'fa-minus' : 'fa-plus'; ?> faq-icon" aria-hidden="true"></i>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-answer-<?php echo (int) $faq_index; ?>">
                         <p><?php echo esc_html($faq['answer']); ?></p>
                     </div>
                 </div>

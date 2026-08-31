@@ -37,6 +37,35 @@ textarea {
   color: var(--slate-border);
 }
 
+/* ---- Accessibility: keyboard focus + skip link ----
+   :focus-visible only shows the ring for keyboard/AT navigation (not
+   mouse clicks), so it doesn't disturb the visual design for pointer
+   users while still giving keyboard users a clearly visible indicator
+   everywhere a native outline is suppressed. */
+:focus-visible {
+  outline: 3px solid var(--terracotta);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 12px;
+  z-index: 100000;
+  background: var(--emerald);
+  color: var(--cream);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
 .container {
   max-width: var(--content-max);
   margin: 0 auto;

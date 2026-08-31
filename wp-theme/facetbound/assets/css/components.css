@@ -113,8 +113,9 @@
   font-family: var(--font-sans);
   color: var(--ink);
 }
-.fb-header__search-input:focus {
-  outline: none;
+.fb-header__search-input:focus-visible {
+  outline: 3px solid var(--terracotta);
+  outline-offset: 2px;
 }
 
 .fb-header__search-close {
@@ -341,7 +342,11 @@
   padding: 11px 14px;
   font-size: 13.5px;
   color: var(--cream);
-  outline: none;
+}
+
+.fb-footer__form input:focus-visible {
+  outline: 3px solid var(--terracotta);
+  outline-offset: 2px;
 }
 
 .fb-footer__form button {
