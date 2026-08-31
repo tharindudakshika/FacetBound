@@ -3935,3 +3935,11 @@
 .policy-page__inner li strong {
   color: var(--ink);
 }
+
+.policy-page__inner code {
+  background: var(--cream-warm);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 0.9em;
+  color: var(--ink);
+}
