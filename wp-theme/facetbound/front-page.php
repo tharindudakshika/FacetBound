@@ -189,7 +189,7 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
                         <h3 class="home-product-name"><?php echo esc_html( $fb_product->get_name() ); ?></h3>
                         <p class="home-product-price"><?php echo $fb_product->get_price_html(); ?></p>
                         <div class="home-product-actions">
-                            <a href="<?php echo esc_url( $fb_permalink ); ?>" class="home-btn-sm home-btn-outline-emerald">Buy Now</a>
+                            <a href="<?php echo esc_url( $fb_permalink ); ?>" class="home-btn-sm home-btn-outline-emerald">Make it Yours</a>
                             <a
                                 class="home-btn-sm home-btn-whatsapp"
                                 href="https://wa.me/?text=<?php echo esc_attr( rawurlencode( "Hi! I'm interested in the " . $fb_product->get_name() ) ); ?>"
@@ -197,7 +197,7 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
                                 rel="noopener noreferrer"
                             >
                                 <i class="fa-brands fa-whatsapp"></i>
-                                WhatsApp
+                                Customer Care
                             </a>
                         </div>
                     </div>
@@ -208,7 +208,7 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
         </div>
         <div class="home-featured__cta">
             <a href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ) ); ?>" class="btn btn-terracotta">
-                View All Products
+                Discover Collection
             </a>
         </div>
     </div>

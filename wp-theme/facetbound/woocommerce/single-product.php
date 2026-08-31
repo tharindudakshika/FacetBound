@@ -186,7 +186,7 @@ if (have_posts()) :
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                    <i class="fa-brands fa-whatsapp"></i> Customer Care
                 </a>
 
                 <button type="button" class="pdp-pay-btn" disabled>

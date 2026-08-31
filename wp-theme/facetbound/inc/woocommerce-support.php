@@ -62,17 +62,17 @@ add_filter('woocommerce_breadcrumb_defaults', function ($defaults) {
  * Direct checkout: skip the Cart page entirely. Adding a product to the
  * cart sends the shopper straight to Checkout (where the order review
  * table still lets them adjust quantity/remove the item), and every
- * "Add to Cart" button/label site-wide reads "Buy Now" instead.
+ * "Add to Cart" button/label site-wide reads "Make it Yours" instead.
  */
 add_filter('woocommerce_add_to_cart_redirect', function () {
     return wc_get_checkout_url();
 });
 
 add_filter('woocommerce_product_add_to_cart_text', function () {
-    return 'Buy Now';
+    return 'Make it Yours';
 });
 add_filter('woocommerce_product_single_add_to_cart_text', function () {
-    return 'Buy Now';
+    return 'Make it Yours';
 });
 
 /**

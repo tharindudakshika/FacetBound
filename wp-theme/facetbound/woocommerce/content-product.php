@@ -64,7 +64,7 @@ $layer_style = 'position:absolute;inset:0;';
 
     <div class="shopcol-card-actions">
         <a href="<?php echo esc_url(get_permalink()); ?>" class="shopcol-btn shopcol-btn-outline-emerald">
-            Buy Now
+            Make it Yours
         </a>
         <a
             class="shopcol-btn shopcol-btn-whatsapp"
@@ -73,7 +73,7 @@ $layer_style = 'position:absolute;inset:0;';
             rel="noopener noreferrer"
         >
             <i class="fa-brands fa-whatsapp"></i>
-            WhatsApp
+            Customer Care
         </a>
     </div>
 </div>

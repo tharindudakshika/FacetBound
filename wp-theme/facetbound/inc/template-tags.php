@@ -50,7 +50,7 @@ function facetbound_concierge_cta() {
                     <i class="fa-solid fa-envelope"></i> Contact Lead Gemologist
                 </a>
                 <a href="https://wa.me/?text=<?php echo rawurlencode('Hi! I have a sizing or engraving question.'); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-emerald">
-                    <i class="fa-brands fa-whatsapp" style="font-size:16px"></i> Chat on WhatsApp
+                    <i class="fa-brands fa-whatsapp" style="font-size:16px"></i> Customer Care
                 </a>
             </div>
             <a href="#" class="concierge__link">
