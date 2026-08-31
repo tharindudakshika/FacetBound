@@ -77,12 +77,20 @@
   flex: 0 0 auto;
 }
 
-/* ---- Preference panel ---- */
+/* ---- Preference panel ----
+   display:flex must only apply while the panel is actually shown —
+   scoped with :not([hidden]) so it doesn't override the browser's own
+   [hidden]{display:none} rule (author CSS always beats the UA
+   stylesheet, so an unscoped display:flex here would keep the panel
+   visually open even after JS sets the hidden attribute back to true). */
+.cookie-consent-panel:not([hidden]) {
+  display: flex;
+}
+
 .cookie-consent-panel {
   position: fixed;
   inset: 0;
   z-index: 10000;
-  display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
