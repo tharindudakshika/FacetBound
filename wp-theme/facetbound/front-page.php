@@ -208,7 +208,7 @@ $fb_shop_url = esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page
         </div>
         <div class="home-featured__cta">
             <a href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ) ); ?>" class="btn btn-terracotta">
-                Discover Collection
+                Discover Our Collection
             </a>
         </div>
     </div>
