@@ -67,7 +67,7 @@ facetbound_hero([
         <ul>
             <li><strong>Direct Privacy Support:</strong> Contact us directly via Email or WhatsApp for instant privacy inquiries.</li>
             <li><strong>Email:</strong> <a href="mailto:hello@facetbound.com">hello@facetbound.com</a></li>
-            <li><strong>Full Privacy Details:</strong> To learn more about how we collect, store, and protect your personal data, please read our full Privacy Policy.</li>
+            <li><strong>Full Privacy Details:</strong> To learn more about how we collect, store, and protect your personal data, please read our full <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">Privacy Policy</a>.</li>
         </ul>
 
     </div>

@@ -26,6 +26,7 @@ if (!defined('ABSPATH')) {
             <a href="<?php echo esc_url(home_url('/warranty-policy/')); ?>" class="fb-footer__policy-link">Warranty Policy</a>
             <a href="<?php echo esc_url(home_url('/accessibility-policy/')); ?>" class="fb-footer__policy-link">Accessibility Policy</a>
             <a href="<?php echo esc_url(home_url('/cookies-policy/')); ?>" class="fb-footer__policy-link">Cookies Policy</a>
+            <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>" class="fb-footer__policy-link">Privacy Policy</a>
             <a href="#" class="fb-footer__policy-link">Ring Size Guide</a>
             <a href="#" class="fb-footer__policy-link">FAQ</a>
         </div>
