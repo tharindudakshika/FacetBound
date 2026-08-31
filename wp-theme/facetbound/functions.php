@@ -19,3 +19,4 @@ require_once FACETBOUND_DIR . '/inc/template-tags.php';
 require_once FACETBOUND_DIR . '/inc/my-account.php';
 require_once FACETBOUND_DIR . '/inc/contact-form.php';
 require_once FACETBOUND_DIR . '/inc/product-certificate.php';
+require_once FACETBOUND_DIR . '/inc/cookie-consent.php';

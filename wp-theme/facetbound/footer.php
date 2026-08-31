@@ -43,6 +43,7 @@ if (!defined('ABSPATH')) {
             <div class="fb-footer__badge"><i class="fa-brands fa-cc-visa"></i><span>Visa</span></div>
             <div class="fb-footer__badge"><i class="fa-brands fa-cc-mastercard"></i><span>Mastercard</span></div>
         </div>
+        <a href="#" class="fb-footer__policy-link" data-cookie-consent="open-settings">Cookie Settings</a>
     </div>
 </footer>
 
