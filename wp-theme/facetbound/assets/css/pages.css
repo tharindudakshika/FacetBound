@@ -3855,3 +3855,87 @@
   color: var(--slate-text);
   margin: 0;
 }
+
+/* ============ Returns & Exchanges (policy content) ============ */
+.policy-page {
+  background: var(--cream);
+  padding: 72px 0 96px;
+}
+
+.policy-page__inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.policy-meta {
+  background: var(--cream-warm);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 0 0 40px;
+}
+
+.policy-meta p {
+  font-size: 14.5px;
+  color: var(--slate-text);
+  margin: 0 0 6px;
+}
+
+.policy-meta p:last-child {
+  margin-bottom: 0;
+}
+
+.policy-meta a {
+  color: var(--terracotta);
+}
+
+.policy-page__inner h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2.6vw, 28px);
+  color: var(--emerald);
+  font-weight: 600;
+  margin: 44px 0 14px;
+}
+
+.policy-page__inner h2:first-of-type {
+  margin-top: 0;
+}
+
+.policy-page__inner h3 {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: var(--emerald);
+  font-weight: 700;
+  margin: 26px 0 10px;
+}
+
+.policy-page__inner p {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--slate-text);
+  margin: 0 0 14px;
+}
+
+.policy-page__inner a {
+  color: var(--terracotta);
+}
+
+.policy-page__inner ul,
+.policy-page__inner ol {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+
+.policy-page__inner ul ul {
+  margin: 8px 0 8px;
+}
+
+.policy-page__inner li {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--slate-text);
+  margin-bottom: 8px;
+}
+
+.policy-page__inner li strong {
+  color: var(--ink);
+}
