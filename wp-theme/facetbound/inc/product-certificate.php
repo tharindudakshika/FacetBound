@@ -221,3 +221,45 @@ function facetbound_get_variation_gem_certificate_url($variation_id, $product_id
     return $attachment_id ? wp_get_attachment_url($attachment_id) : '';
 }
 
+/**
+ * My Account "View Order" page — replace WooCommerce's default
+ * "Order again" button with "Download Gem Certificate" (one per ordered
+ * item that has a certificate: the item's own variation certificate,
+ * falling back to its parent product's).
+ */
+remove_action('woocommerce_order_details_after_order_table', 'woocommerce_order_again_button');
+
+add_action('woocommerce_order_details_after_order_table', 'facetbound_render_order_gem_certificate_buttons');
+function facetbound_render_order_gem_certificate_buttons($order) {
+    if (!$order instanceof WC_Order) {
+        return;
+    }
+    $items = $order->get_items();
+    $multiple_items = count($items) > 1;
+    foreach ($items as $item) {
+        if (!$item instanceof WC_Order_Item_Product) {
+            continue;
+        }
+        $variation_id = $item->get_variation_id();
+        $product_id = $item->get_product_id();
+        $cert_url = $variation_id
+            ? facetbound_get_variation_gem_certificate_url($variation_id, $product_id)
+            : facetbound_get_gem_certificate_url($product_id);
+        if (!$cert_url) {
+            continue;
+        }
+        ?>
+        <p class="gem-certificate-download">
+            <a href="<?php echo esc_url($cert_url); ?>" class="button" target="_blank" rel="noopener noreferrer">
+                <?php
+                echo esc_html__('Download Gem Certificate', 'facetbound');
+                if ($multiple_items) {
+                    echo ' &ndash; ' . esc_html($item->get_name());
+                }
+                ?>
+            </a>
+        </p>
+        <?php
+    }
+}
+
