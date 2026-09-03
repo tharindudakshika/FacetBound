@@ -221,13 +221,3 @@ function facetbound_get_variation_gem_certificate_url($variation_id, $product_id
     return $attachment_id ? wp_get_attachment_url($attachment_id) : '';
 }
 
-/**
- * Surface each variation's certificate URL to the frontend variation-form
- * JS so the PDP can swap the "Download Gem Certificate" link as the
- * customer changes ring size.
- */
-add_filter('woocommerce_available_variation', 'facetbound_add_variation_gem_certificate_data', 10, 3);
-function facetbound_add_variation_gem_certificate_data($data, $product, $variation) {
-    $data['facetbound_gem_certificate_url'] = facetbound_get_variation_gem_certificate_url($variation->get_id(), $product->get_id());
-    return $data;
-}

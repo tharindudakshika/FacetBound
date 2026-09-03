@@ -9,39 +9,7 @@
     document.addEventListener('DOMContentLoaded', function () {
         initLightbox();
         initTabs();
-        initGemCertificateLink();
     });
-
-    /* --------------------------------------------------------------
-     * Gem Certificate link — swaps to the selected variation's PDF.
-     * Bridges to WooCommerce's own jQuery-based variation form events
-     * (found_variation / reset_data), since that's the only way those
-     * fire; everything else in this file stays plain JS.
-     * ------------------------------------------------------------ */
-    function initGemCertificateLink() {
-        var link = document.getElementById('pdp-gem-certificate-link');
-        if (!link || typeof window.jQuery === 'undefined') {
-            return;
-        }
-        var $form = window.jQuery('.variations_form');
-        if (!$form.length) {
-            return;
-        }
-        $form.on('found_variation', function (event, variation) {
-            var url = variation && variation.facetbound_gem_certificate_url;
-            if (url) {
-                link.href = url;
-                link.style.display = '';
-            } else {
-                link.removeAttribute('href');
-                link.style.display = 'none';
-            }
-        });
-        $form.on('reset_data', function () {
-            link.removeAttribute('href');
-            link.style.display = 'none';
-        });
-    }
 
     function escapeHtml(str) {
         var div = document.createElement('div');

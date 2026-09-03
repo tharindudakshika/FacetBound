@@ -208,41 +208,6 @@ if (have_posts()) :
                         <span>Easy 30-Day Size Exchange Policy</span>
                     </div>
                 </div>
-
-                <?php
-                // Gem Certificate download — a variable product's certificate
-                // depends on which ring size (and thus which physical gemstone)
-                // is selected, so the link is populated/swapped by JS on
-                // variation change; a simple product's certificate is static.
-                if ($product->is_type('variable')) :
-                    ?>
-                    <a
-                        href="#"
-                        id="pdp-gem-certificate-link"
-                        class="btn btn-outline-emerald pdp-gem-certificate-link"
-                        style="display:none"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <i class="fa-solid fa-scroll"></i> Download Gem Certificate
-                    </a>
-                    <?php
-                else :
-                    $cert_url = facetbound_get_gem_certificate_url($product->get_id());
-                    if ($cert_url) :
-                        ?>
-                        <a
-                            href="<?php echo esc_url($cert_url); ?>"
-                            class="btn btn-outline-emerald pdp-gem-certificate-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-solid fa-scroll"></i> Download Gem Certificate
-                        </a>
-                        <?php
-                    endif;
-                endif;
-                ?>
             </div>
         </div>
 
