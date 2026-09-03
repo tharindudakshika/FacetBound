@@ -106,3 +106,122 @@ function facetbound_get_gem_certificate_url($product_id) {
     $attachment_id = (int) get_post_meta($product_id, '_gem_certificate_id', true);
     return $attachment_id ? wp_get_attachment_url($attachment_id) : '';
 }
+
+/**
+ * Per-variation Gem Certificate — each ring size can hold a physically
+ * different gemstone, so variable products need their own certificate
+ * PDF per variation rather than one shared per product. Falls back to
+ * the parent product's certificate (above) if a variation has none.
+ */
+add_action('woocommerce_product_after_variable_attributes', 'facetbound_render_variation_gem_certificate_field', 10, 3);
+function facetbound_render_variation_gem_certificate_field($loop, $variation_data, $variation) {
+    $attachment_id = (int) get_post_meta($variation->ID, '_gem_certificate_id', true);
+    $filename = $attachment_id ? basename(get_attached_file($attachment_id)) : '';
+    $url = $attachment_id ? wp_get_attachment_url($attachment_id) : '';
+    ?>
+    <div class="form-row form-row-full facetbound-variation-gem-certificate">
+        <label><strong>Gem Certificate (PDF)</strong></label><br />
+        <input
+            type="hidden"
+            class="facetbound-gem-certificate-id"
+            name="facetbound_gem_certificate_id[<?php echo esc_attr($loop); ?>]"
+            value="<?php echo esc_attr($attachment_id); ?>"
+        />
+        <button type="button" class="button facetbound-gem-certificate-upload-btn"><?php echo $attachment_id ? 'Replace PDF' : 'Upload PDF'; ?></button>
+        <button type="button" class="button facetbound-gem-certificate-remove-btn" <?php echo $attachment_id ? '' : 'style="display:none;"'; ?>>Remove</button>
+        <span class="facetbound-gem-certificate-filename" style="margin-left:8px;">
+            <?php if ($attachment_id) : ?>
+                <a href="<?php echo esc_url($url); ?>" target="_blank"><?php echo esc_html($filename); ?></a>
+            <?php endif; ?>
+        </span>
+    </div>
+    <?php
+}
+
+add_action('woocommerce_save_product_variation', 'facetbound_save_variation_gem_certificate', 10, 2);
+function facetbound_save_variation_gem_certificate($variation_id, $loop) {
+    if (!isset($_POST['facetbound_gem_certificate_id'][$loop])) {
+        return;
+    }
+    $attachment_id = absint($_POST['facetbound_gem_certificate_id'][$loop]);
+    if ($attachment_id) {
+        update_post_meta($variation_id, '_gem_certificate_id', $attachment_id);
+    } else {
+        delete_post_meta($variation_id, '_gem_certificate_id');
+    }
+}
+
+/**
+ * Media-picker JS for the per-variation fields. Variation rows are loaded
+ * and re-rendered via WooCommerce's own AJAX, so handlers are delegated
+ * from a static ancestor rather than bound directly to each button.
+ */
+add_action('admin_footer-post.php', 'facetbound_variation_gem_certificate_script');
+add_action('admin_footer-post-new.php', 'facetbound_variation_gem_certificate_script');
+function facetbound_variation_gem_certificate_script() {
+    global $post;
+    if (!$post || $post->post_type !== 'product') {
+        return;
+    }
+    ?>
+    <script>
+    jQuery(function ($) {
+        $(document).on('click', '.facetbound-gem-certificate-upload-btn', function (e) {
+            e.preventDefault();
+            var $button = $(this);
+            var $wrap = $button.closest('.facetbound-variation-gem-certificate');
+            var $input = $wrap.find('.facetbound-gem-certificate-id');
+            var $filename = $wrap.find('.facetbound-gem-certificate-filename');
+            var $removeBtn = $wrap.find('.facetbound-gem-certificate-remove-btn');
+
+            var mediaFrame = wp.media({
+                title: 'Select Gem Certificate PDF',
+                library: { type: 'application/pdf' },
+                button: { text: 'Use this PDF' },
+                multiple: false
+            });
+            mediaFrame.on('select', function () {
+                var attachment = mediaFrame.state().get('selection').first().toJSON();
+                $input.val(attachment.id);
+                $filename.html('<a href="' + attachment.url + '" target="_blank">' + attachment.filename + '</a>');
+                $button.text('Replace PDF');
+                $removeBtn.show();
+            });
+            mediaFrame.open();
+        });
+
+        $(document).on('click', '.facetbound-gem-certificate-remove-btn', function (e) {
+            e.preventDefault();
+            var $wrap = $(this).closest('.facetbound-variation-gem-certificate');
+            $wrap.find('.facetbound-gem-certificate-id').val('');
+            $wrap.find('.facetbound-gem-certificate-filename').html('');
+            $wrap.find('.facetbound-gem-certificate-upload-btn').text('Upload PDF');
+            $(this).hide();
+        });
+    });
+    </script>
+    <?php
+}
+
+/**
+ * Gem Certificate URL for a specific variation, falling back to the
+ * parent product's certificate when the variation has none of its own.
+ */
+function facetbound_get_variation_gem_certificate_url($variation_id, $product_id = 0) {
+    $attachment_id = (int) get_post_meta($variation_id, '_gem_certificate_id', true);
+    if (!$attachment_id && $product_id) {
+        $attachment_id = (int) get_post_meta($product_id, '_gem_certificate_id', true);
+    }
+    return $attachment_id ? wp_get_attachment_url($attachment_id) : '';
+}
+
+/**
+ * Surface each variation's certificate URL to the frontend variation-form
+ * JS so the PDP can swap the "Download Gem Certificate" link as the
+ * customer changes ring size.
+ */
+add_filter('woocommerce_available_variation', 'facetbound_add_variation_gem_certificate_data', 10, 3);
+function facetbound_add_variation_gem_certificate_data($data, $product, $variation) {
+    $data['facetbound_gem_certificate_url'] = facetbound_get_variation_gem_certificate_url($variation->get_id(), $product->get_id());
+    return $data;
+}
