@@ -32,12 +32,13 @@ function facetbound_handle_appointment_form() {
 
     $name = isset($_POST['appointment_name']) ? sanitize_text_field(wp_unslash($_POST['appointment_name'])) : '';
     $email = isset($_POST['appointment_email']) ? sanitize_email(wp_unslash($_POST['appointment_email'])) : '';
+    $phone = isset($_POST['appointment_phone']) ? sanitize_text_field(wp_unslash($_POST['appointment_phone'])) : '';
     $date = isset($_POST['appointment_date']) ? sanitize_text_field(wp_unslash($_POST['appointment_date'])) : '';
     $time = isset($_POST['appointment_time']) ? sanitize_text_field(wp_unslash($_POST['appointment_time'])) : '';
     $timezone = isset($_POST['appointment_timezone']) ? sanitize_text_field(wp_unslash($_POST['appointment_timezone'])) : '';
     $notes = isset($_POST['appointment_notes']) ? sanitize_textarea_field(wp_unslash($_POST['appointment_notes'])) : '';
 
-    if (!$name || !$email || !is_email($email) || !$date || !$time) {
+    if (!$name || !$email || !is_email($email) || !$phone || !$date || !$time) {
         wp_safe_redirect(add_query_arg('appointment', 'error', $redirect));
         exit;
     }
@@ -47,6 +48,7 @@ function facetbound_handle_appointment_form() {
     $body = "A new virtual consultation was requested via the Facetbound Virtual Appointment page.\n\n"
         . "Name: {$name}\n"
         . "Email: {$email}\n"
+        . "Mobile Number: {$phone}\n"
         . "Preferred Date: {$date}\n"
         . "Preferred Time: {$time}\n"
         . "Time Zone: " . ($timezone ?: '(not detected)') . "\n\n"

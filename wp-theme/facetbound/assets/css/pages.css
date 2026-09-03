@@ -4061,81 +4061,13 @@
   gap: 20px;
 }
 
-/* ---- Testimonial ---- */
-.va-testimonial {
-  background: var(--cream-warm);
-  padding: 90px 0;
-}
-
-.va-testimonial-card {
-  max-width: 680px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.va-testimonial-card__quote {
-  font-family: var(--font-serif);
-  font-size: clamp(18px, 2vw, 22px);
-  line-height: 1.6;
-  color: var(--ink);
-  margin: 18px 0 20px;
-}
-
-.va-testimonial-card__meta {
-  font-family: var(--font-sans);
-  font-size: 13.5px;
-  font-weight: 700;
-  color: var(--emerald);
-  margin: 0;
-}
-
-.va-testimonial-card__meta span {
-  font-weight: 500;
-  color: var(--slate-muted);
-}
-
-/* ---- Guarantee & Trust Banner ---- */
-.va-trust {
-  background: var(--emerald);
-  padding: 56px 0;
-}
-
-.va-trust__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
-  gap: 28px;
-}
-
-.va-trust-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-}
-
-.va-trust-item__icon {
-  color: var(--terracotta);
-  font-size: 22px;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.va-trust-item__title {
-  font-family: var(--font-sans);
-  font-size: 14.5px;
-  font-weight: 700;
-  color: var(--cream);
-  margin: 0 0 4px;
-}
-
-.va-trust-item__desc {
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--sage-text);
-  margin: 0;
+.va-booking__row--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 @media (max-width: 640px) {
-  .va-booking__row {
+  .va-booking__row,
+  .va-booking__row--three {
     grid-template-columns: 1fr;
   }
 }

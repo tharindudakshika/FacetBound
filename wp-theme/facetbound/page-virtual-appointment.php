@@ -64,23 +64,6 @@ for ($va_minutes = 9 * 60; $va_minutes <= 17 * 60 + 30; $va_minutes += 30) {
     $va_time_slots[] = date('g:i A', mktime(0, $va_minutes));
 }
 
-$va_trust = [
-    [
-        'icon' => 'fa-solid fa-lock',
-        'title' => '100% Private &amp; No Obligation',
-        'desc' => 'No pressure to purchase simply by attending the session.',
-    ],
-    [
-        'icon' => 'fa-solid fa-earth-americas',
-        'title' => 'Global Time Zone Friendly',
-        'desc' => 'We work around US, UK, EU, and AU time zones.',
-    ],
-    [
-        'icon' => 'fa-solid fa-scroll',
-        'title' => 'Certified Natural Gems Guaranteed',
-        'desc' => 'Every stone comes with a Gemologist Authenticity Certificate.',
-    ],
-];
 ?>
 
 <!-- Why Book a Virtual Session -->
@@ -149,7 +132,7 @@ $va_trust = [
                 <input type="text" id="facetbound_appointment_company" name="facetbound_appointment_company" tabindex="-1" autocomplete="off">
             </div>
 
-            <div class="va-booking__row">
+            <div class="va-booking__row va-booking__row--three">
                 <div class="contact-field">
                     <label for="appointment_name">Full Name</label>
                     <input type="text" id="appointment_name" name="appointment_name" placeholder="First &amp; Last Name" required>
@@ -157,6 +140,10 @@ $va_trust = [
                 <div class="contact-field">
                     <label for="appointment_email">Email Address</label>
                     <input type="email" id="appointment_email" name="appointment_email" placeholder="Email address" required>
+                </div>
+                <div class="contact-field">
+                    <label for="appointment_phone">Mobile Number</label>
+                    <input type="tel" id="appointment_phone" name="appointment_phone" placeholder="Mobile number" required>
                 </div>
             </div>
 
@@ -183,32 +170,6 @@ $va_trust = [
 
             <button type="submit" class="btn btn-terracotta contact-form__submit">Request My Session</button>
         </form>
-    </div>
-</section>
-
-<!-- Virtual Experience Testimonial -->
-<section class="va-testimonial">
-    <div class="container">
-        <div class="va-testimonial-card">
-            <?php facetbound_stars(5, 15); ?>
-            <p class="va-testimonial-card__quote">&ldquo;I was hesitant about ordering a custom Spinel ring from Sri Lanka to London, but the virtual consultation changed everything. Seeing the gem in live sunlight made me order instantly!&rdquo;</p>
-            <p class="va-testimonial-card__meta">Sarah M., UK &mdash; <span>Verified VIP Client</span></p>
-        </div>
-    </div>
-</section>
-
-<!-- Guarantee & Trust Banner -->
-<section class="va-trust">
-    <div class="container va-trust__grid">
-        <?php foreach ($va_trust as $trust_item) : ?>
-            <div class="va-trust-item">
-                <i class="<?php echo esc_attr($trust_item['icon']); ?> va-trust-item__icon"></i>
-                <div>
-                    <p class="va-trust-item__title"><?php echo wp_kses_post($trust_item['title']); ?></p>
-                    <p class="va-trust-item__desc"><?php echo esc_html($trust_item['desc']); ?></p>
-                </div>
-            </div>
-        <?php endforeach; ?>
     </div>
 </section>
 
