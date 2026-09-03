@@ -15,7 +15,7 @@ facetbound_hero([
     'caption' => 'gemologist inspecting a stone with a 10x loupe during a live Zoom consultation',
     'kicker' => '1-on-1 VIP Gem Concierge',
     'title' => 'Book a Virtual Consultation with Our Lead Gemologist',
-    'subtitle' => 'Experience our Ratnapura studio from anywhere in the world. Inspect raw gemstones in natural light, discuss custom ring sizing, or craft a bespoke milestone keepsake.',
+    'subtitle' => 'Experience our studio from anywhere in the world. Inspect raw gemstones in natural light, discuss custom ring sizing, or craft a bespoke milestone keepsake.',
     'max_width' => 680,
     'cta' => [
         'text' => 'Schedule Your Private Session',
@@ -71,7 +71,7 @@ for ($va_minutes = 9 * 60; $va_minutes <= 17 * 60 + 30; $va_minutes += 30) {
     <div class="container">
         <div class="section-head">
             <div class="kicker" style="text-align:center">Why Book a Virtual Session?</div>
-            <h2>A Private Window Into Our Ratnapura Studio</h2>
+            <h2>A Private Window Into Our Studio</h2>
         </div>
         <div class="va-value__grid">
             <?php foreach ($va_value_cards as $card) : ?>
