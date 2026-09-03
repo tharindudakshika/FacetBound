@@ -39,5 +39,21 @@ add_action('wp_footer', function () {
             . ' price=' . esc_html($product->get_price())
             . ' regular_price=' . esc_html($product->get_regular_price())
             . ' changes=' . esc_html(wp_json_encode($product->get_changes())) . ' -->';
+        echo '<!-- WMC_DEBUG product82 price_html=' . esc_html($product->get_price_html()) . ' -->';
+    }
+    global $wp_query;
+    if (isset($wp_query->posts) && is_array($wp_query->posts)) {
+        foreach ($wp_query->posts as $wp_post) {
+            if (get_post_type($wp_post) !== 'product') {
+                continue;
+            }
+            $loop_product = wc_get_product($wp_post->ID);
+            if (!$loop_product) {
+                continue;
+            }
+            echo '<!-- WMC_DEBUG loop_product id=' . (int) $wp_post->ID
+                . ' price=' . esc_html($loop_product->get_price())
+                . ' changes=' . esc_html(wp_json_encode($loop_product->get_changes())) . ' -->';
+        }
     }
 });
