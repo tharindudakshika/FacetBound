@@ -58,21 +58,11 @@ $va_steps = [
     ],
 ];
 
-$va_durations = [
-    [
-        'value' => '15-Min Quick Sizing & Gem Preview (Free)',
-        'title' => '15-Min Quick Sizing & Gem Preview',
-        'desc' => 'A fast, focused session to nail your ring size or preview a gemstone.',
-    ],
-    [
-        'value' => '30-Min Bespoke Custom Design Session (Free)',
-        'title' => '30-Min Bespoke Custom Design Session',
-        'desc' => 'A deeper session to co-create a custom design, texture, or engraving.',
-    ],
-];
-
-$va_interests = ['Custom Ring Design', 'Gem Selection', 'Ring Sizing Help', 'Milestone Gift Query'];
-$va_gemstones = ['No preference', 'Blue Topaz', 'Natural Spinel', 'Amethyst', 'Moonstone', 'Other'];
+// 30-minute slots across studio hours (Mon–Sat, 9 AM–6 PM IST).
+$va_time_slots = [];
+for ($va_minutes = 9 * 60; $va_minutes <= 17 * 60 + 30; $va_minutes += 30) {
+    $va_time_slots[] = date('g:i A', mktime(0, $va_minutes));
+}
 
 $va_trust = [
     [
@@ -137,7 +127,7 @@ $va_trust = [
         <div class="section-head">
             <div class="kicker" style="text-align:center">Reserve Your Slot</div>
             <h2>Schedule Your Session</h2>
-            <p class="section-head__body">Choose a session length, share a few details, and we'll confirm your private video link by email — typically within a few hours during studio hours (Mon&ndash;Sat, 9 AM&ndash;6 PM IST).</p>
+            <p class="section-head__body">Pick a preferred date and time, share a few details, and we'll confirm your private video link by email — typically within a few hours during studio hours (Mon&ndash;Sat, 9 AM&ndash;6 PM IST).</p>
         </div>
 
         <?php if ('success' === $appointment_status) : ?>
@@ -159,25 +149,6 @@ $va_trust = [
                 <input type="text" id="facetbound_appointment_company" name="facetbound_appointment_company" tabindex="-1" autocomplete="off">
             </div>
 
-            <div class="va-booking__durations" role="radiogroup" aria-label="Session length">
-                <?php foreach ($va_durations as $duration_index => $duration) : ?>
-                    <label class="va-duration-card">
-                        <input
-                            type="radio"
-                            name="appointment_duration"
-                            value="<?php echo esc_attr($duration['value']); ?>"
-                            required
-                            <?php echo 0 === $duration_index ? 'checked' : ''; ?>
-                        >
-                        <span class="va-duration-card__body">
-                            <span class="va-duration-card__title"><?php echo esc_html($duration['title']); ?></span>
-                            <span class="va-duration-card__desc"><?php echo esc_html($duration['desc']); ?></span>
-                            <span class="va-duration-card__price">Free</span>
-                        </span>
-                    </label>
-                <?php endforeach; ?>
-            </div>
-
             <div class="va-booking__row">
                 <div class="contact-field">
                     <label for="appointment_name">Full Name</label>
@@ -196,24 +167,10 @@ $va_trust = [
                 </div>
                 <div class="contact-field">
                     <label for="appointment_time">Preferred Time</label>
-                    <input type="text" id="appointment_time" name="appointment_time" placeholder="e.g. 10:00 AM" required>
-                </div>
-            </div>
-
-            <div class="va-booking__row">
-                <div class="contact-field">
-                    <label for="appointment_interest">Interest</label>
-                    <select id="appointment_interest" name="appointment_interest">
-                        <?php foreach ($va_interests as $interest) : ?>
-                            <option value="<?php echo esc_attr($interest); ?>"><?php echo esc_html($interest); ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-                <div class="contact-field">
-                    <label for="appointment_gemstone">Preferred Gemstone <span class="contact-field__optional">(optional)</span></label>
-                    <select id="appointment_gemstone" name="appointment_gemstone">
-                        <?php foreach ($va_gemstones as $gemstone) : ?>
-                            <option value="<?php echo esc_attr($gemstone); ?>"><?php echo esc_html($gemstone); ?></option>
+                    <select id="appointment_time" name="appointment_time" required>
+                        <option value="">Select a time</option>
+                        <?php foreach ($va_time_slots as $slot) : ?>
+                            <option value="<?php echo esc_attr($slot); ?>"><?php echo esc_html($slot); ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
