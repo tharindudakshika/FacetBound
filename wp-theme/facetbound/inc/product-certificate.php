@@ -182,7 +182,13 @@ function facetbound_variation_gem_certificate_script() {
             });
             mediaFrame.on('select', function () {
                 var attachment = mediaFrame.state().get('selection').first().toJSON();
-                $input.val(attachment.id);
+                // WooCommerce's variations panel only enables its "Save
+                // changes" button when it sees a change/input event fire on
+                // a field inside .woocommerce_variations — setting .val()
+                // alone doesn't trigger that, so the value would otherwise
+                // never actually get saved. Firing 'change' here is what
+                // makes the Save button (and the real save) work.
+                $input.val(attachment.id).trigger('change');
                 $filename.html('<a href="' + attachment.url + '" target="_blank">' + attachment.filename + '</a>');
                 $button.text('Replace PDF');
                 $removeBtn.show();
@@ -193,7 +199,7 @@ function facetbound_variation_gem_certificate_script() {
         $(document).on('click', '.facetbound-gem-certificate-remove-btn', function (e) {
             e.preventDefault();
             var $wrap = $(this).closest('.facetbound-variation-gem-certificate');
-            $wrap.find('.facetbound-gem-certificate-id').val('');
+            $wrap.find('.facetbound-gem-certificate-id').val('').trigger('change');
             $wrap.find('.facetbound-gem-certificate-filename').html('');
             $wrap.find('.facetbound-gem-certificate-upload-btn').text('Upload PDF');
             $(this).hide();
