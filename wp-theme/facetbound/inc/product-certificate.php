@@ -225,13 +225,14 @@ function facetbound_get_variation_gem_certificate_url($variation_id, $product_id
  * My Account "View Order" page — replace WooCommerce's default
  * "Order again" button with "Download Gem Certificate" (one per ordered
  * item that has a certificate: the item's own variation certificate,
- * falling back to its parent product's).
+ * falling back to its parent product's). Only shown once the order is
+ * Completed — no certificate to hand over before then.
  */
 remove_action('woocommerce_order_details_after_order_table', 'woocommerce_order_again_button');
 
 add_action('woocommerce_order_details_after_order_table', 'facetbound_render_order_gem_certificate_buttons');
 function facetbound_render_order_gem_certificate_buttons($order) {
-    if (!$order instanceof WC_Order) {
+    if (!$order instanceof WC_Order || !$order->has_status('completed')) {
         return;
     }
     $items = $order->get_items();
