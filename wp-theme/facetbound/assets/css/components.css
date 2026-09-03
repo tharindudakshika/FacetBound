@@ -533,3 +533,7 @@
   font-weight: 500;
   line-height: 1.6;
 }
+
+.fb-hero__cta {
+  margin-top: 28px;
+}

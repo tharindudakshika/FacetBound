@@ -81,6 +81,7 @@ function facetbound_hero($args) {
     $title = $args['title'] ?? '';
     $subtitle = $args['subtitle'] ?? '';
     $max_width = $args['max_width'] ?? 640;
+    $cta = $args['cta'] ?? null;
     ?>
     <section class="fb-hero" style="min-height:<?php echo (int) $min_height; ?>px">
         <div class="fb-hero__media">
@@ -98,6 +99,9 @@ function facetbound_hero($args) {
                 <h1 class="fb-hero__title"><?php echo wp_kses_post($title); ?></h1>
                 <?php if ($subtitle) : ?>
                     <p class="fb-hero__subtitle"><?php echo esc_html($subtitle); ?></p>
+                <?php endif; ?>
+                <?php if ($cta) : ?>
+                    <a href="<?php echo esc_url($cta['url']); ?>" class="btn btn-terracotta fb-hero__cta"><?php echo esc_html($cta['text']); ?></a>
                 <?php endif; ?>
             </div>
         </div>

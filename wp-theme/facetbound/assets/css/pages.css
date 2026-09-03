@@ -3948,3 +3948,259 @@
   font-size: 0.9em;
   color: var(--ink);
 }
+
+.contact-field__optional {
+  color: var(--slate-muted);
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ============================================================
+   Virtual Appointment Page
+   ============================================================ */
+
+/* ---- Why Book a Virtual Session ---- */
+.va-value {
+  background: var(--cream);
+  padding: 100px 0;
+}
+
+.va-value__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 24px;
+}
+
+.va-value-card {
+  background: var(--cream);
+  border: 1px solid var(--slate-light);
+  border-radius: 14px;
+  padding: 32px;
+  text-align: center;
+}
+
+.va-value-card__icon {
+  display: block;
+  color: var(--terracotta);
+  font-size: 26px;
+  margin-bottom: 18px;
+}
+
+.va-value-card__title {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--emerald);
+  margin: 0 0 10px 0;
+}
+
+.va-value-card__desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--slate-text);
+  margin: 0;
+}
+
+/* ---- How It Works ---- */
+.va-steps {
+  background: var(--cream-warm);
+  padding: 100px 0;
+}
+
+.va-steps__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 32px;
+}
+
+.va-step {
+  text-align: center;
+}
+
+.va-step__number {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--emerald);
+  color: var(--cream);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+
+.va-step__title {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--emerald);
+  margin: 0 0 10px;
+}
+
+.va-step__desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--slate-text);
+  margin: 0;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---- Booking / Quick Intake Form ---- */
+.va-booking {
+  background: var(--cream);
+  padding: 100px 0;
+  scroll-margin-top: 24px;
+}
+
+.va-booking__inner {
+  max-width: 720px;
+}
+
+.va-booking__durations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.va-duration-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1.5px solid var(--slate-border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.va-duration-card:has(input:checked) {
+  border-color: var(--terracotta);
+  background: var(--cream-warm);
+}
+
+.va-duration-card input {
+  margin-top: 4px;
+  accent-color: var(--terracotta);
+  flex-shrink: 0;
+}
+
+.va-duration-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.va-duration-card__title {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--emerald);
+}
+
+.va-duration-card__desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--slate-text);
+}
+
+.va-duration-card__price {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-top: 2px;
+}
+
+.va-booking__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ---- Testimonial ---- */
+.va-testimonial {
+  background: var(--cream-warm);
+  padding: 90px 0;
+}
+
+.va-testimonial-card {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.va-testimonial-card__quote {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 18px 0 20px;
+}
+
+.va-testimonial-card__meta {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--emerald);
+  margin: 0;
+}
+
+.va-testimonial-card__meta span {
+  font-weight: 500;
+  color: var(--slate-muted);
+}
+
+/* ---- Guarantee & Trust Banner ---- */
+.va-trust {
+  background: var(--emerald);
+  padding: 56px 0;
+}
+
+.va-trust__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 28px;
+}
+
+.va-trust-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.va-trust-item__icon {
+  color: var(--terracotta);
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.va-trust-item__title {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--cream);
+  margin: 0 0 4px;
+}
+
+.va-trust-item__desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--sage-text);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .va-booking__row {
+    grid-template-columns: 1fr;
+  }
+}
