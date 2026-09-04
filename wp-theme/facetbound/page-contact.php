@@ -43,16 +43,16 @@ $contact_subjects = ['General Inquiry', 'Order Support', 'VIP & Custom Gem Sourc
 
 $contact_faqs = [
     [
-        'question' => 'How long does international delivery take via DHL/FedEx?',
-        'answer' => 'Orders ship free within 5–7 business days via fully insured DHL or FedEx express courier, with a tracking number sent the moment your parcel leaves the studio.',
+        'question' => 'What makes FACETBOUND jewelry unique?',
+        'answer' => 'FACETBOUND combines 100% natural, ethically sourced Sri Lankan gemstones with artisan-textured 925 sterling silver. Every piece is individually handcrafted, ensuring no two rings are identical.',
     ],
     [
-        'question' => 'What if I order the wrong ring size?',
-        'answer' => "We offer an easy 30-day size exchange — just reach out via WhatsApp or the form above with your order number, and we'll arrange a free resize or replacement.",
+        'question' => 'Where are your gemstones sourced and crafted?',
+        'answer' => 'Our gemstones are ethically sourced straight from the riverbeds and mines of Ratnapura, Sri Lanka, and handcrafted by local master silversmiths.',
     ],
     [
-        'question' => 'Do your gems come with authenticity certificates?',
-        'answer' => "Yes — every piece includes a Gemologist Authenticity Certificate confirming your stone's natural origin, cut, and carat weight.",
+        'question' => 'How can I contact customer concierge for urgent order help?',
+        'answer' => 'You can reach our Concierge team instantly via Email at hello@facetbound.com or via our WhatsApp VIP Concierge. We respond within 12 hours.',
     ],
 ];
 ?>
