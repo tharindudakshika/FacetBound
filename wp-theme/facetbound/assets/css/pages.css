@@ -3810,6 +3810,12 @@
   gap: 16px;
 }
 
+.faq-cta {
+  max-width: 880px;
+  margin: 32px auto 0;
+  text-align: center;
+}
+
 .faq-item {
   background: var(--cream);
   border: 1.5px solid var(--slate-border);

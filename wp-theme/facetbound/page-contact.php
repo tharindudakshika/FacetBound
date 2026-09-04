@@ -200,6 +200,9 @@ $contact_faqs = [
                 </div>
             <?php endforeach; ?>
         </div>
+        <div class="faq-cta">
+            <a href="<?php echo esc_url(home_url('/faq/')); ?>" class="btn btn-outline-emerald">View All FAQs</a>
+        </div>
     </div>
 </section>
 

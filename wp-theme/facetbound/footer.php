@@ -32,7 +32,7 @@ if (!defined('ABSPATH')) {
         <div class="fb-footer__col">
             <div class="fb-footer__label">Resources</div>
             <a href="#" class="fb-footer__policy-link">Ring Size Guide</a>
-            <a href="#" class="fb-footer__policy-link">FAQ</a>
+            <a href="<?php echo esc_url(home_url('/faq/')); ?>" class="fb-footer__policy-link">FAQ</a>
         </div>
         <div class="fb-footer__col">
             <div class="fb-footer__label">Join the Circle</div>
