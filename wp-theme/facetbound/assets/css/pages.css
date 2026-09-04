@@ -3806,31 +3806,6 @@
   padding-top: 72px;
 }
 
-.faq-toc {
-  max-width: 880px;
-  margin: 0 auto 48px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.faq-toc__link {
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--emerald);
-  border: 1.5px solid var(--slate-light);
-  border-radius: 999px;
-  padding: 8px 16px;
-  transition: border-color 0.2s ease, color 0.2s ease;
-}
-
-.faq-toc__link:hover {
-  border-color: var(--terracotta);
-  color: var(--terracotta);
-}
-
 .faq-category {
   max-width: 880px;
   margin: 0 auto 56px;

@@ -198,23 +198,18 @@ $faq_running_index = 0;
 
 <section class="contact-faq">
     <div class="container">
-        <nav class="faq-toc" aria-label="FAQ categories">
-            <?php foreach ($faq_categories as $faq_category) : ?>
-                <a href="#faq-cat-<?php echo esc_attr($faq_category['slug']); ?>" class="faq-toc__link"><?php echo wp_kses_post($faq_category['title']); ?></a>
-            <?php endforeach; ?>
-        </nav>
-
         <?php foreach ($faq_categories as $faq_category) : ?>
             <div class="faq-category" id="faq-cat-<?php echo esc_attr($faq_category['slug']); ?>">
                 <h2 class="faq-category__title"><?php echo wp_kses_post($faq_category['title']); ?></h2>
                 <div class="faq-list">
                     <?php foreach ($faq_category['items'] as $faq) :
                         $faq_running_index++;
+                        $faq_is_first = 1 === $faq_running_index;
                         ?>
-                        <div class="faq-item">
-                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-<?php echo (int) $faq_running_index; ?>">
+                        <div class="faq-item<?php echo $faq_is_first ? ' faq-item--open' : ''; ?>">
+                            <button type="button" class="faq-question" aria-expanded="<?php echo $faq_is_first ? 'true' : 'false'; ?>" aria-controls="faq-answer-<?php echo (int) $faq_running_index; ?>">
                                 <span><?php echo esc_html($faq['question']); ?></span>
-                                <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+                                <i class="fa-solid <?php echo $faq_is_first ? 'fa-minus' : 'fa-plus'; ?> faq-icon" aria-hidden="true"></i>
                             </button>
                             <div class="faq-answer" id="faq-answer-<?php echo (int) $faq_running_index; ?>">
                                 <p><?php echo esc_html($faq['answer']); ?></p>
